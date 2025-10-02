@@ -3,9 +3,13 @@ export default function Home() {
         <div>
             <h1>Paolino Angeletti</h1>
 
-            <p>Ciao!</p>
-            <p>Il mio nome è Paolino Angeletti, Benvenuto nel mio portfolio :)</p>
-            <p>Sono uno sviluppatore Back End, con anche piccole esperienze come Front-End.</p>
+            <p>Ciao! Benvenuto nel mio portfolio &#128075;</p>
+            <p>Il mio nome è Paolino Angeletti, sono uno sviluppatore Senior Back-End, con anche piccole esperienze nello sviluppo Front-End.</p>
+            <p>In questa prima sezione, cercherò di dare quante più informazioni riassunte possibili, informazioni che potranno poi essere approfondite in specifiche sezioni presenti in questo portfolio &#128521;</p>
+
+            <h2>Informazioni personali</h2>
+            <h2>Istruzione</h2>
+            <h2>Esperienze professionali</h2>
         </div>
     );
 }

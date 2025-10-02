@@ -6,9 +6,9 @@ function App() {
   const [selected, setSelected] = useState("Home");
 
   return (
-    <div style={{ display: "flex", height: "100vh" }}>
+    <div className="app-container">
       <Sidebar selected={selected} setSelected={setSelected} />
-      <div style={{ flex: 1, paddingLeft: "20px" }}>
+      <div className="detail">
         <DetailView section={selected} />
       </div>
     </div>
