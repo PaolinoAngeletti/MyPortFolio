@@ -18,11 +18,13 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   width: 100%;
   margin: 0;
@@ -44,11 +46,37 @@ body {
   overflow-x: hidden;
 }
 
+.hamburger {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  font-size: 2em;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 .sidebar {
-  width: 250px;
+  transition: transform 0.3s ease, width 0.3s ease;
   background-color: #1e1e1e;
-  padding: 20px;
+  padding: 30px;
+  padding-top: 100px;
   box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 999;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar.closed {
+  transform: translateX(-160px);
 }
 
 .sidebar div {
@@ -64,10 +92,12 @@ body {
 .detail {
   flex: 1;
   padding: 20px;
+  padding-top: 50px;
   background-color: #242424;
   color: rgba(255, 255, 255, 0.87);
   max-width: 100%;
   box-sizing: border-box;
+  margin-left: 0;
 }
 
 h1 {
@@ -101,13 +131,9 @@ button:focus-visible {
     flex-direction: column;
   }
 
-  .sidebar {
-    width: 100%;
-  }
+  
 
-  .detail {
-    padding: 10px;
-  }
+  
 }
 
 @media (prefers-color-scheme: light) {
@@ -115,15 +141,19 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
+
   .sidebar {
     background-color: #f2f2f2;
   }
+
   .detail {
     background-color: #ffffff;
     color: #213547;

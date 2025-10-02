@@ -1,8 +1,8 @@
 const sections = ["Home", "Scarica CV"];
 
-export default function Sidebar({ selected, setSelected }) {
+export default function Sidebar({ selected, setSelected, open }) {
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${open ? "open" : "closed"}`}>
       {sections.map((sec) => (
         <div
           key={sec}

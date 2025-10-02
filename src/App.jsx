@@ -4,13 +4,24 @@ import DetailView from "./components/DetailView";
 
 function App() {
   const [selected, setSelected] = useState("Home");
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
     <div className="app-container">
-      <Sidebar selected={selected} setSelected={setSelected} />
+
+      <button
+        className="hamburger"
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+      >
+        ☰
+      </button>
+
+      <Sidebar selected={selected} setSelected={setSelected} open={sidebarOpen} />
+      
       <div className="detail">
         <DetailView section={selected} />
       </div>
+
     </div>
   );
 }
