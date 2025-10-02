@@ -1,15 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+const base = process.env.NODE_ENV === 'production' ? '/MyPortFolio/' : './'
+
 export default defineConfig({
   plugins: [react()],
-  base: '/MyPortFolio/',
+  base,
   build: {
-
-    // build save path
-    outDir: '.',
-
-    // avoid to delete my files in root before build
-    emptyOutDir: false,
+    outDir: 'docs',
+    emptyOutDir: true,
   },
 })

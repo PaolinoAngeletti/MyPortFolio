@@ -3,7 +3,7 @@ import Sidebar from "./components/Sidebar";
 import DetailView from "./components/DetailView";
 
 function App() {
-  const [selected, setSelected] = useState("Esperienza");
+  const [selected, setSelected] = useState("Home");
 
   return (
     <div style={{ display: "flex", height: "100vh" }}>
