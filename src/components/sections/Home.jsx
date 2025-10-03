@@ -5,7 +5,7 @@ export default function Home() {
 
             <p>Ciao! Benvenuto nel mio portfolio &#128075;</p>
             <p>Il mio nome è Paolino Angeletti, sono uno sviluppatore Senior Back-End, con anche piccole esperienze nello sviluppo Front-End.</p>
-            <p>In questa prima sezione, cercherò di dare quante più informazioni riassunte possibili, informazioni che potranno poi essere approfondite in specifiche sezioni presenti in questo portfolio &#128521;</p>
+            <p>In questa pagina troverete informazioni riassunte relative alle mie esperienze, informazioni che potranno poi essere approfondite in specifiche sezioni presenti in questo portfolio &#128521;</p>
 
             <h2>Informazioni personali</h2>
             <h2>Istruzione</h2>
