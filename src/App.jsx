@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Sidebar from "./components/Sidebar";
 import DetailView from "./components/DetailView";
 
 function App() {
+  
   const [selected, setSelected] = useState("Home");
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(() => window.innerWidth >= 768);
 
   return (
     <div className="app-container">

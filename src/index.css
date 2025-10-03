@@ -76,7 +76,7 @@ body {
 }
 
 .sidebar.closed {
-  transform: translateX(-160px);
+  transform: translateX(-100%);
 }
 
 .sidebar div {
@@ -85,7 +85,6 @@ body {
 }
 
 .sidebar div.selected {
-  font-weight: bold;
   color: #646cff;
 }
 
@@ -126,16 +125,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (max-width: 768px) {
-  .app-container {
-    flex-direction: column;
-  }
-
-  
-
-  
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -157,5 +146,33 @@ button:focus-visible {
   .detail {
     background-color: #ffffff;
     color: #213547;
+  }
+}
+
+/* desktop */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .sidebar {
+    position: relative;
+    height: auto;
+    width: fit-content;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .hamburger {
+    visibility: visible;
+  }
+
+  .sidebar {
+    width: 100%;
   }
 }
