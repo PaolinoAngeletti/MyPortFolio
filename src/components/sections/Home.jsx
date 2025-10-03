@@ -30,22 +30,22 @@ export default function Home() {
 
             <div class={styles.detail_title}>
                 <h3>Laurea Triennale in Informatica</h3>
-                <p class={styles.information}>Università Federico II, Napoli • 2012–2016 • Votazione: 100/110</p>
+                <p class={styles.information}>Università Federico II, Napoli • 2012 - 2016 • Votazione: 100/110</p>
             </div>
-            
+
             <div class={styles.detail_title}>
                 <h3>Diploma Perito Commerciale e Programmatore</h3>
-                <p class={styles.information}>ITCG Masullo-Theti, Nola (NA) • 2009–2012 • Votazione: 74/100</p>
+                <p class={styles.information}>ITCG Masullo-Theti, Nola (NA) • 2009 - 2012 • Votazione: 74/100</p>
             </div>
 
             <h2>Esperienze professionali</h2>
 
             <div class={styles.detail_title}>
                 <h3>Hitachi Rail (Consultant @ Teoresi Group S.p.A.)</h3>
-                <p class={styles.information}>Napoli • Giugno 2024 – Ottobre 2025</p>
+                <p class={styles.information}>Napoli • Giugno 2024 - Ottobre 2025</p>
                 <ul>
                     <li>
-                        Progetto 360Motion
+                        Progetto: 360Motion
                     </li>
                     <li>
                         Sviluppo microservizi in Java Spring Boot
@@ -60,13 +60,64 @@ export default function Home() {
                         Gestione test di integrazione tramite libreria proprietaria Test Core
                     </li>
                     <li>
-                        Progetto 360Motion
-                    </li>
-                    <li>
                         Protocolli: HTTP, MQTT
                     </li>
                 </ul>
             </div>
+
+            <div class={styles.detail_title}>
+                <h3>Hitachi Rail (Consultant @ Teoresi Group S.p.A.)</h3>
+                <p class={styles.information}>Napoli • Gennaio 2024 - Aprile 2024</p>
+                <ul>
+                    <li>
+                        Progetto: 360FlowVehicle
+                    </li>
+                    <li>
+                        Sviluppo microservizi in Python
+                    </li>
+                    <li>
+                        Utilizzo avanzato di Docker
+                    </li>
+                    <li>
+                        Sicurezza: crittografia, MQTT, autenticazione
+                    </li>
+                </ul>
+            </div>
+
+            <div class={styles.detail_title}>
+                <h3>Advise S.R.L.</h3>
+                <p class={styles.information}>Mugnano del Cardinale (AV) • Giugno 2016 - Gennaio 2024</p>
+                <ul>
+                    <li>
+                        Progetti Android (Java) & Back end (Node.js, Python)
+                    </li>
+                    <li>
+                        Project Manager su vari gestionali (NegozioPerfetto, MBE LAB, MagazzinoPerfetto)
+                    </li>
+                    <li>
+                        Integrazione con AWS, RFID, Blockchain, WooCommerce
+                    </li>
+                    <li>
+                        Realizzazione APP offline-first sincronizzate con MySQL/DynamoDB
+                    </li>
+                    <li>
+                        API REST, notifiche push (Firebase), stampa Bluetooth (ZPL)
+                    </li>
+                </ul>
+            </div>
+
+            <div class={styles.detail_title}>
+                <h3>Software Business S.R.L.</h3>
+                <p class={styles.information}>Mugnano del Cardinale (AV) • Tirocinio universitario • Marzo 2016 - Agosto 2016</p>
+                <ul>
+                    <li>
+                        Progettazione e rilascio piattaforma ordini B2B integrata SAP
+                    </li>
+                </ul>
+            </div>
+
+            <h2>Competenze tecniche</h2>
+
         </div>
     );
 }
