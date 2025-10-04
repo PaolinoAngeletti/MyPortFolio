@@ -1,4 +1,4 @@
-const sections = ["Home", "Scarica CV"];
+const sections = ["Home", "Tecnologie", "Scarica CV"];
 
 export default function Sidebar({ selected, setSelected, open }) {
   return (
