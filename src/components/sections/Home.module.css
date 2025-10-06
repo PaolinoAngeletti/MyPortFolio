@@ -1,0 +1,13 @@
+.detail_title {
+    margin-bottom: 20px;
+}
+
+.detail_title h3 {
+    margin: 10px 0 5px 0;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.detail_title .information {
+    margin: 0;
+}

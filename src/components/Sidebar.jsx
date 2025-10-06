@@ -1,17 +1,27 @@
-const sections = ["Home", "Scarica CV"];
+import { NavLink } from "react-router-dom";
 
-export default function Sidebar({ selected, setSelected, open }) {
+const sections = [
+  { label: "Home", to: "/" },
+  { label: "Technologies", to: "/technologies" },
+  { label: "Download", to: "/download" },
+];
+
+export default function Sidebar() {
   return (
-    <div className={`sidebar ${open ? "open" : "closed"}`}>
-      {sections.map((sec) => (
-        <div
-          key={sec}
-          onClick={() => setSelected(sec)}
-          className={selected === sec ? "selected" : ""}
-        >
-          {sec}
-        </div>
-      ))}
-    </div>
+    <nav>
+        {sections.map(section => (
+          <NavLink
+            to={section.to}
+            key={section.to}
+            className={({ isActive }) =>
+              isActive
+                ? "selected"
+                : ""
+            }
+          >
+            {section.label}
+          </NavLink>
+        ))}
+      </nav>
   );
 }

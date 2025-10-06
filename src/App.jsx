@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+
 import Sidebar from "./components/Sidebar";
-import DetailView from "./components/DetailView";
+import DetailView from "./components/main/DetailView";
 
 function App() {
   
-  const [selected, setSelected] = useState("Home");
   const [sidebarOpen, setSidebarOpen] = useState(() => window.innerWidth >= 768);
 
   return (
@@ -17,10 +17,12 @@ function App() {
         ☰
       </button>
 
-      <Sidebar selected={selected} setSelected={setSelected} open={sidebarOpen} />
+      <div className={`sidebar ${sidebarOpen ? "open" : "closed"}`}>
+        <Sidebar />
+      </div>
       
       <div className="detail">
-        <DetailView section={selected} />
+        <DetailView />
       </div>
 
     </div>
