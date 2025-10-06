@@ -1,9 +1,8 @@
 import { Java } from '../models/technologies/java.js';
 import { Python } from '../models/technologies/python.js';
-import { Kotlin } from '../models/technologies/kotlin.js';
 
 const technologies = [
-    new Java(), new Kotlin(), new Python
+    new Java(), new Python
 ];
 
 export function retrieveAll() {
