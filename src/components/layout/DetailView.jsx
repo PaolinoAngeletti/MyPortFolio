@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 
-import Home from "../sections/Home";
-import Download from "../sections/Download";
-import Technologies from "../sections/Technologies";
+import Home from "../../pages/Home";
+import Download from "../../pages/Download";
+import Technologies from "../../pages/Technologies";
 
 export default function DetailView() {
   return (

@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import Card from '../graphic/Card';
+import { retrieveGroupedByType } from '../repository/technologiesRepository';
+
 import styles from './Home.module.css';
-import { retrieveGroupedByType } from '../../repository/technologiesRepository';
+import Card from '../components/ui/Card';
 
 export default function Home() {
 
@@ -52,14 +53,14 @@ export default function Home() {
             <h2>Esperienze professionali</h2>
 
             <div className={styles.detail_title}>
-                <h3>Hitachi Rail (Consultant @ Teoresi Group S.p.A.)</h3>
-                <p className={styles.information}>Napoli • Giugno 2024 - Ottobre 2025</p>
+                <h3>Teoresi Group S.p.A. (Consultant @ Hitachi Rail)</h3>
+                <p className={styles.information}>Napoli • Giugno 2024 - presente</p>
                 <ul>
                     <li>
-                        Progetto: 360Motion
+                        Progetti: 360Motion, 360FlowVehicle (ambito Railway)
                     </li>
                     <li>
-                        Sviluppo microservizi in Java Spring Boot
+                        Sviluppo microservizi in Java Spring Boot e Python.
                     </li>
                     <li>
                         Utilizzo avanzato di: Docker, Kafka, Keycloak, Redis, PostgreSQL, AKHQ, JMeter, SonarQube, Test Containers
@@ -73,24 +74,8 @@ export default function Home() {
                     <li>
                         Protocolli: HTTP, MQTT
                     </li>
-                </ul>
-            </div>
-
-            <div className={styles.detail_title}>
-                <h3>Hitachi Rail (Consultant @ Teoresi Group S.p.A.)</h3>
-                <p className={styles.information}>Napoli • Gennaio 2024 - Aprile 2024</p>
-                <ul>
                     <li>
-                        Progetto: 360FlowVehicle
-                    </li>
-                    <li>
-                        Sviluppo microservizi in Python
-                    </li>
-                    <li>
-                        Utilizzo avanzato di Docker
-                    </li>
-                    <li>
-                        Sicurezza: crittografia, MQTT, autenticazione
+                        Sicurezza: Crittografia, Keycloak, JWT
                     </li>
                 </ul>
             </div>

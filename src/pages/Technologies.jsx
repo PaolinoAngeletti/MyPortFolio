@@ -1,4 +1,4 @@
-import { retrieveAll } from '../../repository/technologiesRepository';
+import { retrieveAll } from '../repository/technologiesRepository';
 
 import styles from './Home.module.css';
 import { useEffect } from 'react';
