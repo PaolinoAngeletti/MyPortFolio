@@ -1,5 +1,4 @@
 import { retrieveAll } from '../repository/technologiesRepository';
-
 import styles from './Home.module.css';
 import { useEffect } from 'react';
 
@@ -23,7 +22,7 @@ export default function Technologies() {
             <h1>Stack tecnologico</h1>
 
             {technologiesList.map((technology) => (
-                <div key={technology.name} className={styles.detail_title}>
+                <div id={technology.name} key={technology.name} className={styles.detail_title}>
                     <h3>{technology.name}</h3>
                     <p className={styles.information}>{technology.content}</p>
                 </div>

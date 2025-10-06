@@ -1,17 +1,11 @@
-import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { retrieveGroupedByType } from '../repository/technologiesRepository';
 
 import styles from './Home.module.css';
-import Card from '../components/ui/Card';
 
 export default function Home() {
 
     const technologiesList = retrieveGroupedByType();
-
-    const navigate = useNavigate();
-    const openTechnologiesPage = () => {
-        navigate("/technologies");
-    };
 
     return (
         <div>
@@ -117,13 +111,21 @@ export default function Home() {
             {Object.entries(technologiesList).map(([type, technologies]) => (
                 <div className={styles.detail_title} key={type}>
                     <h3>{type}</h3>
-                    <div style={{ display: 'flex' }}>
+                    <div style={{ display: 'flex', gap: "10px" }}>
                         {technologies.map((technology) => (
-                            <Card
+                            <NavLink
+                                to={`/technologies#${technology.name}`}
                                 key={technology.name}
-                                title={technology.name} onClick={openTechnologiesPage}
-                            />
-                        ))}</div>
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? "selected"
+                                        : ""
+                                }
+                            >
+                                {technology.name}
+                            </NavLink>
+                        ))}
+                    </div>
                 </div>
             ))}
 
