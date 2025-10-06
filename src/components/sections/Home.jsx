@@ -1,10 +1,16 @@
+import { useNavigate } from "react-router-dom";
+import Card from '../graphic/Card';
 import styles from './Home.module.css';
 import { retrieveGroupedByType } from '../../repository/technologiesRepository';
-import Card from '../graphic/Card';
 
-export default function Home({handleCardClick}) {
+export default function Home() {
 
     const technologiesList = retrieveGroupedByType();
+
+    const navigate = useNavigate();
+    const openTechnologiesPage = () => {
+        navigate("/technologies");
+    };
 
     return (
         <div>
@@ -130,7 +136,7 @@ export default function Home({handleCardClick}) {
                         {technologies.map((technology) => (
                             <Card
                                 key={technology.name}
-                                title={technology.name} onClick={() => handleCardClick("Tecnologie", "Java")}
+                                title={technology.name} onClick={openTechnologiesPage}
                             />
                         ))}</div>
                 </div>
