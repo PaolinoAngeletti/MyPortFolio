@@ -21,4 +21,8 @@ export class Project {
     hasGooglePlayStoreUrl() {
         return this.googlePlayStore ? true : false;
     }
+
+    isFreelanceProject() {
+        return this.company.freelance;
+    }
 }

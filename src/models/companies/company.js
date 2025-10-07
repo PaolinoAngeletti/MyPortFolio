@@ -6,5 +6,10 @@ export class Company {
         this.location = location;
         this.webSite = webSite;
         this.content = content;
+        this.freelance = false;
+    }
+
+    setIfFreelance(boolean){
+        this.freelance = boolean;
     }
 }
