@@ -19,10 +19,13 @@ export default function Technologies() {
                     {technology.hasProjects() && (
                         <p>
                             <i>
-                                Progetti:{" "}
-                                {technology.projects.map((project) =>
-                                    buildNavLink(project.name, "/projects")
-                                )}
+                                Progetti ({technology.retrieveProjectsNumber()}):{" "}
+                                {technology.projects.map((project, index) => (
+                                    <span key={project.name}>
+                                        {buildNavLink(project.name, "/projects")}
+                                        {index < technology.projects.length - 1 && ", "}
+                                    </span>
+                                ))}
                             </i>
                         </p>
                     )}

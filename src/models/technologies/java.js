@@ -1,7 +1,10 @@
 import { Technology } from './technology.js';
 import { getLanguagesTitle } from '../../repository/technologies/technologiesTypeRepository.js';
 
+import { MBELab } from "../projects/mbe_lab.js";
 import { Motion } from "../projects/360motion.js";
+import { NegozioPerfetto } from "../projects/negozio_perfetto.js";
+import { MagazzinoPerfetto } from "../projects/magazzino_perfetto.js";
 
 const content = `Nella mia esperienza ho utilizzato Java in più di un progetto, ma principalmente in due modi:
 
@@ -13,6 +16,6 @@ Per ulteriori dettagli relativi alle mie esperienze Android, si può far riferim
 export class Java extends Technology {
     constructor() {
         super("Java", getLanguagesTitle(), content);
-        this.setProjects(new Motion());
+        this.setProjects(new NegozioPerfetto, new MBELab, new MagazzinoPerfetto, new Motion);
     }
 }
