@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { retrieveGroupedByType } from '../repository/technologies/technologiesRepository';
-
 import styles from './Home.module.css';
 
 export default function Home() {

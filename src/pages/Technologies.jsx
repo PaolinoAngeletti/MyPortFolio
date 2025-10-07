@@ -1,4 +1,5 @@
 import useScrollToHash from '../utils/HookUtils';
+import buildNavLink from '../utils/NavLinkUtils';
 import { retrieveAll } from '../repository/technologies/technologiesRepository';
 import styles from './Home.module.css';
 
@@ -14,6 +15,11 @@ export default function Technologies() {
             {technologiesList.map((technology) => (
                 <div id={technology.name} key={technology.name} className={styles.detail_title}>
                     <h2>{technology.name}</h2>
+
+                    {technology.projects.map((project) => (
+                        buildNavLink(project.name, "/projects")
+                    ))}
+
                     <p className={styles.information}>{technology.content}</p>
                 </div>
             ))}

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import buildNavLink from '../utils/NavLinkUtils';
 import useScrollToHash from '../utils/HookUtils';
 import { retrieveAll } from '../repository/projects/projectsRepository';
 import styles from './Home.module.css';
@@ -18,18 +18,7 @@ export default function Projects() {
 
                     <div className={styles.detail_title}>
                         <h3>🏢 Azienda</h3>
-                        <p className={styles.information}>{project.start}</p>
-                        <NavLink
-                            to={`/companies#${project.company.name}`}
-                            key={project.name}
-                            className={({ isActive }) =>
-                                isActive
-                                    ? "selected"
-                                    : ""
-                            }
-                        >
-                            {project.company.name}
-                        </NavLink>
+                        {buildNavLink(project.company.name, "/companies")}
                     </div>
 
                     <div className={styles.detail_title}>
