@@ -28,6 +28,14 @@ export default function Projects() {
                                 {project.retrieveWebSite()}
                             </a>
                         </p>
+
+                        {project.hasGooglePlayStoreUrl() && (
+                            <p className={styles.information}>
+                                <a href={project.googlePlayStore} target="_blank" >
+                                    Pagina Google Play Store
+                                </a>
+                            </p>
+                        )}
                     </div>
 
                     <p className={styles.information}>{project.content}</p>

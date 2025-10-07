@@ -6,11 +6,19 @@ export class Project {
         this.projectWebSite = projectWebSite;
     }
 
-    retrieveWebSite(){
+    retrieveWebSite() {
         var result = this.projectWebSite;
-        if(!result){
+        if (!result) {
             result = this.company.webSite;
         }
         return result;
+    }
+
+    setGooglePlayStoreUrl(url) {
+        this.googlePlayStore = url;
+    }
+
+    hasGooglePlayStoreUrl() {
+        return this.googlePlayStore ? true : false;
     }
 }
