@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
+import useScrollToHash from '../utils/HookUtils';
 import { retrieveAll } from '../repository/companies/companiesRepository';
 import styles from './Home.module.css';
 
 export default function Companies() {
 
+    useScrollToHash();
     const companiesList = retrieveAll();
 
     return (

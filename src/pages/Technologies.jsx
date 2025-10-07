@@ -1,21 +1,11 @@
-import { useEffect } from 'react';
+import useScrollToHash from '../utils/HookUtils';
 import { retrieveAll } from '../repository/technologies/technologiesRepository';
 import styles from './Home.module.css';
 
 export default function Technologies() {
 
+    useScrollToHash();
     const technologiesList = retrieveAll();
-
-    // scroll effect when paragraph is detected in url path.
-    useEffect(() => {
-        if (window.location.hash) {
-            const id = window.location.hash.replace('#', '');
-            const el = document.getElementById(id);
-            if (el) {
-                el.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    }, []);
 
     return (
         <div>
