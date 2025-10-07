@@ -16,9 +16,16 @@ export default function Technologies() {
                 <div id={technology.name} key={technology.name} className={styles.detail_title}>
                     <h2>{technology.name}</h2>
 
-                    {technology.projects.map((project) => (
-                        buildNavLink(project.name, "/projects")
-                    ))}
+                    {technology.hasProjects() && (
+                        <p>
+                            <i>
+                                Progetti:{" "}
+                                {technology.projects.map((project) =>
+                                    buildNavLink(project.name, "/projects")
+                                )}
+                            </i>
+                        </p>
+                    )}
 
                     <p className={styles.information}>{technology.content}</p>
                 </div>

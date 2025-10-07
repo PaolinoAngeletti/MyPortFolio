@@ -9,4 +9,8 @@ export class Technology {
   setProjects(...projects) {
     this.projects = projects;
   }
+
+  hasProjects(){
+    return this.projects?.length > 0;
+  }
 }
