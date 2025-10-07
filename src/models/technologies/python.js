@@ -1,5 +1,5 @@
 import { Technology } from './technology.js';
-import { getLanguagesTitle } from '../../repository/technologiesTypeRepository.js';
+import { getLanguagesTitle } from '../../repository/technologies/technologiesTypeRepository.js';
 
 const content = `Nella mia esperienza ho utilizzato Python in più di un progetto, con le seguenti modalità:
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import Sidebar from "./components/layout/Sidebar";
-import DetailView from "./components/layout/DetailView";
+import Sidebar from "./components/Sidebar";
+import DetailView from "./components/DetailView";
 
 function App() {
   

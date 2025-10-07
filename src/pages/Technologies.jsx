@@ -1,21 +1,12 @@
-import { retrieveAll } from '../repository/technologiesRepository';
+import useScrollToHash from '../utils/HookUtils';
+import buildNavLink from '../utils/NavLinkUtils';
+import { retrieveAll } from '../repository/technologies/technologiesRepository';
 import styles from './Home.module.css';
-import { useEffect } from 'react';
 
 export default function Technologies() {
 
+    useScrollToHash();
     const technologiesList = retrieveAll();
-
-    useEffect(() => {
-        // Se c'è un hash nell'URL, scrolla al paragrafo corrispondente
-        if (window.location.hash) {
-            const id = window.location.hash.replace('#', '');
-            const el = document.getElementById(id);
-            if (el) {
-                el.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    }, []);
 
     return (
         <div>
@@ -23,7 +14,19 @@ export default function Technologies() {
 
             {technologiesList.map((technology) => (
                 <div id={technology.name} key={technology.name} className={styles.detail_title}>
-                    <h3>{technology.name}</h3>
+                    <h2>{technology.name}</h2>
+
+                    {technology.hasProjects() && (
+                        <p>
+                            <i>
+                                Progetti:{" "}
+                                {technology.projects.map((project) =>
+                                    buildNavLink(project.name, "/projects")
+                                )}
+                            </i>
+                        </p>
+                    )}
+
                     <p className={styles.information}>{technology.content}</p>
                 </div>
             ))}
