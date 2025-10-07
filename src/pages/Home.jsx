@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import buildNavLink from '../utils/NavLinkUtils';
 import { retrieveGroupedByType } from '../repository/technologies/technologiesRepository';
 import styles from './Home.module.css';
 
@@ -112,17 +112,7 @@ export default function Home() {
                     <h3>{type}</h3>
                     <div style={{ display: 'flex', gap: "10px" }}>
                         {technologies.map((technology) => (
-                            <NavLink
-                                to={`/technologies#${technology.name}`}
-                                key={technology.name}
-                                className={({ isActive }) =>
-                                    isActive
-                                        ? "selected"
-                                        : ""
-                                }
-                            >
-                                {technology.name}
-                            </NavLink>
+                            buildNavLink(technology.name, "/technologies")
                         ))}
                     </div>
                 </div>
