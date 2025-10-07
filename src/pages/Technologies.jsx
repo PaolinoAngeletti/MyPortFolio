@@ -23,7 +23,7 @@ export default function Technologies() {
 
             {technologiesList.map((technology) => (
                 <div id={technology.name} key={technology.name} className={styles.detail_title}>
-                    <h3>{technology.name}</h3>
+                    <h2>{technology.name}</h2>
                     <p className={styles.information}>{technology.content}</p>
                 </div>
             ))}
