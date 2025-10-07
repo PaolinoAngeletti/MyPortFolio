@@ -1,5 +1,5 @@
 import { Technology } from './technology.js';
-import { getLanguagesTitle } from '../../repository/technologiesTypeRepository.js';
+import { getLanguagesTitle } from '../../repository/technologies/technologiesTypeRepository.js';
 
 const content = `Nella mia esperienza ho utilizzato Java in più di un progetto, ma principalmente in due modi:
 

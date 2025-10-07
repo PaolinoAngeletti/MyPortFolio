@@ -1,7 +1,7 @@
-import { Java } from '../models/technologies/java.js';
-import { Python } from '../models/technologies/python.js';
-import { Gradle } from '../models/technologies/gradle.js';
-import { Maven } from '../models/technologies/maven.js';
+import { Java } from '../../models/technologies/java.js';
+import { Python } from '../../models/technologies/python.js';
+import { Gradle } from '../../models/technologies/gradle.js';
+import { Maven } from '../../models/technologies/maven.js';
 
 const technologies = [
     new Java(), new Gradle(), new Maven(), 

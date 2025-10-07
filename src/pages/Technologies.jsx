@@ -1,13 +1,13 @@
-import { retrieveAll } from '../repository/technologiesRepository';
-import styles from './Home.module.css';
 import { useEffect } from 'react';
+import { retrieveAll } from '../repository/technologies/technologiesRepository';
+import styles from './Home.module.css';
 
 export default function Technologies() {
 
     const technologiesList = retrieveAll();
 
+    // scroll effect when paragraph is detected in url path.
     useEffect(() => {
-        // Se c'è un hash nell'URL, scrolla al paragrafo corrispondente
         if (window.location.hash) {
             const id = window.location.hash.replace('#', '');
             const el = document.getElementById(id);
