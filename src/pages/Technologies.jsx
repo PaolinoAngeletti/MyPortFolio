@@ -1,35 +1,43 @@
 import useScrollToHash from '../utils/HookUtils';
 import buildNavLink from '../utils/NavLinkUtils';
-import { retrieveAll } from '../repository/technologies/technologiesRepository';
-import styles from './Home.module.css';
+import { retrieveGroupedByType } from '../repository/technologies/technologiesRepository';
 
 export default function Technologies() {
 
     useScrollToHash();
-    const technologiesList = retrieveAll();
+    const technologiesList = retrieveGroupedByType();
 
     return (
         <div>
             <h1>Stack tecnologico</h1>
 
-            {technologiesList.map((technology) => (
-                <div id={technology.name} key={technology.name} className={styles.detail_title}>
-                    <h2>{technology.name}</h2>
+            {Object.entries(technologiesList).map(([type, technologies]) => (
+                <div className="detail_title" key={type}>
+                    <h2>{type}</h2>
+                    {technologies.map((technology) => (
+                        <div id={technology.name} key={technology.name} className="detail_title">
+                            <h2>{technology.name}</h2>
 
-                    {technology.hasProjects() && (
-                        <p>
-                            <i>
-                                Progetti:{" "}
-                                {technology.projects.map((project) =>
-                                    buildNavLink(project.name, "/projects")
-                                )}
-                            </i>
-                        </p>
-                    )}
+                            {technology.hasProjects() && (
+                                <p>
+                                    <i>
+                                        Progetti ({technology.retrieveProjectsNumber()}):{" "}
+                                        {technology.projects.map((project, index) => (
+                                            <span key={project.name}>
+                                                {buildNavLink(project.name, "/projects")}
+                                                {index < technology.projects.length - 1 && ", "}
+                                            </span>
+                                        ))}
+                                    </i>
+                                </p>
+                            )}
 
-                    <p className={styles.information}>{technology.content}</p>
+                            <p className="information">{technology.content}</p>
+                        </div>
+                    ))}
                 </div>
             ))}
+
         </div>
     );
 }

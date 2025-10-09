@@ -31,7 +31,7 @@ Invece, le attività di cui mi sono occupato sono:
 •	Verifica ed eventuale fix per work-item rilevati dal team di V&V (Verification & Validation)
 •	Refactoring di un SDK interno utile alla gestione delle proprietà che i singoli componenti potevano richiedere al database
 •	Implementazione della libreria Test Core, utilizzata come framework per la scrittura di test di integrazione. Questa libreria mette a disposizione vari connettori (database, Redis, Kafka, ecc.) e gestisce, tramite il file application. properties, l'accesso a tali connettori tramite test container o tramite l'ambiente reale locale. I connettori vengono implementati utilizzando il Factory pattern, garantendo così una facile aggiunta di nuovi elementi.
-•	Implementazione di un nuovo servizio Java, platform-integration-test, che, tramite la libreria Test Core, contiene una serie di test di integrazione per verificare il comportamento dei vari microservizi rilasciati.
+•	Implementazione di un nuovo servizio Java, platform-integration-test, che, tramite la libreria Test Core, contiene una serie di test di integrazione per verificare il comportamento dei vari microservizi rilasciati. Questo strumento è stato impostato in modo da eseguire, ogni notte, una suite di test di integrazione definiti tramite JSON, in modo da verificare, ogni giorno, l’impatto di nuovi sviluppi o modifiche all’ambiente sulla stabilità del software.
 
 Nel contesto di IntelliJ, sono stati usati i seguenti plugins:
 •	Lombok, usato per importare annotazioni e ridurre il codice scritto.

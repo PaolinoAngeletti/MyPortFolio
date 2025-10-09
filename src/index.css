@@ -100,6 +100,24 @@ body {
   margin-left: 0;
 }
 
+.detail_title {
+    margin-bottom: 20px;
+}
+
+.detail_title h3 {
+    margin: 10px 0 5px 0;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.detail_title .information {
+    margin: 0;
+    white-space: pre-line;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -129,30 +147,6 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
-
-  .sidebar {
-    background-color: #f2f2f2;
-  }
-
-  .detail {
-    background-color: #ffffff;
-    color: #213547;
-  }
 }
 
 /* desktop */

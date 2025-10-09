@@ -10,7 +10,11 @@ export class Technology {
     this.projects = projects;
   }
 
-  hasProjects(){
-    return this.projects?.length > 0;
+  retrieveProjectsNumber() {
+    return this.projects?.length;
+  }
+
+  hasProjects() {
+    return this.retrieveProjectsNumber() > 0;
   }
 }
