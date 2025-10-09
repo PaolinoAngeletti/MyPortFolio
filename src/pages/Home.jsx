@@ -1,6 +1,6 @@
+import styles from './Home.module.css';
 import buildNavLink from '../utils/NavLinkUtils';
 import { retrieveGroupedByType } from '../repository/technologies/technologiesRepository';
-import styles from './Home.module.css';
 
 export default function Home() {
 

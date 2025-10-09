@@ -11,9 +11,22 @@ import { Maven } from '../../models/technologies/maven.js';
 import { Gradle } from '../../models/technologies/gradle.js';
 import { Android } from '../../models/technologies/android.js';
 
+import { AWS } from '../../models/technologies/aws.js';
+import { Docker } from '../../models/technologies/docker.js';
+
+import { SQL } from '../../models/technologies/sql.js';
+import { MySQL } from '../../models/technologies/mysql.js';
+import { PostgresSQL } from '../../models/technologies/postgres.js';
+
+import { Redis } from '../../models/technologies/redis.js';
+import { DynamoDB } from '../../models/technologies/dynamodb.js';
+
 const technologies = [
     new BeanShell, new Java, new Javascript, new NodeJS, new Python, new Swift, new VBNet,
-    new Android, new Git, new Gradle, new Maven
+    new Android, new Git, new Gradle, new Maven,
+    new AWS, new Docker,
+    new MySQL, new SQL, new PostgresSQL,
+    new DynamoDB, new Redis
 ];
 
 export function retrieveAll() {
