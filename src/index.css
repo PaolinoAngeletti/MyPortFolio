@@ -149,30 +149,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
-
-  .sidebar {
-    background-color: #f2f2f2;
-  }
-
-  .detail {
-    background-color: #ffffff;
-    color: #213547;
-  }
-}
-
 /* desktop */
 @media (min-width: 768px) {
   .hamburger {
