@@ -21,3 +21,19 @@ export function getRelationalDatabaseTitle() {
 export function getNoSqlDatabaseTitle() {
   return "Database NoSQL";
 }
+
+export function getMessageBrokersTitle() {
+  return "Messages Brokers";
+}
+
+export function getPatternsTitle() {
+  return "Patterns";
+}
+
+export function getDocumentationTitle() {
+  return "Documentazione & PM";
+}
+
+export function getHardwareTitle() {
+  return "Hardware & IoT Integration";
+}
