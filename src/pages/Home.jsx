@@ -1,4 +1,3 @@
-import styles from './Home.module.css';
 import buildNavLink from '../utils/NavLinkUtils';
 import { retrieveGroupedByType } from '../repository/technologies/technologiesRepository';
 
@@ -16,38 +15,38 @@ export default function Home() {
 
             <h2>Informazioni personali</h2>
 
-            <div className={styles.detail_title}>
+            <div className="detail_title">
                 <h3>🎂 Data di nascita</h3>
-                <p className={styles.information}>04 Maggio 1993</p>
+                <p className="information">04 Maggio 1993</p>
             </div>
 
-            <div className={styles.detail_title}>
+            <div className="detail_title">
                 <h3>🌍 Nazionalità</h3>
-                <p className={styles.information}>Italiana</p>
+                <p className="information">Italiana</p>
             </div>
 
-            <div className={styles.detail_title}>
+            <div className="detail_title">
                 <h3>💬 Livello Inglese</h3>
-                <p className={styles.information}>B1</p>
+                <p className="information">B1</p>
             </div>
 
             <h2>Istruzione</h2>
 
-            <div className={styles.detail_title}>
+            <div className="detail_title">
                 <h3>Laurea Triennale in Informatica</h3>
-                <p className={styles.information}>Università Federico II, Napoli • 2012 - 2016 • Votazione: 100/110</p>
+                <p className="information">Università Federico II, Napoli • 2012 - 2016 • Votazione: 100/110</p>
             </div>
 
-            <div className={styles.detail_title}>
+            <div className="detail_title">
                 <h3>Diploma Perito Commerciale e Programmatore</h3>
-                <p className={styles.information}>ITCG Masullo-Theti, Nola (NA) • 2009 - 2012 • Votazione: 74/100</p>
+                <p className="information">ITCG Masullo-Theti, Nola (NA) • 2009 - 2012 • Votazione: 74/100</p>
             </div>
 
             <h2>Esperienze professionali</h2>
 
-            <div className={styles.detail_title}>
+            <div className="detail_title">
                 <h3>Teoresi Group S.p.A. (Consultant @ Hitachi Rail)</h3>
-                <p className={styles.information}>Napoli • Giugno 2024 - presente</p>
+                <p className="information">Napoli • Giugno 2024 - presente</p>
                 <ul>
                     <li>
                         Progetti: 360Motion, 360FlowVehicle (ambito Railway)
@@ -73,9 +72,9 @@ export default function Home() {
                 </ul>
             </div>
 
-            <div className={styles.detail_title}>
+            <div className="detail_title">
                 <h3>Advise S.R.L.</h3>
-                <p className={styles.information}>Mugnano del Cardinale (AV) • Giugno 2016 - Gennaio 2024</p>
+                <p className="information">Mugnano del Cardinale (AV) • Giugno 2016 - Gennaio 2024</p>
                 <ul>
                     <li>
                         Progetti Android (Java) & Back end (Node.js, Python)
@@ -95,9 +94,9 @@ export default function Home() {
                 </ul>
             </div>
 
-            <div className={styles.detail_title}>
+            <div className="detail_title">
                 <h3>Software Business S.R.L.</h3>
-                <p className={styles.information}>Mugnano del Cardinale (AV) • Tirocinio universitario • Marzo 2016 - Agosto 2016</p>
+                <p className="information">Mugnano del Cardinale (AV) • Tirocinio universitario • Marzo 2016 - Agosto 2016</p>
                 <ul>
                     <li>
                         Progettazione e rilascio piattaforma ordini B2B integrata SAP
@@ -108,7 +107,7 @@ export default function Home() {
             <h2>Competenze tecniche</h2>
 
             {Object.entries(technologiesList).map(([type, technologies]) => (
-                <div className={styles.detail_title} key={type}>
+                <div className="detail_title" key={type}>
                     <h3>{type}</h3>
                     <div style={{ display: 'flex', gap: "10px" }}>
                         {technologies.map((technology) => (

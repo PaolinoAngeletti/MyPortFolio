@@ -1,7 +1,6 @@
 import buildNavLink from '../utils/NavLinkUtils';
 import useScrollToHash from '../utils/HookUtils';
 import { retrieveAll, retrieveFreelance } from '../repository/projects/projectsRepository';
-import styles from './Home.module.css';
 
 export default function Projects() {
 
@@ -13,10 +12,10 @@ export default function Projects() {
         return (
             <div>
                 {projectsList.map((project) => (
-                    <div id={project.name} key={project.name} className={styles.detail_title}>
+                    <div id={project.name} key={project.name} className="detail_title">
                         <h2>{project.name}</h2>
 
-                        <div className={styles.detail_title}>
+                        <div className="detail_title">
                             <h3>🏢 Azienda</h3>
                             {project.isFreelanceProject()
                                 ? <p>{project.company.name}</p>
@@ -24,16 +23,16 @@ export default function Projects() {
                             }
                         </div>
 
-                        <div className={styles.detail_title}>
+                        <div className="detail_title">
                             <h3>🌐 Sito Web</h3>
-                            <p className={styles.information}>
+                            <p className="information">
                                 <a href={project.retrieveWebSite()} target="_blank" >
                                     {project.retrieveWebSite()}
                                 </a>
                             </p>
 
                             {project.hasGooglePlayStoreUrl() && (
-                                <p className={styles.information}>
+                                <p className="information">
                                     <a href={project.googlePlayStore} target="_blank" >
                                         Pagina Google Play Store
                                     </a>
@@ -41,7 +40,7 @@ export default function Projects() {
                             )}
                         </div>
 
-                        <p className={styles.information}>{project.content}</p>
+                        <p className="information">{project.content}</p>
                     </div>
                 ))}
             </div>

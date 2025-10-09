@@ -10,6 +10,7 @@ import { Git } from '../../models/technologies/git.js';
 import { Maven } from '../../models/technologies/maven.js';
 import { Gradle } from '../../models/technologies/gradle.js';
 import { Android } from '../../models/technologies/android.js';
+import { SpringBoot } from '../../models/technologies/spring_boot.js';
 
 import { AWS } from '../../models/technologies/aws.js';
 import { Docker } from '../../models/technologies/docker.js';
@@ -36,7 +37,7 @@ import { RFID } from '../../models/technologies/rfid.js';
 
 const technologies = [
     new BeanShell, new Java, new Javascript, new NodeJS, new Python, new Swift, new VBNet,
-    new Android, new Git, new Gradle, new Maven,
+    new Android, new Git, new Gradle, new Maven, new SpringBoot,
     new AWS, new Docker,
     new MySQL, new SQL, new PostgresSQL,
     new DynamoDB, new Redis,

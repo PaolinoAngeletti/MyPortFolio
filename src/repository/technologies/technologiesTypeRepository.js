@@ -1,5 +1,5 @@
 export function getLanguagesTitle() {
-  return "Linguaggi";
+  return "Linguaggi di programmazione";
 }
 
 export function getFrameworkTitle() {

@@ -1,4 +1,3 @@
-import styles from './Home.module.css';
 import useScrollToHash from '../utils/HookUtils';
 import buildNavLink from '../utils/NavLinkUtils';
 import { retrieveGroupedByType } from '../repository/technologies/technologiesRepository';
@@ -13,10 +12,10 @@ export default function Technologies() {
             <h1>Stack tecnologico</h1>
 
             {Object.entries(technologiesList).map(([type, technologies]) => (
-                <div className={styles.detail_title} key={type}>
+                <div className="detail_title" key={type}>
                     <h2>{type}</h2>
                     {technologies.map((technology) => (
-                        <div id={technology.name} key={technology.name} className={styles.detail_title}>
+                        <div id={technology.name} key={technology.name} className="detail_title">
                             <h2>{technology.name}</h2>
 
                             {technology.hasProjects() && (
@@ -33,7 +32,7 @@ export default function Technologies() {
                                 </p>
                             )}
 
-                            <p className={styles.information}>{technology.content}</p>
+                            <p className="information">{technology.content}</p>
                         </div>
                     ))}
                 </div>
