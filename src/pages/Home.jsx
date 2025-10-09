@@ -4,6 +4,8 @@ import { retrieveGroupedByType } from '../repository/technologies/technologiesRe
 export default function Home() {
 
     const technologiesList = retrieveGroupedByType();
+    const emailAddress = "paolinoangeletti@gmail.com";
+    const linkedinUrl = "https://www.linkedin.com/in/paolino-angeletti-64484211b";
 
     return (
         <div>
@@ -28,6 +30,31 @@ export default function Home() {
             <div className="detail_title">
                 <h3>💬 Livello Inglese</h3>
                 <p className="information">B1</p>
+            </div>
+
+            <h2>Contatti</h2>
+
+            <div className="detail_title">
+                <h3>✉️ Email</h3>
+                <p className="information">
+                    <a className='information' href={`mailto:${emailAddress}`}>
+                        {emailAddress}
+                    </a>
+                </p>
+            </div>
+
+            <div className="detail_title">
+                <h3>📞 Cellulare</h3>
+                <p className="information">+39 320.29.50.351</p>
+            </div>
+
+            <div className="detail_title">
+                <h3>💼 Linkedin</h3>
+                <p className="information">
+                    <a className='information' href={linkedinUrl} target="_blank">
+                        {linkedinUrl}
+                    </a>
+                </p>
             </div>
 
             <h2>Istruzione</h2>
