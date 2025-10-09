@@ -9,9 +9,11 @@ import { MagazzinoPerfetto } from '../../models/projects/magazzino_perfetto.js';
 import { CRMO } from '../../models/projects/crmo.js';
 import { Movitel } from '../../models/projects/movitel.js';
 import { ApriUnTicket } from '../../models/projects/apri_ticket.js';
-
 import { AcquistoMerciCreazioneOrdiniSap } from '../../models/projects/acquisto_merci_sap.js';
+
 import { QLMobile } from '../../models/projects/ql_mobile.js';
+import { MyPortFolio } from '../../models/projects/my_portfolio.js';
+import { FantaRegolamento } from '../../models/projects/fantaregolamento.js';
 
 const projects = [
     new Motion, new FlowVehicle, new TestCaseRunner,
@@ -21,7 +23,7 @@ const projects = [
 ];
 
 const freelanceProjects = [
-    new QLMobile
+    new QLMobile, new FantaRegolamento, new MyPortFolio
 ];
 
 export function retrieveAll() {
