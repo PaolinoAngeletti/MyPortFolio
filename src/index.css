@@ -114,7 +114,7 @@ body {
   margin: 0;
   white-space: pre-line;
   word-wrap: break-word;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
   line-height: 1.5;
 }
 

@@ -136,7 +136,7 @@ export default function Home() {
             {Object.entries(technologiesList).map(([type, technologies]) => (
                 <div className="detail_title" key={type}>
                     <h3>{type}</h3>
-                    <div style={{ display: 'flex', gap: "10px" }}>
+                    <div style={{ display: 'flex', flexWrap: "wrap", gap: "10px" }}>
                         {technologies.map((technology) => (
                             buildNavLink(technology.name, "/technologies")
                         ))}
