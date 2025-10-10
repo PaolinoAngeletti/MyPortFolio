@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-export default function buildNavLink(title, linkPath) {
+export default function buildNavLink(title, linkPath, callback) {
     return (
         <NavLink
             to={`${linkPath}?filter=${title}`}
@@ -8,6 +8,7 @@ export default function buildNavLink(title, linkPath) {
             className={({ isActive }) =>
                 isActive ? "selected" : ""
             }
+            onClick={callback}
         >
             {title}
         </NavLink>

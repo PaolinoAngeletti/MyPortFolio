@@ -4,8 +4,18 @@ import Sidebar from "./components/Sidebar";
 import DetailView from "./components/DetailView";
 
 function App() {
-  
-  const [sidebarOpen, setSidebarOpen] = useState(() => window.innerWidth >= 768);
+
+  const isMobile = () => {
+    return window.innerWidth <= 768;
+  }
+
+  const [sidebarOpen, setSidebarOpen] = useState(() => !isMobile());
+
+  const sidebarClickCallback = () => {
+    if (isMobile()) {
+      setSidebarOpen(false);
+    }
+  };
 
   return (
     <div className="app-container">
@@ -18,9 +28,9 @@ function App() {
       </button>
 
       <div className={`sidebar ${sidebarOpen ? "open" : "closed"}`}>
-        <Sidebar />
+        <Sidebar callback={sidebarClickCallback} />
       </div>
-      
+
       <div className="detail">
         <DetailView />
       </div>
