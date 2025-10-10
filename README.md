@@ -28,10 +28,10 @@ To facilitate the deployment phase of the project, a bash file has been created 
 
 This command will perform the following operations:
 
-1. Build project via "NODE_ENV=production npm run build" command.
-2. Commit and push all pending files.
-3. Create a Pull Request in order to merge new changes into master branch (obviously the PR will have to be confirmed manually).
-4. Increase project version.
+1. Increase project version.
+2. Build project via "NODE_ENV=production npm run build" command.
+3. Commit and push all pending files.
+4. Create a Pull Request in order to merge new changes into master branch (obviously the PR will have to be confirmed manually).
 
 The {version-increase-type} parameter specifies the type of version increase to apply.\
 The project version is in the X.Y.Z style, where:
