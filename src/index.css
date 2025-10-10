@@ -101,21 +101,21 @@ body {
 }
 
 .detail_title {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .detail_title h3 {
-    margin: 10px 0 5px 0;
-    font-size: 1.1em;
-    line-height: 1.5;
+  margin: 10px 0 5px 0;
+  font-size: 1.1em;
+  line-height: 1.5;
 }
 
 .detail_title .information {
-    margin: 0;
-    white-space: pre-line;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.5;
+  margin: 0;
+  white-space: pre-line;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
 }
 
 h1 {

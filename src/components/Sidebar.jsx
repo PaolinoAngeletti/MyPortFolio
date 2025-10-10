@@ -8,7 +8,7 @@ const sections = [
   { label: "Curriculum", to: "/download" },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ callback }) {
   return (
     <nav>
       {sections.map(section => (
@@ -20,6 +20,7 @@ export default function Sidebar() {
               ? "selected"
               : ""
           }
+          onClick={callback}
         >
           {section.label}
         </NavLink>
