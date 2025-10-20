@@ -38,3 +38,7 @@ The project version is in the X.Y.Z style, where:
 - X indicates the major version
 - Y indicates the minor version
 - Z indicates the patch version
+
+### Update Curriculum Vitae document
+
+To update the Real Curriculum document and make it public, you need to update the file in the public folder.
