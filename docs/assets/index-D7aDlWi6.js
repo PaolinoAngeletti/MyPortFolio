@@ -187,20 +187,24 @@ La mia esperienza con questo linguaggio è quindi più orientata allo scripting 
 
 Le Lambda potevano essere scritte anche in Python, ma in alcuni casi si preferiva Node.js per la sua rapidità nel gestire operazioni I/O asincrone.
 Ad esempio, ho realizzato una funzione che riceveva richieste API, interrogava un database DynamoDB, e restituiva i risultati in formato JSON in modo non bloccante, sfruttando le Promise e le funzioni async/await di Node.js.`;class yy extends ye{constructor(){super("Node.js",al(),gy),this.setProjects(new Qt,new wt,new Ut)}}class Jm extends Zi{constructor(s,f,c,d,g,E){super(s,f,c,d,g,E),this.setIfFreelance(!0)}}class zy extends Jm{constructor(){super("RFI - Ferrovie dello Stato",null,null,null,"https://www.fsitaliane.it",null)}}const Sy=`Progetto commissionato da Trenitalia, che aveva l’esigenza di monitorare, in maniera sicura e semplice, le varie tratte che il sistema ferroviario prevedeva.
-Questo progetto nasce durante il periodo Covid, in cui, per sopperire all’impossibilità di lavorare in presenza in ufficio, venne ideata questa soluzione per permettere agli operatori di lavorare anche da casa. 
+Questo progetto nasce durante il periodo Covid, in cui, per sopperire all’impossibilità di lavorare in presenza in ufficio, venne ideata questa soluzione per permettere agli operatori di lavorare anche da casa.
 Tutt’ora il sistema è in uso dalle stazioni di Bologna e Milano, ma col tempo la lista potrà solamente aumentare.
 
 QL Mobile è una APP che, tramite sistemi di API, comunica con i sistemi RFI per ottenere informazioni riguardo le tratte, i ritardi, le videoregistrazioni, che un qualsiasi operatore poteva interrogare per qualsiasi esigenza.
 Oltre ciò, la APP implementa anche un sistema di streaming video per accedere a varie telecamere poste su una specifica tratta.
+Sono previste due modalità di visualizzazione:
+Modalità Image: aggiornamento a intervalli regolari configurabili, che simula un frame rate (FPS) costante.
+Modalità RTSP: riproduzione diretta di flussi video in tempo reale provenienti dal server.
 
 Per ragioni di sicurezza, la APP non è pubblicata sul PlayStore ufficiale ed opera in maniera corretta solo in presenza di Rete mobile RFI sul device (SIM dedicata), cosi da controllare con facilità i dispositivi da cui la APP può funzionare.
+L’APP viene distribuita attraverso uno store interno RFI, accessibile solo a personale autorizzato.
+La mia responsabilità includeva il build locale del progetto e la pubblicazione interna sullo store RFI (la distribuzione finale era gestita da altri team).
 
-La APP è stata rilasciata sia per Android che per iOS, scritta in entrambi casi con linguaggio nativo Android e Swift.
-
+La APP è stata sviluppata sia per Android che per iOS, scritta in entrambi casi con linguaggio nativo Android e Swift.
 Strumenti coinvolti:
-•	Android (Java).
-•	Swift (IOS).
-•	API.`;class Km extends vt{constructor(){super("Quadro Luminoso - QL Mobile",new zy,null,Sy)}}const by=`Ho utilizzato il linguaggio Swift per lo sviluppo dell’app mobile QL-Mobile.
+• Android (Java).
+• Swift (IOS).
+• API.`;class Km extends vt{constructor(){super("Quadro Luminoso - QL Mobile",new zy,null,Sy)}}const by=`Ho utilizzato il linguaggio Swift per lo sviluppo dell’app mobile QL-Mobile.
 Si tratta dell’unico progetto in cui ho impiegato questo linguaggio, ma l’esperienza mi ha permesso di acquisire familiarità sia con Swift sia con l’IDE Xcode di Apple.
 Ho approfondito le best practice di sviluppo iOS, realizzando un’interfaccia fluida e funzionale, integrando API esterne e gestendo un database locale per la memorizzazione di dati persistenti, come le impostazioni utente.`;class Ay extends ye{constructor(){super("Swift",al(),by),this.setProjects(new Km)}}const Ey=`CRM - O (Officina) è un software sviluppato per una delle più grandi concessionarie Peugeot e Volkswagen della Campania.
 Il software nasce come esigenza alla seguente richiesta: le due grandi multinazionali nominate sopra, richiedono con cadenza mensile un file tracciato, in formato txt, contenente l'elenco dei clienti soddisfatti e non passati in officina durante il mese corrente.
