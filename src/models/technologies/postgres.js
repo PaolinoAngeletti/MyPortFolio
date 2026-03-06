@@ -1,6 +1,7 @@
 import { Technology } from './technology.js';
 import { getRelationalDatabaseTitle } from '../../repository/technologies/technologiesTypeRepository.js';
 
+import { Hmax } from '../projects/hmax.js';
 import { Motion } from '../projects/360motion.js';
 import { FlowVehicle } from '../projects/360flow_vehicle.js';
 
@@ -10,6 +11,6 @@ Anche per questo database sono state utilizzati trigger e procedure. Inoltre, pe
 export class PostgresSQL extends Technology {
     constructor() {
         super("PostgresSQL", getRelationalDatabaseTitle(), content);
-        this.setProjects(new FlowVehicle, new Motion);
+        this.setProjects(new FlowVehicle, new Motion, new Hmax);
     }
 }

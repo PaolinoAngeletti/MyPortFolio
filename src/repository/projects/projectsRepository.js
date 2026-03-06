@@ -1,3 +1,4 @@
+import { Hmax } from '../../models/projects/hmax.js';
 import { Motion } from '../../models/projects/360motion.js';
 import { FlowVehicle } from '../../models/projects/360flow_vehicle.js';
 import { TestCaseRunner } from '../../models/projects/test_case_runner.js';
@@ -16,7 +17,7 @@ import { MyPortFolio } from '../../models/projects/my_portfolio.js';
 import { FantaRegolamento } from '../../models/projects/fantaregolamento.js';
 
 const projects = [
-    new Motion, new FlowVehicle, new TestCaseRunner,
+    new Hmax, new Motion, new FlowVehicle, new TestCaseRunner,
     new NegozioPerfetto, new MBELab, new MagazzinoPerfetto,
     new ApriUnTicket, new CRMO, new Movitel,
     new AcquistoMerciCreazioneOrdiniSap

@@ -25,6 +25,8 @@ import { DynamoDB } from '../../models/technologies/dynamodb.js';
 import { MQTT } from '../../models/technologies/mqtt.js';
 import { Kafka } from '../../models/technologies/kafka.js';
 
+import { Airflow } from '../../models/technologies/airflow.js';
+
 import { Singleton } from '../../models/technologies/singleton.js';
 import { Factory } from '../../models/technologies/factory.js';
 import { Observer } from '../../models/technologies/observer.js';
@@ -34,6 +36,7 @@ import { Doors } from '../../models/technologies/doors.js';
 
 import { ZPL } from '../../models/technologies/zpl.js';
 import { RFID } from '../../models/technologies/rfid.js';
+import { SSH } from '../../models/technologies/ssh.js';
 
 const technologies = [
     new BeanShell, new Java, new Javascript, new NodeJS, new Python, new Swift, new VBNet,
@@ -42,9 +45,11 @@ const technologies = [
     new MySQL, new SQL, new PostgresSQL,
     new DynamoDB, new Redis,
     new MQTT, new Kafka,
+    new Airflow,
     new Singleton, new Factory, new Mediator, new Observer,
     new Doors,
-    new RFID, new ZPL
+    new RFID, new ZPL, 
+    new SSH
 ];
 
 export function retrieveAll() {
