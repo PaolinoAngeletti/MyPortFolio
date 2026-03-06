@@ -1,6 +1,7 @@
 import { Technology } from './technology.js';
 import { getLanguagesTitle } from '../../repository/technologies/technologiesTypeRepository.js';
 
+import { Hmax } from '../projects/hmax.js';
 import { MBELab } from "../projects/mbe_lab.js";
 import { Motion } from "../projects/360motion.js";
 import { NegozioPerfetto } from "../projects/negozio_perfetto.js";
@@ -17,6 +18,6 @@ Lato progetto, ho utilizzato sia Maven che Gradle come strumento di gestione del
 export class Java extends Technology {
     constructor() {
         super("Java", getLanguagesTitle(), content);
-        this.setProjects(new NegozioPerfetto, new MBELab, new MagazzinoPerfetto, new Motion);
+        this.setProjects(new NegozioPerfetto, new MBELab, new MagazzinoPerfetto, new Motion, new Hmax);
     }
 }

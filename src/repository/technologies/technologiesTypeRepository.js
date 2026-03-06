@@ -26,6 +26,10 @@ export function getMessageBrokersTitle() {
   return "Messages Brokers";
 }
 
+export function getOrchestratorTitle() {
+  return "Workflow Orchestrator";
+}
+
 export function getPatternsTitle() {
   return "Patterns";
 }
@@ -36,4 +40,8 @@ export function getDocumentationTitle() {
 
 export function getHardwareTitle() {
   return "Hardware & IoT Integration";
+}
+
+export function getRemoteAccessTitle() {
+  return "Remote Access & System Administration";
 }
