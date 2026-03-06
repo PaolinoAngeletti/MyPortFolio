@@ -3,7 +3,7 @@ import { Java } from '../../models/technologies/java.js';
 import { Swift } from '../../models/technologies/swift.js';
 import { VBNet } from '../../models/technologies/vb_net.js';
 import { Python } from '../../models/technologies/python.js';
-import { BeanShell } from '../../models/technologies/bean_shell.js';
+//import { BeanShell } from '../../models/technologies/bean_shell.js';
 import { Javascript } from '../../models/technologies/javascript.js';
 
 import { Git } from '../../models/technologies/git.js';
@@ -12,7 +12,7 @@ import { Gradle } from '../../models/technologies/gradle.js';
 //import { Android } from '../../models/technologies/android.js';
 import { SpringBoot } from '../../models/technologies/spring_boot.js';
 
-import { AWS } from '../../models/technologies/aws.js';
+//import { AWS } from '../../models/technologies/aws.js';
 import { Docker } from '../../models/technologies/docker.js';
 
 import { SQL } from '../../models/technologies/sql.js';
@@ -39,12 +39,14 @@ import { RFID } from '../../models/technologies/rfid.js';
 import { SSH } from '../../models/technologies/ssh.js';
 
 const technologies = [
-    new BeanShell, new Java, new Javascript, 
+    //new BeanShell, 
+    new Java, new Javascript, 
     //new NodeJS, 
     new Python, new Swift, new VBNet,
     //new Android, 
     new Git, new Gradle, new Maven, new SpringBoot,
-    new AWS, new Docker,
+    //new AWS, 
+    new Docker,
     new MySQL, new SQL, new PostgresSQL,
     new DynamoDB, 
     //new Redis,

@@ -10,6 +10,7 @@ class PortfolioRepository {
 
   build() {
 
+    // iterate over technologies.
     data.technologies.forEach(t => {
       this.technologies.set(t.id, {
         ...t,
@@ -17,24 +18,22 @@ class PortfolioRepository {
       });
     });
 
+    // iterate over projects.
     data.projects.forEach(p => {
-
       const project = {
         ...p,
         technologies: []
       };
 
+      // mapping projects with technologies.
       p.technologies.forEach(tId => {
-
         const tech = this.technologies.get(tId);
-
+        if (!tech) return;
         project.technologies.push(tech);
         tech.projects.push(project);
-
       });
 
       this.projects.set(p.id, project);
-
     });
 
   }
@@ -53,6 +52,28 @@ class PortfolioRepository {
 
   getTechnology(id) {
     return this.technologies.get(id);
+  }
+
+  getTechnologiesGroupedByType() {
+    const grouped = {};
+
+    // grouping
+    this.getTechnologies().forEach(tech => {
+      if (!grouped[tech.type]) {
+        grouped[tech.type] = [];
+      }
+      grouped[tech.type].push(tech);
+    });
+
+    // types ordering.
+    const orderedTypes = data.technologyTypes.sort((a, b) => a.order - b.order);
+    return orderedTypes
+      .map(type => ({
+        type: type.id,
+        title: type.title,
+        technologies: grouped[type.id] || []
+      }))
+      .filter(group => group.technologies.length > 0);
   }
 
 }
