@@ -1,0 +1,99 @@
+{
+  "technologies": [
+
+{
+  "id": "airflow",
+  "name": "Apache Airflow",
+  "type": "Workflow Orchestrator",
+  "content": "Apache Airflow è una piattaforma open-source utilizzata per orchestrare, schedulare e monitorare workflow, spesso impiegata nella gestione di pipeline di dati.\nPermette di definire flussi di lavoro come DAG in Python, coordinando l’esecuzione di task tra loro dipendenti, come processi ETL, elaborazioni batch o pipeline di analytics.\n\nNel progetto HMAX l’ho utilizzato per schedulare processi ETL sui dati e gestire l’ingestion batch dei dati energetici nel contesto del prodotto Lumada."
+},
+
+
+    {
+  "id": "nodejs",
+  "name": "Node.js",
+  "type": "Linguaggi di programmazione",
+  "content": "Ho utilizzato Node.js principalmente per la scrittura di script e funzioni serverless in AWS Lambda, sfruttando la sua capacità di gestire in modo efficiente eventi e richieste asincrone.\n\nLa mia esperienza con questo linguaggio è quindi più orientata allo scripting operativo che allo sviluppo di applicazioni complete: ho scritto codice per connettermi a database, elaborare dati e integrare servizi cloud, ma non mi sono occupato di aspetti come build, dipendenze o configurazioni complesse di progetto.\n\nLe Lambda potevano essere scritte anche in Python, ma in alcuni casi si preferiva Node.js per la sua rapidità nel gestire operazioni I/O asincrone.\nAd esempio, ho realizzato una funzione che riceveva richieste API, interrogava un database DynamoDB, e restituiva i risultati in formato JSON in modo non bloccante, sfruttando le Promise e le funzioni async/await di Node.js."
+},
+    {
+      "id": "redis",
+      "name": "Redis",
+      "type": "Database NoSQL",
+      "content": "Redis è un database in-memory open-source che funziona come un data-store NoSQL.\nÈ noto per la sua velocità estremamente elevata, poiché i dati vengono memorizzati principalmente in memoria (RAM) anziché su disco.\nRedis supporta strutture dati come stringhe, liste, set, hash e bitmaps, ed è spesso utilizzato per caching, session management, real-time analytics e messaging.\n\nNel progetto 360Motion, ho usato Redis per la storicizzazione e lettura di JSON che dovevano essere letti e modificati di continuo in runtime.\nUsato, inoltre, RedisCommander come strumento per l’accesso a tale database."
+    }
+  ],
+
+  "projects": [
+    {
+      "id": "hmax",
+      "name": "HMAX",
+      "technologies": ["airflow"]
+    },
+    {
+      "id": "360_motion",
+      "name": "360 Motion",
+      "technologies": ["redis"]
+    },
+    {
+      "id": "360_flow_vehicle",
+      "name": "360 Flow Veicolo",
+      "technologies": []
+    },
+    {
+      "id": "tcr",
+      "name": "TCR - Test Case Runner",
+      "technologies": []
+    },
+    {
+      "id": "negozio_perfetto",
+      "name": "Negozio Perfetto",
+      "technologies": ["nodejs"],
+      "description": "Sistema di gestione magazzino."
+    },
+    {
+      "id": "mbe_lab",
+      "name": "MBE Lab",
+      "technologies": ["nodejs"]
+    },
+    {
+      "id": "magazzino_perfetto",
+      "name": "Magazzino Perfetto",
+      "technologies": ["nodejs"]
+    },
+    {
+      "id": "apri_un_ticket",
+      "name": "ApriUnTicket",
+      "technologies": []
+    },
+    {
+      "id": "crm_o",
+      "name": "CRM-0",
+      "technologies": []
+    },
+    {
+      "id": "movitel",
+      "name": "Movitel",
+      "technologies": []
+    },
+    {
+      "id": "acquisto_merci",
+      "name": "Acquisto Merci - Creazione Ordini",
+      "technologies": []
+    },
+    {
+      "id": "ql_mobile",
+      "name": "Quadro Luminoso - QL Mobile",
+      "technologies": []
+    },
+    {
+      "id": "fanta_regolamento",
+      "name": "FantaRegolamento",
+      "technologies": []
+    },
+    {
+      "id": "my_portfolio",
+      "name": "My PortFolio",
+      "technologies": []
+    }
+  ]
+}
