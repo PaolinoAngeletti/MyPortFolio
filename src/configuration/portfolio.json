@@ -236,9 +236,14 @@
     {
       "id": "fanta_regolamento",
       "name": "FantaRegolamento",
+      "website": "https://paolinoangeletti.github.io/fantaregolamento",
       "technologies": [
+        "html",
+        "css",
+        "git",
         "javascript"
-      ]
+      ],
+      "content": "Questo progetto nasce da un gioco condiviso con amici: il Fantacalcio.\nA partire dall’esigenza di definire un regolamento chiaro e automatizzato in grado di gestire le diverse situazioni che possono presentarsi, ho ideato e sviluppato una web application dedicata.\nL’applicazione è stata deployata tramite GitHub Pages ed è stata realizzata utilizzando HTML, CSS e JavaScript.\nIn questo progetto ho anche avuto modo di realizzare Unit testing sfruttando Jasmine."
     },
     {
       "id": "ql_mobile",
@@ -271,11 +276,15 @@
     {
       "id": "crm_o",
       "name": "CRM-O",
+      "company": "advise",
       "technologies": [
+        "html",
+        "css",
         "javascript",
         "sql_server",
         "vb_net"
-      ]
+      ],
+      "content": "CRM - O (Officina) è un software sviluppato per una delle più grandi concessionarie Peugeot e Volkswagen della Campania.\nIl software nasce come esigenza alla seguente richiesta: le due grandi multinazionali nominate sopra, richiedono con cadenza mensile un file tracciato, in formato txt, contenente l'elenco dei clienti soddisfatti e non passati in officina durante il mese corrente.\nLa soddisfazione viene stabilita tramite un colloquio telefonico che viene effettuato.\n\nDunque, il software, aveva i seguenti compiti:\n- Comunicare con i gestionali, ottenendo così i clienti da chiamare questo mese.\n- Per rendere agile la chiamata, ossia senza l'onere di dover digitare il numero da chiamare, tale software comunicava con un sistema di chiamate VoIP (www.voispeed.com), in modo che l'operatore potesse effettuare chiamate direttamente dalla pagina web.\n- Compilazione dei questionari, da effettuare, ovviamente, a chiamata conclusa col cliente (o durante).\n- Generazione del file tracciato, rispettando le regole previste, ed invio di tale file alle case madri.\n\nApplicativo scritto in .NET, e database SQL per l’archivio dei dati."
     },
     {
       "id": "apri_un_ticket",
@@ -352,9 +361,12 @@
     {
       "id": "tcr",
       "name": "TCR - Test Case Runner",
+      "company": "teoresi",
       "technologies": [
-        "python"
-      ]
+        "python",
+        "git"
+      ],
+      "content": "Il Test Case Runner è una piattaforma generica per implementare l'automazione dei test, basata su un'applicazione web Python Django.\nLe funzionalità principali consentono di:\n• caricare una suite di test basata su un formato XML validato\n• caricare plugins su richiesta\n• memorizzare su un database SQLite le informazioni del test (ovvero test, descrizione, requisiti, report di esecuzione)\n• eseguire le fasi di prova\n• esportare documenti personalizzati in base alle informazioni archiviate nel database.\n\nL'applicazione può essere personalizzata per testare un progetto specifico. \nIl core carica automaticamente i plugins presenti in una cartella specifica.\nI plugin possono implementare le seguenti interfacce:\n• pre-esecuzione: una serie di passaggi eseguiti prima dell'esecuzione dei passaggi di test (ovvero preconfigurazione del test)\n• eseguire: una serie di passaggi di test\n• post-esecuzione: una serie di passaggi eseguiti dopo l'esecuzione dei passaggi di test (ovvero smontaggio)\n\nL'applicazione web Python Django consente di:\n• caricare una suite di test\n• creare una nuova suite di test\n• modificare una suite di test (ad esempio aggiornando titolo o descrizione, aggiungendo test case, modificando passaggi di test, …)\n• eseguire una suite di test\n• mostra la cronologia della suite di test\n• Esportare una suite di test.\n\nIn questo progetto mi sono occupato di:\n• Migrazione del progetto da Python 2.7 a Python 3.9, in cui sono stato coinvolto nel refactoring di alcune funzionalità, dato che alcune librerie usate in Python 2.7 non erano presenti per Python 3.9 oppure producevano risultati diversi. Nomino ad esempio la libreria py_spy, sostituita con py_shark per lo sniffing di pacchetti di rete UDP.\n• Integrazione del protocollo TRDP, oltre a quello già presente IPTCOM. Il TRDP (Train Real-time Data Protocol) è un protocollo di comunicazione progettato specificamente per il settore ferroviario, che permette la trasmissione di dati in tempo reale tra i vari sistemi di un treno. È stato sviluppato per soddisfare le esigenze di comunicazione affidabile e deterministica in ambienti ferroviari, dove è fondamentale avere un basso ritardo e alta disponibilità dei dati.\n• Definizione di una GUI utile alla creazione dei test XML in maniera rapida ed intuitiva."
     },
     {
       "id": "360_motion",
@@ -379,15 +391,20 @@
     {
       "id": "hmax",
       "name": "HMAX",
+      "company": "hitachi",
+      "website": "https://www.hitachirail.com/products-and-solutions/digital-asset-management/",
       "technologies": [
         "airflow",
         "java",
         "kafka",
+        "git",
         "postgresql",
         "python",
+        "kubernetes",
         "spring_boot",
         "ssh"
-      ]
+      ],
+      "content": "HMAX è una piattaforma di gestione digitale delle risorse di Hitachi Rail. \nHMAX consente di prevedere i problemi, ottimizzare la rete e trasformare le operazioni, su flotte di treni, sistemi di segnalamento e infrastrutture.\n\nIn questo immenso progetto, ho contributo allo sviluppo di una piattaforma Energy Management System (enMS) per la raccolta e l’analisi di dati di consumo energetico e idrico, con generazione di KPI energetici conformi allo standard ISO 50001.\n\nResponsabile del coordinamento tecnico tra team internazionali (Hitachi Digital Vietnam) e della traduzione dei requisiti funzionali in specifiche architetturali e tecniche per l’implementazione.\n\nDefinizione e supervisione dell’implementazione di un’architettura data-driven capace di gestire ingestione dati sia real-time che batch, pipeline di elaborazione dei dati e calcolo dei KPI energetici.\n\nL’infrastruttura di sviluppo e deploy era basata su ambienti virtualizzati accessibili via SSH, con pipeline di sviluppo e integrazione continua."
     }
   ],
   "companies": [
