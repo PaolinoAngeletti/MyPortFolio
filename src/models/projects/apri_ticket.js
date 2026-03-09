@@ -14,6 +14,6 @@ Per la parte di front-end invece sono stati utilizzati:
 
 export class ApriUnTicket extends Project {
     constructor() {
-        super("Apri Un Ticket", new Advise(), null, content);
+        super("ApriUnTicket", new Advise(), null, content);
     }
 }

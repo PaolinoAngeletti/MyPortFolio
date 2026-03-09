@@ -171,6 +171,36 @@
       "content": "Nel contesto del progetto MagazzinoPerfetto, ho applicato la tecnologia RFID per facilitare il tracciamento dell'entrata e dell'uscita della merce, nonché per semplificare le attività di inventario e il controllo dello stock in magazzino.\nIn particolare, abbiamo utilizzato l'area di memoria EPC per memorizzare i dati univoci degli articoli, mentre il TID è stato sfruttato per monitorare il numero di rilevazioni dell'EPC specifico durante la lettura RFID.\nL’integrazione RFID con l’APP è stata eseguita tramite SDK di Zebra."
     },
     {
+      "id": "spring_boot",
+      "name": "Spring Boot",
+      "type": "framework",
+      "content": "Durante lo sviluppo del progetto 360Motion, ho contribuito alla realizzazione di un sistema basato su Spring Boot e architettura a microservizi, dove ciascun servizio era indipendente e comunicava con gli altri tramite Kafka.\nHo curato la definizione delle API REST, la gestione del data layer tramite Spring Data JPA e Hibernate, e la configurazione dei database PostgreSQL e Redis per la memorizzazione dei dati.\nL’intero progetto è stato gestito e costruito con Maven, assicurando una solida integrazione tra i vari componenti.\n\nNel progetto HMAX, Spring Framework è stato utilizzato per sviluppare una dashboard web finalizzata alla visualizzazione e gestione dei KPI energetici prodotti dal sistema Lumada."
+    },
+    {
+      "id": "sql_server",
+      "name": "SQL Server",
+      "type": "db_sql",
+      "content": "Database usato nei progetti CRM-O ed ApriUnTicket, come soluzione usata negli applicativi web menzionati."
+    },
+    {
+      "id": "ssh",
+      "name": "SSH",
+      "type": "remote_access",
+      "content": "Ho utilizzato SSH per accedere e lavorare su diverse macchine virtuali Linux Red Hat 9, messe a disposizione del team di Hitachi Digital per attività di sviluppo.\nPoiché queste macchine non avevano accesso a Internet, i file venivano trasferiti in modalità offline."
+    },
+    {
+      "id": "swift",
+      "name": "Swift",
+      "type": "language",
+      "content": "Ho utilizzato il linguaggio Swift per lo sviluppo dell’app mobile QL-Mobile.\nSi tratta dell’unico progetto in cui ho impiegato questo linguaggio, ma l’esperienza mi ha permesso di acquisire familiarità sia con Swift sia con l’IDE Xcode di Apple.\nHo approfondito le best practice di sviluppo iOS, realizzando un’interfaccia fluida e funzionale, integrando API esterne e gestendo un database locale per la memorizzazione di dati persistenti, come le impostazioni utente."
+    },
+    {
+      "id": "vb_net",
+      "name": "VB.NET",
+      "type": "language",
+      "content": "Ho avuto modo di utilizzare il linguaggio VB.NET nei primi anni della mia esperienza lavorativa, occupandomi inizialmente della manutenzione di applicativi già in produzione al momento della mia assunzione.\nCon il tempo, ho esteso le mie competenze sviluppando nuove funzionalità e partecipando all’evoluzione dei moduli esistenti, migliorandone prestazioni e stabilità.\nQuesta esperienza mi ha permesso di approfondire la programmazione ad oggetti in ambiente .NET, l’interazione con database SQL Server e la gestione del ciclo di vita del software in contesti aziendali strutturati."
+    },
+    {
       "id": "nodejs",
       "name": "Node.js",
       "type": "langauge",
@@ -181,6 +211,12 @@
       "name": "Redis",
       "type": "db_no_sql",
       "content": "Redis è un database in-memory open-source che funziona come un data-store NoSQL.\nÈ noto per la sua velocità estremamente elevata, poiché i dati vengono memorizzati principalmente in memoria (RAM) anziché su disco.\nRedis supporta strutture dati come stringhe, liste, set, hash e bitmaps, ed è spesso utilizzato per caching, session management, real-time analytics e messaging.\n\nNel progetto 360Motion, ho usato Redis per la storicizzazione e lettura di JSON che dovevano essere letti e modificati di continuo in runtime.\nUsato, inoltre, RedisCommander come strumento per l’accesso a tale database."
+    },
+    {
+      "id": "zpl",
+      "name": "ZPL",
+      "type": "hardware",
+      "content": "Ho utilizzato lo ZPL per creare etichette stampabili tramite stampanti Zebra, consentendomi di gestire le dimensioni delle etichette e altri aspetti legati alla funzionalità. Questo linguaggio si è dimostrato particolarmente utile per le stampe via Bluetooth, riducendo il carico di dati da inviare dal dispositivo alla stampante, ottimizzando così il processo di stampa."
     }
   ],
   "projects": [
@@ -201,7 +237,9 @@
     {
       "id": "ql_mobile",
       "name": "Quadro Luminoso - QL Mobile",
-      "technologies": []
+      "technologies": [
+        "swift"
+      ]
     },
     {
       "id": "acquisto_merci",
@@ -212,21 +250,26 @@
       "id": "movitel",
       "name": "Movitel",
       "technologies": [
-        "javascript"
+        "javascript",
+        "vb_net"
       ]
     },
     {
       "id": "crm_o",
-      "name": "CRM-0",
+      "name": "CRM-O",
       "technologies": [
-        "javascript"
+        "javascript",
+        "sql_server",
+        "vb_net"
       ]
     },
     {
       "id": "apri_un_ticket",
       "name": "ApriUnTicket",
       "technologies": [
-        "javascript"
+        "javascript",
+        "sql_server",
+        "vb_net"
       ]
     },
     {
@@ -237,8 +280,11 @@
         "aws",
         "dynamo_db",
         "gradle",
-        "java","my_sql","python",
-        "nodejs"
+        "java",
+        "my_sql",
+        "python",
+        "nodejs",
+        "zpl"
       ]
     },
     {
@@ -249,8 +295,11 @@
         "aws",
         "docker",
         "gradle",
-        "java","my_sql","python",
-        "nodejs"
+        "java",
+        "my_sql",
+        "python",
+        "nodejs",
+        "zpl"
       ]
     },
     {
@@ -261,21 +310,30 @@
         "aws",
         "docker",
         "gradle",
-        "java","my_sql","python","rfid",
-        "nodejs"
+        "java",
+        "my_sql",
+        "python",
+        "rfid",
+        "nodejs",
+        "zpl"
       ]
     },
     {
       "id": "360_flow_vehicle",
       "name": "360 Flow - Veicolo",
       "technologies": [
-        "docker","mqtt","postgresql","python"
+        "docker",
+        "mqtt",
+        "postgresql",
+        "python"
       ]
     },
     {
       "id": "tcr",
       "name": "TCR - Test Case Runner",
-      "technologies": ["python"]
+      "technologies": [
+        "python"
+      ]
     },
     {
       "id": "360_motion",
@@ -285,7 +343,11 @@
         "docker",
         "doors",
         "java",
-        "kafka","maven","mqtt","postgresql",
+        "kafka",
+        "maven",
+        "mqtt",
+        "postgresql",
+        "spring_boot",
         "redis"
       ]
     },
@@ -295,7 +357,11 @@
       "technologies": [
         "airflow",
         "java",
-        "kafka","postgresql","python"
+        "kafka",
+        "postgresql",
+        "python",
+        "spring_boot",
+        "ssh"
       ]
     }
   ]
