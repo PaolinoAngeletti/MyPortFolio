@@ -223,15 +223,19 @@
     {
       "id": "my_portfolio",
       "name": "My PortFolio",
-      "company": "freelance",
+      "website": "https://paolinoangeletti.github.io/MyPortFolio",
       "technologies": [
-        "javascript"
-      ]
+        "html",
+        "css",
+        "javascript",
+        "git",
+        "react"
+      ],
+      "content": "Questa applicazione realizza un curriculum vitae navigabile, in cui ogni concetto è collegato a progetti, tecnologie, e viceversa.\nL’applicazione è stata deployata tramite GitHub Pages ed è stata realizzata utilizzando il framework React, quindi HTML, CSS e Javascript XML.\nPer il versionamento è stato utilizzato GIT."
     },
     {
       "id": "fanta_regolamento",
       "name": "FantaRegolamento",
-      "company": "freelance",
       "technologies": [
         "javascript"
       ]
@@ -239,7 +243,9 @@
     {
       "id": "ql_mobile",
       "name": "Quadro Luminoso - QL Mobile",
+      "company": "RFI - Ferrovie dello Stato",
       "technologies": [
+        "git",
         "swift"
       ]
     },
@@ -247,7 +253,12 @@
       "id": "acquisto_merci",
       "name": "Acquisto Merci - Creazione Ordini",
       "company": "software_business",
-      "technologies": []
+      "technologies": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "content": "Questa applicazione è stata implementata durante il mio tirocinio aziendale.\nEssa nasce dall'esigenza dei clienti finali di ordinare merce in autonomia, e quindi l'applicativo, implementato in stile Master-detail, mostrava la lista di articoli acquistabili e la gestione di un carrello finale.\nDopodiché, ad ordine completo, esso veniva esportato nel sistema SAP di riferimento.\nLe richieste verso il server SAP venivano eseguite tramite API REST.\nUtilizzato SAP WEB IDE come strumento di lavoro."
     },
     {
       "id": "movitel",
