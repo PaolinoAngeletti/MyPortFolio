@@ -17,8 +17,8 @@ export default function Technologies() {
                     <h2>{group.title}</h2>
                     {group.technologies.map(technology => (
                         <div
-                            id={technology.id}
-                            key={technology.id}
+                            id={technology.name}
+                            key={technology.name}
                             className="detail_title"
                         >
                             <h2>{technology.name}</h2>

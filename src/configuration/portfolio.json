@@ -87,6 +87,36 @@
       "content": "Ho utilizzato il linguaggio BeanShell per le attività di test automation del progetto 360Motion, basato sull’uso del software Apache JMeter.\nQuindi linguaggio utilizzato solamente per scripting, e non a livello di progetto."
     },
     {
+      "id": "docker",
+      "name": "Docker",
+      "type": "container",
+      "content": "Nella mia esperienza ho lavorato in maniera massiccia con Docker, utilizzando questa tecnologia in due modalità principali:\n\n1. Sviluppo di app mobile con integrazione AWS: ho utilizzato Docker per creare container a partire da script sviluppati in PHP.\nLe immagini generate venivano poi caricate su AWS tramite il servizio AWS Batch, utilizzato per eseguire job schedulati e non, consentendo di processare operazioni anche di lunga durata, che potevano richiedere diverse ore.\n\n2. Progetti Hitachi 360Flow e 360Motion: ho impiegato Docker nella sua funzione principale, ossia la containerizzazione di servizi Java, permettendone l’esecuzione sia in locale sia in ambiente di produzione tramite Kubernetes.\nIn questo contesto ho utilizzato Docker Compose per buildare e orchestrare i vari container in maniera efficiente."
+    },
+    {
+      "id": "doors",
+      "name": "Doors",
+      "type": "documentation",
+      "content": "IBM Engineering Requirements Management DOORS è uno strumento di gestione dei requisiti ampiamente utilizzato nel settore dell'ingegneria e dello sviluppo di software.\nHo utilizzato questo strumento per gestire i requisiti del progetto 360 Motion."
+    },
+    {
+      "id": "dynamo_db",
+      "name": "DynamoDB",
+      "type": "db_no_sql",
+      "content": "Amazon DynamoDB è un servizio di database NoSQL gestito, offerto da AWS, progettato per garantire prestazioni veloci e scalabili.\nÈ altamente disponibile, supporta dati strutturati in tabelle, ed è ottimizzato per applicazioni che richiedono basse latenze e alta velocità nelle operazioni di lettura e scrittura.\n\nNel progetto NegozioPerfetto, è stato usato DynamoDB per la storicizzazione di alcuni tipi di entità, come ad esempio documenti JSON da associare a specifiche transazioni di magazzino storicizzate, invece, in MySQL."
+    },
+    {
+      "id": "git",
+      "name": "GIT",
+      "type": "framework",
+      "content": "Ho utilizzato GIT come strumento di versioning in tutti i progetti in cui ho lavorato.\nLa mia esperienza mi ha portato a utilizzare GIT in quasi tutte le sue funzionalità, lavorando su branch separati che venivano poi pushati sia tramite pull-request sia tramite commit diretti sul branch master.\nHo anche utilizzato la variante Git Flow, che permette di seguire un modello di branching strutturato e standardizzato, gestendo in modo chiaro e sicuro le fasi di sviluppo, release e hotfix.\nQuesto approccio facilita il lavoro in team, riduce il rischio di conflitti e permette di mantenere sempre stabile il branch principale."
+    },
+    {
+      "id": "gradle",
+      "name": "Gradle",
+      "type": "framework",
+      "content": "Ho utilizzato Gradle in vari progetti, in particolare nei progetti implementati tramite framework Android.\nLa tecnologia veniva utilizzata ovviamente per la gestione delle dipendenze, il versioning dell’applicativo e la configurazione dei task di build, semplificando così il processo di compilazione e distribuzione dell’app."
+    },
+    {
       "id": "nodejs",
       "name": "Node.js",
       "type": "langauge",
@@ -101,28 +131,38 @@
   ],
   "projects": [
     {
-      "id": "hmax",
-      "name": "HMAX",
-      "technologies": [
-        "airflow"
-      ]
-    },
-    {
-      "id": "360_motion",
-      "name": "360 Motion",
-      "technologies": [
-        "bean_shell",
-        "redis"
-      ]
-    },
-    {
-      "id": "360_flow_vehicle",
-      "name": "360 Flow Veicolo",
+      "id": "my_portfolio",
+      "name": "My PortFolio",
       "technologies": []
     },
     {
-      "id": "tcr",
-      "name": "TCR - Test Case Runner",
+      "id": "fanta_regolamento",
+      "name": "FantaRegolamento",
+      "technologies": []
+    },
+    {
+      "id": "ql_mobile",
+      "name": "Quadro Luminoso - QL Mobile",
+      "technologies": []
+    },
+    {
+      "id": "acquisto_merci",
+      "name": "Acquisto Merci - Creazione Ordini",
+      "technologies": []
+    },
+    {
+      "id": "movitel",
+      "name": "Movitel",
+      "technologies": []
+    },
+    {
+      "id": "crm_o",
+      "name": "CRM-0",
+      "technologies": []
+    },
+    {
+      "id": "apri_un_ticket",
+      "name": "ApriUnTicket",
       "technologies": []
     },
     {
@@ -131,16 +171,19 @@
       "technologies": [
         "android",
         "aws",
+        "dynamo_db",
+        "gradle",
         "nodejs"
-      ],
-      "description": "Sistema di gestione magazzino."
+      ]
     },
     {
       "id": "mbe_lab",
-      "name": "MBE Lab",
+      "name": "MBE LAB",
       "technologies": [
         "android",
         "aws",
+        "docker",
+        "gradle",
         "nodejs"
       ]
     },
@@ -150,43 +193,39 @@
       "technologies": [
         "android",
         "aws",
+        "docker",
+        "gradle",
         "nodejs"
       ]
     },
     {
-      "id": "apri_un_ticket",
-      "name": "ApriUnTicket",
+      "id": "360_flow_vehicle",
+      "name": "360 Flow Veicolo",
+      "technologies": [
+        "docker"
+      ]
+    },
+    {
+      "id": "tcr",
+      "name": "TCR - Test Case Runner",
       "technologies": []
     },
     {
-      "id": "crm_o",
-      "name": "CRM-0",
-      "technologies": []
+      "id": "360_motion",
+      "name": "360 Motion",
+      "technologies": [
+        "bean_shell",
+        "docker",
+        "doors",
+        "redis"
+      ]
     },
     {
-      "id": "movitel",
-      "name": "Movitel",
-      "technologies": []
-    },
-    {
-      "id": "acquisto_merci",
-      "name": "Acquisto Merci - Creazione Ordini",
-      "technologies": []
-    },
-    {
-      "id": "ql_mobile",
-      "name": "Quadro Luminoso - QL Mobile",
-      "technologies": []
-    },
-    {
-      "id": "fanta_regolamento",
-      "name": "FantaRegolamento",
-      "technologies": []
-    },
-    {
-      "id": "my_portfolio",
-      "name": "My PortFolio",
-      "technologies": []
+      "id": "hmax",
+      "name": "HMAX",
+      "technologies": [
+        "airflow"
+      ]
     }
   ]
 }

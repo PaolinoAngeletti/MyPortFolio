@@ -1,10 +1,10 @@
 import buildNavLink from '../utils/NavLinkUtils';
-import { retrieveGroupedByType } from '../repository/technologies/technologiesRepository';
+import { portfolioRepository } from '../repository/portfolioRepository';
 
 export default function Home() {
 
-    const technologiesList = retrieveGroupedByType();
     const emailAddress = "paolinoangeletti@gmail.com";
+    const technologiesList = portfolioRepository.getTechnologiesGroupedByType();
     const linkedinUrl = "https://www.linkedin.com/in/paolino-angeletti-64484211b";
 
     return (
@@ -133,14 +133,16 @@ export default function Home() {
 
             <h2>Competenze tecniche</h2>
 
-            {Object.entries(technologiesList).map(([type, technologies]) => (
-                <div className="detail_title" key={type}>
-                    <h3>{type}</h3>
-                    <div style={{ display: 'flex', flexWrap: "wrap", gap: "10px" }}>
-                        {technologies.map((technology) => (
+            {technologiesList.map((group) => (
+                <div className="detail_title" key={group.type}>
+                    <h3>{group.title}</h3>
+
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+                        {group.technologies.map((technology) => (
                             buildNavLink(technology.name, "/technologies")
                         ))}
                     </div>
+
                 </div>
             ))}
 
