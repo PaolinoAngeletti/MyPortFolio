@@ -117,6 +117,60 @@
       "content": "Ho utilizzato Gradle in vari progetti, in particolare nei progetti implementati tramite framework Android.\nLa tecnologia veniva utilizzata ovviamente per la gestione delle dipendenze, il versioning dell’applicativo e la configurazione dei task di build, semplificando così il processo di compilazione e distribuzione dell’app."
     },
     {
+      "id": "java",
+      "name": "Java",
+      "type": "language",
+      "content": "Nella mia esperienza ho utilizzato Java in più di un progetto, ma principalmente in due modi:\n\n1. Sviluppo di applicazioni mobile in ambito logistico, quindi sfruttando il framework previsto dallo sviluppo Android. Per ulteriori dettagli relativi alle mie esperienze Android, si può far riferimento alla apposita sezione.\n\n2. Sviluppo di micro servizi in Java tramite framework Spring Boot.\n\nLato progetto, ho utilizzato sia Maven che Gradle come strumento di gestione delle dipendenze, del versionamento, ecc."
+    },
+    {
+      "id": "javascript",
+      "name": "Javascript",
+      "type": "language",
+      "content": "Ho utilizzato JavaScript in diversi progetti lato front-end, in particolare nelle mie prime esperienze lavorative, dove ero responsabile dello sviluppo e della manutenzione di alcuni applicativi web.\nIn questa fase, l’utilizzo di JavaScript è stato di tipo tradizionale, in combinazione con HTML e CSS, senza l’impiego di framework particolari, per realizzare le funzionalità e l’interfaccia desiderate.\nSuccessivamente ho utilizzato anche jQuery, per semplificare l’accesso e la manipolazione degli elementi del DOM.\nInfine, in alcuni progetti personali, ho avuto modo di approfondire l’uso di React, implementando un’applicazione basata su JSX (JavaScript XML) per raggiungere gli obiettivi dell’applicazione.\nHo anche avuto modo di esplorare lo Unit Testing in Javascript, sfruttando il framework Jasmine."
+    },
+    {
+      "id": "kafka",
+      "name": "Apache Kafka",
+      "type": "broker",
+      "content": "Ho utilizzato Apache Kafka nel progetto 360Motion per distribuire messaggi tra i diversi consumer dello streaming interno.\nPer la gestione e il monitoraggio dei topic e dei messaggi in circolazione, ho utilizzato AKHQ, che ha permesso di leggere e analizzare facilmente i flussi di dati all’interno della piattaforma Kafka.\n\nNel progetto HMAX, Apache Kafka è stato utilizzato come data ingestion layer per i dati energetici in real-time, consentendo la gestione di flussi ad alta frequenza con migliaia di messaggi al secondo."
+    },
+    {
+      "id": "maven",
+      "name": "Maven",
+      "type": "framework",
+      "content": "Per il progetto 360Motion ho utilizzato Maven per la gestione centralizzata delle dipendenze e il versionamento dei vari servizi. Il sistema di build supportava, per alcuni servizi, output multipli, includendo sia un applicativo eseguibile sia una libreria, ottimizzando compilazione e distribuzione."
+    },
+    {
+      "id": "mqtt",
+      "name": "MQTT",
+      "type": "broker",
+      "content": "MQTT è un protocollo di messaggistica leggero basato su publish/subscribe, progettato per reti con larghezza di banda limitata e connessioni intermittenti.\nNei progetti 360Flow Veicolo e 360Motion, ho utilizzato MQTT per consentire ai veicoli in movimento di inviare ai componenti centralizzati dati come vehicle-congestion, vehicle-position e simili.\nQuesto protocollo è stato scelto perché, ad alte velocità, la connettività potrebbe non essere garantita; MQTT è progettato proprio per garantire la comunicazione anche in presenza di connessioni instabili o di scarsa qualità."
+    },
+    {
+      "id": "my_sql",
+      "name": "MySQL",
+      "type": "db_sql",
+      "content": "Database usato nei progetti NegozioPerfetto, MagazzinoPerfetto e MBE LAB come database in cloud per la storicizzazione di dati provenienti dalle APP Android.\nGli strumenti utilizzati sono stati:\n• Trigger\n• Stored function\n• Stored procedure\n• Indici\n\nNel progetto MagazzinoPerfetto, sono stati implementati trigger che invocavano chiamate API che a loro volta invocavano procedure lambda in AWS, per rendere disponibili web hook utili all’utente finale.\nQuesta soluzione ha consentito l'integrazione fluida con altre applicazioni e sistemi esterni, garantendo una gestione efficiente delle notifiche e degli aggiornamenti in tempo reale all'interno del magazzino."
+    },
+    {
+      "id": "postgresql",
+      "name": "PostgresSQL",
+      "type": "db_sql",
+      "content": "Nell'ambito dei progetti Hitachi, ho utilizzato PostgreSQL come database per la storicizzazione dei dati elaborati dal sistema.\nAnche per questo database sono state utilizzati trigger e procedure. Inoltre, per alcune entità, sono stati anche gestiti JSON come colonne di un record."
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "type": "language",
+      "content": "Nella mia esperienza ho utilizzato Python in più di un progetto, con le seguenti modalità:\n\n1. In ambito AWS, ho utilizzato Python per l’implementazione delle funzioni Lambda, che venivano poi esposte tramite le apposite API Gateway previste sempre nell’ambito AWS. In particolare, queste funzioni Lambda sono state sviluppate con l’utilizzo della libreria boto3, utile per l'interazione con gli altri servizi AWS (esempio database, storage, ecc.).\n\n2. Nel progetto 360FlowVehicle, Python era il linguaggio di programmazione con cui l’intero progetto è stato sviluppato. I moduli sviluppati venivano poi containerizzati in ambito Docker. In questo contesto è stato utilizzato anche un server Flask per simulare richieste HTTP.\n\n3. Nel progetto TCR, mi sono occupato della migrazione del progetto da Python 2.7 a Python 3.9, andando a gestire anche casistiche in cui alcune librerie utilizzate dalla 2.7 non erano più supportate dalla versione 3.9.\n\n4. Nel progetto HMAX, ho utilizzato Python per l’implementazione di alcuni DAG, ossia script schedulati ed eseguiti tramite l’utilizzo di Apache Airflow."
+    },
+    {
+      "id": "rfid",
+      "name": "RFID",
+      "type": "hardware",
+      "content": "Nel contesto del progetto MagazzinoPerfetto, ho applicato la tecnologia RFID per facilitare il tracciamento dell'entrata e dell'uscita della merce, nonché per semplificare le attività di inventario e il controllo dello stock in magazzino.\nIn particolare, abbiamo utilizzato l'area di memoria EPC per memorizzare i dati univoci degli articoli, mentre il TID è stato sfruttato per monitorare il numero di rilevazioni dell'EPC specifico durante la lettura RFID.\nL’integrazione RFID con l’APP è stata eseguita tramite SDK di Zebra."
+    },
+    {
       "id": "nodejs",
       "name": "Node.js",
       "type": "langauge",
@@ -133,12 +187,16 @@
     {
       "id": "my_portfolio",
       "name": "My PortFolio",
-      "technologies": []
+      "technologies": [
+        "javascript"
+      ]
     },
     {
       "id": "fanta_regolamento",
       "name": "FantaRegolamento",
-      "technologies": []
+      "technologies": [
+        "javascript"
+      ]
     },
     {
       "id": "ql_mobile",
@@ -153,17 +211,23 @@
     {
       "id": "movitel",
       "name": "Movitel",
-      "technologies": []
+      "technologies": [
+        "javascript"
+      ]
     },
     {
       "id": "crm_o",
       "name": "CRM-0",
-      "technologies": []
+      "technologies": [
+        "javascript"
+      ]
     },
     {
       "id": "apri_un_ticket",
       "name": "ApriUnTicket",
-      "technologies": []
+      "technologies": [
+        "javascript"
+      ]
     },
     {
       "id": "negozio_perfetto",
@@ -173,6 +237,7 @@
         "aws",
         "dynamo_db",
         "gradle",
+        "java","my_sql","python",
         "nodejs"
       ]
     },
@@ -184,6 +249,7 @@
         "aws",
         "docker",
         "gradle",
+        "java","my_sql","python",
         "nodejs"
       ]
     },
@@ -195,20 +261,21 @@
         "aws",
         "docker",
         "gradle",
+        "java","my_sql","python","rfid",
         "nodejs"
       ]
     },
     {
       "id": "360_flow_vehicle",
-      "name": "360 Flow Veicolo",
+      "name": "360 Flow - Veicolo",
       "technologies": [
-        "docker"
+        "docker","mqtt","postgresql","python"
       ]
     },
     {
       "id": "tcr",
       "name": "TCR - Test Case Runner",
-      "technologies": []
+      "technologies": ["python"]
     },
     {
       "id": "360_motion",
@@ -217,6 +284,8 @@
         "bean_shell",
         "docker",
         "doors",
+        "java",
+        "kafka","maven","mqtt","postgresql",
         "redis"
       ]
     },
@@ -224,7 +293,9 @@
       "id": "hmax",
       "name": "HMAX",
       "technologies": [
-        "airflow"
+        "airflow",
+        "java",
+        "kafka","postgresql","python"
       ]
     }
   ]
