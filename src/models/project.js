@@ -23,6 +23,10 @@ export class Project {
 
     // GETTER
 
+    hasCompany() {
+        return this.company != null;
+    }
+
     retrieveCompanyName() {
         if (!this.company) {
             return "No company";
@@ -52,7 +56,7 @@ export class Project {
 
     isFreelanceProject() {
         if (!this.company) {
-            return false;
+            return true;
         }
         return this.company.freelance;
     }

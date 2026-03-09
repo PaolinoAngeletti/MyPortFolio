@@ -280,11 +280,15 @@
     {
       "id": "apri_un_ticket",
       "name": "ApriUnTicket",
+      "company": "advise",
       "technologies": [
+        "html",
+        "css",
         "javascript",
         "sql_server",
         "vb_net"
-      ]
+      ],
+      "content": "ApriUnTicket è un CRM (Customer Relationship Management) sviluppato dapprima per uso interno aziendale, e poi venduto a clienti terzi per alcune funzionalità utili individuate in esso.\nQuesto CRM, a dispetto degli altri, è un CRM sviluppato con l'obiettivo di facilitare non solo il rapporto con la clientela e la gestione dei vari problemi informatici che ogni giorno possono venire a mostrarsi, ma è stato sviluppato con il vero scopo di aiutare i tecnici che lavorano ai problemi, e quindi vien data la possibilità di indicare metodo (Teleassistenza oppure On Side) e durata di un intervento, così da poter poi estrarre anche reportistiche utili a capire, ad esempio, il cliente più impegnativo, il cliente con meno problemi, e così via.\nAltra particolarità di questo progetto (presente però anche in altri CRM) è l'implementazione di un lettore automatico di email, cioè un utente con problema non dovrà far altro che scrivere una email ad un indirizzo specificato, e tale lettore automatico aprirà un ticket automaticamente, oppure lo aggiornerà se la email richiama un ticket già aperto in precedenza.\nIn questo modo sia gli utenti che i tecnici non dovranno mai accedere al portale web del CRM per gestire un issue (o ticket), ma potranno farlo in maniera comodissima tramite le email.\n\nL’applicativo è stato scritto tramite tecnologie .NET (ASPX nello specifico) con database SQL per la gestione dei dati.\nPer la parte di front-end invece sono stati utilizzati:\n• HTML, CSS, Javascript.\n• IDE di sviluppo: Visual studio.\n• PHP: usato per l’implementazione del lettore automatico di email."
     },
     {
       "id": "negozio_perfetto",
@@ -355,18 +359,22 @@
     {
       "id": "360_motion",
       "name": "360 Motion",
+      "company": "hitachi",
+      "website": "https://www.youtube.com/watch?v=3Oe-XVIZd-I",
       "technologies": [
         "bean_shell",
         "docker",
         "doors",
         "java",
+        "git",
         "kafka",
         "maven",
         "mqtt",
         "postgresql",
         "spring_boot",
         "redis"
-      ]
+      ],
+      "content": "360Motion è una piattaforma pionieristica che sta trasformando la mobilità urbana consolidando i dati provenienti da diversi servizi di trasporto in una soluzione unificata. È alimentato da algoritmi avanzati di intelligenza artificiale e ML, che gli consentono di ottimizzare dinamicamente le reti di trasporto pubblico, facilitare la pianificazione degli scenari e anticipare e mitigare le interruzioni.\nIn pratica, 360Motion riunisce i dati di più servizi di trasporto (bus, metro e veicoli vari) in un'unica piattaforma unificata.\nQuesti dati vengono ricevuti ed analizzati, con lo scopo di fornire una piattaforma web che possa fornire all’utente quante più informazioni e operatività possibili.\n\n360Motion è una piattaforma indipendente dall'hardware, in grado di scalare le soluzioni di mobilità esistenti raccogliendo e acquisendo dati da qualsiasi tipo di fonte e consentendo a operatori e passeggeri di comprendere il modo ottimale di spostarsi attraverso i paesaggi urbani.\nTecnicamente, invece, 360Motion è un progetto a micro-servizi, scritti in Java (SpringBoot), Python, ed una parte front-end scritta in Angular, che viene distribuito tramite Kubernetes e pipeline DevOps.\n\nIn questa mia esperienza come consulente, le attività di cui mi sono occupato sono:\n• Implementazione di Integration-test per controller Spring che ne erano sprovvisti, con JUnit.\n• Incremento della code coverage del codice.\n• Integrazione di Swagger nei controller previsti.\n• Verifica ed eventuale fix per work-item rilevati dal team di V&V (Verification & Validation), tramite software JMeter e linguaggio BeanShell.\n• Refactoring di un SDK interno utile alla gestione delle proprietà che i singoli componenti potevano richiedere al database\n• Implementazione della libreria Test Core, utilizzata come framework per la scrittura di test di integrazione. Questa libreria mette a disposizione vari connettori (database, Redis, Kafka, ecc.) e gestisce, tramite il file application. properties, l'accesso a tali connettori tramite test container o tramite l'ambiente reale locale. I connettori vengono implementati utilizzando il Factory pattern, garantendo così una facile aggiunta di nuovi elementi.\n• Implementazione di un nuovo servizio Java, platform-integration-test, che, tramite la libreria Test Core, contiene una serie di test di integrazione per verificare il comportamento dei vari microservizi rilasciati. Questo strumento è stato impostato in modo da eseguire, ogni notte, una suite di test di integrazione definiti tramite JSON, in modo da verificare, ogni giorno, l’impatto di nuovi sviluppi o modifiche all’ambiente sulla stabilità del software.\n\nNel contesto di IntelliJ, sono stati usati i seguenti plugins:\n• Lombok, usato per importare annotazioni e ridurre il codice scritto.\n• SonarLint, utile a rilevare eventuali problemi del codice."
     },
     {
       "id": "hmax",

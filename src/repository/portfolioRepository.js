@@ -6,9 +6,19 @@ import data from "../configuration/portfolio.json";
 class PortfolioRepository {
 
   constructor() {
-    this.projects = new Map();
+
+    // work experiences.
     this.companies = new Map();
+
+    // technologies.
     this.technologies = new Map();
+
+    // project worked during work experiences.
+    this.work_projects = new Map();
+
+    // project worked during free time.
+    this.freelance_projects = new Map();
+
     this.build();
   }
 
@@ -34,13 +44,21 @@ class PortfolioRepository {
 
   buildProjects() {
     data.projects.forEach(p => {
-      const project = new Project(p.name, p.web_site, p.content);
+      const project = new Project(p.name, p.website, p.content);
 
       // mapping project with company.
-      const projectCompany = this.companies.get(p.company);
-      if (projectCompany) {
-        project.setCompany(projectCompany);
-        projectCompany.addProject(project);
+      if (p.company) {
+        const projectCompany = this.companies.get(p.company);
+        if (projectCompany) {
+          project.setCompany(projectCompany);
+          projectCompany.addProject(project);
+        } else {
+          // companies over experiences branch. 
+          // This companies will be managed as freelance companies.
+          const otherCompany = new Company({ "name": p.company });
+          otherCompany.setIfFreelance(true);
+          project.setCompany(otherCompany);
+        }
       }
 
       // mapping project with technologies.
@@ -51,24 +69,29 @@ class PortfolioRepository {
         tech.addProject(project);
       });
 
-      this.projects.set(p.id, project);
+      // put inside correct list.
+      if (project.isFreelanceProject()) {
+        this.freelance_projects.set(p.id, project);
+      } else {
+        this.work_projects.set(p.id, project);
+      }
     });
   }
 
-  getProjects() {
-    return [...this.projects.values()];
+  getWorkProjects() {
+    return [...this.work_projects.values()];
+  }
+
+  getWorkProject(id) {
+    return this.work_projects.get(id);
+  }
+
+  getFreelanceProjects() {
+    return [...this.freelance_projects.values()];
   }
 
   getTechnologies() {
     return [...this.technologies.values()];
-  }
-
-  getCompanies() {
-    return [...this.companies.values()];
-  }
-
-  getProject(id) {
-    return this.projects.get(id);
   }
 
   getTechnology(id) {
@@ -95,6 +118,10 @@ class PortfolioRepository {
         technologies: grouped[type.id] || []
       }))
       .filter(group => group.technologies.length > 0);
+  }
+
+  getCompanies() {
+    return [...this.companies.values()];
   }
 
 }
