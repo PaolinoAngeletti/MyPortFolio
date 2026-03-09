@@ -162,7 +162,7 @@
       "id": "python",
       "name": "Python",
       "type": "language",
-      "content": "Nella mia esperienza ho utilizzato Python in più di un progetto, con le seguenti modalità:\n\n1. In ambito AWS, ho utilizzato Python per l’implementazione delle funzioni Lambda, che venivano poi esposte tramite le apposite API Gateway previste sempre nell’ambito AWS. In particolare, queste funzioni Lambda sono state sviluppate con l’utilizzo della libreria boto3, utile per l'interazione con gli altri servizi AWS (esempio database, storage, ecc.).\n\n2. Nel progetto 360FlowVehicle, Python era il linguaggio di programmazione con cui l’intero progetto è stato sviluppato. I moduli sviluppati venivano poi containerizzati in ambito Docker. In questo contesto è stato utilizzato anche un server Flask per simulare richieste HTTP.\n\n3. Nel progetto TCR, mi sono occupato della migrazione del progetto da Python 2.7 a Python 3.9, andando a gestire anche casistiche in cui alcune librerie utilizzate dalla 2.7 non erano più supportate dalla versione 3.9.\n\n4. Nel progetto HMAX, ho utilizzato Python per l’implementazione di alcuni DAG, ossia script schedulati ed eseguiti tramite l’utilizzo di Apache Airflow."
+      "content": "Nella mia esperienza ho utilizzato Python in più di un progetto, con le seguenti modalità:\n\n1. In ambito AWS, ho utilizzato Python per l’implementazione delle funzioni Lambda, che venivano poi esposte tramite le apposite API Gateway previste sempre nell’ambito AWS. In particolare, queste funzioni Lambda sono state sviluppate con l’utilizzo della libreria boto3, utile per l'interazione con gli altri servizi AWS (esempio database, storage, ecc.).\n\n2. Nel progetto 360FlowVehicle, Python era il linguaggio di programmazione con cui l’intero progetto è stato sviluppato. I moduli sviluppati venivano poi containerizzati in ambito Docker. In questo contesto è stato utilizzato PyCharm come IDE ed anche un server Flask per simulare richieste HTTP.\n\n3. Nel progetto TCR, mi sono occupato della migrazione del progetto da Python 2.7 a Python 3.9, andando a gestire anche casistiche in cui alcune librerie utilizzate dalla 2.7 non erano più supportate dalla versione 3.9.\n\n4. Nel progetto HMAX, ho utilizzato Python per l’implementazione di alcuni DAG, ossia script schedulati ed eseguiti tramite l’utilizzo di Apache Airflow."
     },
     {
       "id": "rfid",
@@ -223,6 +223,7 @@
     {
       "id": "my_portfolio",
       "name": "My PortFolio",
+      "company": "freelance",
       "technologies": [
         "javascript"
       ]
@@ -230,6 +231,7 @@
     {
       "id": "fanta_regolamento",
       "name": "FantaRegolamento",
+      "company": "freelance",
       "technologies": [
         "javascript"
       ]
@@ -244,6 +246,7 @@
     {
       "id": "acquisto_merci",
       "name": "Acquisto Merci - Creazione Ordini",
+      "company": "software_business",
       "technologies": []
     },
     {
@@ -321,12 +324,15 @@
     {
       "id": "360_flow_vehicle",
       "name": "360 Flow - Veicolo",
+      "company": "hitachi",
       "technologies": [
         "docker",
+        "git",
         "mqtt",
         "postgresql",
         "python"
-      ]
+      ],
+      "content": "360Flow è un sistema a micro servizi per il conteggio delle persone a bordo veicolo.\n\nIl sistema è stato sviluppato in Python su più moduli che comunicano tra di loro tramite algoritmo MQTT e tramite l’esterno tramite HTTP e socket.\nIl sistema si interfaccia con la sensoristica per la manipolazione dei dati di congestionamento a bordo treno, dei dati di posizionamento e dei dati di diagnostica.\nI moduli sono sviluppati per container Docker su sistema operativo Windows. Il sistema utilizza dei sistemi per difendersi da attacchi informatici. Inoltre è presente la possibilità di interfacciamento diretto con il TCMS a bordo treno tramite un modulo sviluppato in C con protocollo TRDP.\nInoltre è presente un modulo di AI per la rilevazione delle porte aperte o chiuse in caso di impossibilità di connessione con il TCMS. È stato sviluppato un proxy per consentire la connessione da parte di app terze, come ad esempio HMI per di manutenzione che permette l’invio di comandi al sistema o la lettura di dati da esso. È presente anche un database di tipo relazionale PostgreSQL il quale viene utilizzato per la configurazione dei dispositivi e per la storicizzazione dei dati. Si è dovuta gestire tutta la parte relativa alla sicurezza informatica per le comunicazioni in ingresso ed in uscita dal sistema, in particolare utilizzando certificazioni sulle comunicazioni, crittazione dei dati con chiavi simmetriche e asimmetriche e combinazioni utente password per l’autenticazione.\n\nTra i dati che la 360Flow raccoglie possiamo nominare:\n• Numero di persone entrate ed uscite ad una certa stazione per una certa porta del treno\n• Numero di persone che, durante il viaggio, ha cambiato la propria carrozza di viaggio.\n• Tipo di oggetti che occupano il treno, esempio biciclette, carrozzine, ecc.\n\n360Flow prevede software sia per la parte veicolo (treno) che per la parte di stazione.\nIn particolare, ho lavorato alla parte di veicolo, eseguendo i seguenti sviluppi:\n• Implementazione delle operazioni CRUD sul database PostgreSQL.\n• Gestione del formato JSON dei messaggi che il modulo ActionCore (proxy) doveva prevedere.\n• Gestione dell’algoritmo di crittazione che doveva essere applicato ai messaggi da pubblicare tramite MQTT.\n• Sviluppo della libreria centralizzata per il logging del sistema.\n• Sviluppo di un componente del modulo di diagnostica, il FileArchiver, utile a gestire i log creati nel punto precedente. Di fatti, il FileArchiver verifica se i log abbiano superato una certa dimensione oppure una certa data di creazione, ed in tal caso vengono archiviati ed inviati al sistema esterno centrale.\n• Sviluppo del modulo DiagnosticReporter, modulo dedicato al monitoraggio di alcuni valori del sistema centrale.\nEsempio, se la RAM della macchina a bordo treno supera alcuni limiti previsti, il sistema di controllo centrale deve essere allertato tramite messaggi HTTP e/o MQTT."
     },
     {
       "id": "tcr",
@@ -363,6 +369,44 @@
         "spring_boot",
         "ssh"
       ]
+    }
+  ],
+  "companies": [
+    {
+      "id": "software_business",
+      "name": "Software Business S.R.L.",
+      "start": "Marzo 2016",
+      "end": "Agosto 2016",
+      "city": "Mugnano del Cardinale (AV)",
+      "website": "https://www.softwarebusiness.it",
+      "content": "Questa esperienza è nata come opportunità di tirocinio messa a disposizione dall’università.\nIl mio obiettivo finale era il rilascio di una piattaforma web user-friendly avente lo scopo di creare ordini clienti in SAP.\nTale applicativo doveva essere utilizzato dagli stessi customer finali, che quindi potevano ordinare merce autonomamente, stile e-commerce."
+    },
+    {
+      "id": "advise",
+      "name": "Advise S.R.L.",
+      "start": "Giugno 2016",
+      "end": "Gennaio 2024",
+      "city": "Mugnano del Cardinale (AV)",
+      "website": "https://www.advise.it",
+      "content": "La mia esperienza in questa azienda si può suddividere in due fasi:\nAll’inizio, le prime attività riguardavano la manutenzione degli applicativi già in produzione, scritti prevalentemente con tecnologia .NET e database SQL o MySQL.\nIn questa fase mi sono occupato sia dello sviluppo Back-End che Front-End, con l’ausilio delle classiche tecnologie HTML, CSS e Javascript. Nessun framework in particolare è stato utilizzato.\nDopo circa un anno dalla mia assunzione, sono stati avviati alcuni progetti per lo sviluppo di APP, nello specifico Android e Gestionali di magazzino (ambito logistico), di cui sono diventato, col tempo, Project Manager. I progetti vengono descritti più ampiamente nella sezione dedicata.\nQueste APP sono state sviluppate, quindi, con l’utilizzo del framework Android e l’integrazione di alcuni servizi AWS."
+    },
+    {
+      "id": "teoresi",
+      "name": "Teoresi Group S.P.A.",
+      "start": "Gennaio 2024",
+      "end": "Febbraio 2026",
+      "city": "Napoli, via Ferrante Imparato",
+      "website": "https://www.teoresigroup.it",
+      "content": "Teoresi è una multi-nazionale in ambito di consulenza ingegneristica. Come tale, sono stato assegnato, nel tempo, a diversi progetti per diversi clienti finali, di cui parlo nei paragrafi successivi.\nIn questo periodo ho vissuto politiche di smart-working ibrido, alternando così giornate in presenza (sia in sede Teoresi che sede cliente) con giornate di smart."
+    },
+    {
+      "id": "hitachi",
+      "name": "Hitachi Rail STS S.P.A.",
+      "start": "Gennaio 2024",
+      "end": "Febbraio 2026",
+      "city": "Napoli, via Argine",
+      "website": "https://www.hitachirail.com",
+      "content": "Ho lavorato presso Hitachi come consulente Teoresi, in svariati progetti.\nIn particolare, ho lavorato al progetto 360Flow, lato veicolo, per la manutenzione dei moduli già implementati oltre allo sviluppo di nuove librerie e moduli software.\nIn Giugno 2024, sono stato invece assegnato al progetto 360Motion, terminato invece verso Settembre 2025, dato che in questo periodo sono stato assegnato al progetto HMAX.\nPer un approfondimento dei progetti e delle tecnologie coinvolte, si può far riferimento alle apposite sezioni."
     }
   ]
 }
