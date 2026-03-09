@@ -1,10 +1,10 @@
 import useScrollToHash from '../utils/HookUtils';
-import { retrieveAll } from '../repository/companies/companiesRepository';
+import { portfolioRepository } from '../repository/portfolioRepository';
 
 export default function Companies() {
 
     useScrollToHash();
-    const companiesList = retrieveAll();
+    const companiesList = portfolioRepository.getCompanies();
 
     return (
         <div>

@@ -1,40 +1,58 @@
-import data from "../configuration/portfolio.json";
+import { Project } from "../models/project";
+import { Company } from "../models/company";
 import { Technology } from "../models/technology";
+import data from "../configuration/portfolio.json";
 
 class PortfolioRepository {
 
   constructor() {
     this.projects = new Map();
+    this.companies = new Map();
     this.technologies = new Map();
     this.build();
   }
 
   build() {
+    this.buildTechnologies();
+    this.buildCompanies();
+    this.buildProjects();
+  }
 
-    // iterate over technologies.
+  buildTechnologies() {
     data.technologies.forEach(t => {
       const tech = new Technology(t.name, t.type, t.content);
       this.technologies.set(t.id, tech);
     });
+  }
 
-    // iterate over projects.
+  buildCompanies() {
+    data.companies.forEach(json_company => {
+      const company = new Company(json_company);
+      this.companies.set(json_company.id, company);
+    });
+  }
+
+  buildProjects() {
     data.projects.forEach(p => {
-      const project = {
-        ...p,
-        technologies: []
-      };
+      const project = new Project(p.name, p.web_site, p.content);
 
-      // mapping projects with technologies.
+      // mapping project with company.
+      const projectCompany = this.companies.get(p.company);
+      if (projectCompany) {
+        project.setCompany(projectCompany);
+        projectCompany.addProject(project);
+      }
+
+      // mapping project with technologies.
       p.technologies.forEach(tId => {
         const tech = this.technologies.get(tId);
         if (!tech) return;
-        project.technologies.push(tech);
+        project.addTechnology(tech);
         tech.addProject(project);
       });
 
       this.projects.set(p.id, project);
     });
-
   }
 
   getProjects() {
@@ -43,6 +61,10 @@ class PortfolioRepository {
 
   getTechnologies() {
     return [...this.technologies.values()];
+  }
+
+  getCompanies() {
+    return [...this.companies.values()];
   }
 
   getProject(id) {

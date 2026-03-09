@@ -1,5 +1,5 @@
 import useScrollToHash from '../utils/HookUtils';
-import buildNavLink from '../utils/NavLinkUtils';
+import { HorizontalLinks } from '../utils/NavLinkUtils';
 import { portfolioRepository } from '../repository/portfolioRepository';
 
 export default function Technologies() {
@@ -9,6 +9,7 @@ export default function Technologies() {
 
     // retrieving technologies grouped by type.
     const technologiesByType = portfolioRepository.getTechnologiesGroupedByType();
+    
     return (
         <div>
             <h1>Stack tecnologico</h1>
@@ -22,19 +23,9 @@ export default function Technologies() {
                             className="detail_title"
                         >
                             <h2>{technology.name}</h2>
-                            {technology.projects.length > 0 && (
-                                <p>
-                                    <i>
-                                        Progetti ({technology.projects.length}):{" "}
-                                        {technology.projects.map((project, index) => (
-                                            <span key={project.id}>
-                                                {buildNavLink(project.name, "/projects")}
-                                                {index < technology.projects.length - 1 && ", "}
-                                            </span>
-                                        ))}
-                                    </i>
-                                </p>
-                            )}
+
+                            <HorizontalLinks parentName={technology.id} title="Progetti" linkToPage="projects" values={technology.projects} />
+
                             <p className="information">
                                 {technology.content}
                             </p>
