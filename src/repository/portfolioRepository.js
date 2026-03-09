@@ -1,5 +1,5 @@
 import data from "../configuration/portfolio.json";
-import { Technology } from "../models/technologies/technology";
+import { Technology } from "../models/technology";
 
 class PortfolioRepository {
 
