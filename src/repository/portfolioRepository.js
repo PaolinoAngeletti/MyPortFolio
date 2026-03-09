@@ -1,4 +1,5 @@
 import data from "../configuration/portfolio.json";
+import { Technology } from "../models/technologies/technology";
 
 class PortfolioRepository {
 
@@ -12,10 +13,8 @@ class PortfolioRepository {
 
     // iterate over technologies.
     data.technologies.forEach(t => {
-      this.technologies.set(t.id, {
-        ...t,
-        projects: []
-      });
+      const tech = new Technology(t.name, t.type, t.content);
+      this.technologies.set(t.id, tech);
     });
 
     // iterate over projects.
@@ -30,7 +29,7 @@ class PortfolioRepository {
         const tech = this.technologies.get(tId);
         if (!tech) return;
         project.technologies.push(tech);
-        tech.projects.push(project);
+        tech.addProject(project);
       });
 
       this.projects.set(p.id, project);
