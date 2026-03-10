@@ -76,6 +76,14 @@ class PortfolioRepository {
         this.work_projects.set(p.id, project);
       }
     });
+
+    // sort result lists based on project start time.
+    this.work_projects = this.sortProjects(this.work_projects);
+    this.freelance_projects = this.sortProjects(this.freelance_projects);
+  }
+
+  sortProjects(list_to_sort) {
+    return [...list_to_sort.values()].sort((a, b) => b.start - a.start);
   }
 
   getWorkProjects() {

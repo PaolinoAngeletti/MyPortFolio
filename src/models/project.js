@@ -5,6 +5,7 @@ export class Project {
         this.content = json.content;
         this.projectWebSite = json.website;
         this.googlePlayStore = json.googlePlayStore;
+        this.start = new Date(json.start);
         this.technologies = [];
     }
 
