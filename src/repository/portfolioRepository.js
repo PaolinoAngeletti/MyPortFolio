@@ -2,6 +2,7 @@ import { Project } from "../models/project";
 import { Company } from "../models/company";
 import { Technology } from "../models/technology";
 import data from "../configuration/portfolio.json";
+import ProjectUtils from "../utils/ProjectUtils";
 
 class PortfolioRepository {
 
@@ -19,30 +20,32 @@ class PortfolioRepository {
     // project worked during free time.
     this.freelance_projects = new Map();
 
-    this.build();
+    this.#build();
   }
 
-  build() {
-    this.buildTechnologies();
-    this.buildCompanies();
-    this.buildProjects();
+  #build() {
+    this.#buildTechnologies();
+    this.#buildCompanies();
+    this.#buildProjects();
   }
 
-  buildTechnologies() {
-    data.technologies.forEach(t => {
-      const tech = new Technology(t.name, t.type, t.content);
-      this.technologies.set(t.id, tech);
-    });
+  #buildTechnologies() {
+    data.technologies
+      .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }))
+      .forEach(t => {
+        const tech = new Technology(t.name, t.type, t.content);
+        this.technologies.set(t.id, tech);
+      });
   }
 
-  buildCompanies() {
+  #buildCompanies() {
     data.companies.forEach(json_company => {
       const company = new Company(json_company);
       this.companies.set(json_company.id, company);
     });
   }
 
-  buildProjects() {
+  #buildProjects() {
     data.projects.forEach(p => {
       const project = new Project(p);
 
@@ -78,12 +81,8 @@ class PortfolioRepository {
     });
 
     // sort result lists based on project start time.
-    this.work_projects = this.sortProjects(this.work_projects);
-    this.freelance_projects = this.sortProjects(this.freelance_projects);
-  }
-
-  sortProjects(list_to_sort) {
-    return [...list_to_sort.values()].sort((a, b) => b.start - a.start);
+    this.work_projects = ProjectUtils.sortByStartDesc(this.work_projects);
+    this.freelance_projects = ProjectUtils.sortByStartDesc(this.freelance_projects);
   }
 
   getWorkProjects() {

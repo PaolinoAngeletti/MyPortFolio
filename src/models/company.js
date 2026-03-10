@@ -1,3 +1,5 @@
+import ProjectUtils from "../utils/ProjectUtils";
+
 export class Company {
 
     constructor(jsonCompany) {
@@ -13,6 +15,9 @@ export class Company {
 
     addProject(project) {
         this.projects.push(project);
+
+        // when new element are added, then the list is automatically ordered.
+        this.projects = ProjectUtils.sortByStartDesc(this.projects);
     }
 
     setIfFreelance(boolean) {

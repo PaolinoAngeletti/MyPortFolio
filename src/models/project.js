@@ -1,3 +1,5 @@
+import TechnologyUtils from "../utils/TechnologyUtils";
+
 export class Project {
 
     constructor(json) {
@@ -17,10 +19,9 @@ export class Project {
 
     addTechnology(technology) {
         this.technologies.push(technology);
-    }
 
-    setGooglePlayStoreUrl(url) {
-        this.googlePlayStore = url;
+        // when new element are added, then the list is alphabetically ordered.
+        this.technologies = TechnologyUtils.sortAlphabetically(this.technologies);
     }
 
     // GETTER

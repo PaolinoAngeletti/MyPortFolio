@@ -276,9 +276,9 @@
       "name": "Movitel",
       "company": "advise",
       "technologies": [
+        "vb_net",
         "javascript",
-        "sql_server",
-        "vb_net"
+        "sql_server"
       ],
       "content": "Questo piccolo progetto nasce dalla completa integrazione con i sistemi Voispeed, azienda fornitrice di centralini professionali aziendali.\nL’obiettivo di questa applicazione Desktop era quella di interfacciarsi con il sistema Voispeed in modo da replicare su schermo le funzionalità previste da un classico telefono centralino, esempio la possibilità di effettuare chiamate, inoltrare chiamate, ecc.\nLe comunicazioni con il centralino avvenivano tramite API REST.",
       "start": "2017-02"
