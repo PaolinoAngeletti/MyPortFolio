@@ -1,5 +1,6 @@
 import useScrollToHash from '../utils/HookUtils';
 import { portfolioRepository } from '../repository/portfolioRepository';
+import { HorizontalLinks } from '../utils/NavLinkUtils';
 
 export default function Companies() {
 
@@ -39,6 +40,8 @@ export default function Companies() {
                     </div>
 
                     <p className="information">{company.content}</p>
+
+                    <HorizontalLinks parentName={company.id} title="Progetti" linkToPage="projects" values={company.projects} />
                 </div>
             ))}
         </div>
