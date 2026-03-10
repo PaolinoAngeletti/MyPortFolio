@@ -10,6 +10,10 @@ export class Technology {
     this.projects = projects;
   }
 
+  addProject(project) {
+    this.projects.push(project);
+  }
+
   retrieveProjectsNumber() {
     return this.projects?.length;
   }

@@ -1,12 +1,13 @@
 import buildNavLink from '../utils/NavLinkUtils';
 import useScrollToHash from '../utils/HookUtils';
-import { retrieveAll, retrieveFreelance } from '../repository/projects/projectsRepository';
+import { portfolioRepository } from '../repository/portfolioRepository';
+import { HorizontalLinks } from '../utils/NavLinkUtils';
 
 export default function Projects() {
 
     useScrollToHash();
-    const projectsList = retrieveAll();
-    const freelanceList = retrieveFreelance();
+    const projectsList = portfolioRepository.getWorkProjects();
+    const freelanceList = portfolioRepository.getFreelanceProjects();
 
     function manageProjectList(projectsList) {
         return (
@@ -15,32 +16,41 @@ export default function Projects() {
                     <div id={project.name} key={project.name} className="detail_title">
                         <h2>{project.name}</h2>
 
-                        <div className="detail_title">
-                            <h3>🏢 Azienda</h3>
-                            {project.isFreelanceProject()
-                                ? <p>{project.company.name}</p>
-                                : buildNavLink(project.company.name, "/companies")
-                            }
-                        </div>
+                        {project.hasCompany() && (
+                            <div className="detail_title">
+                                <h3>🏢 Azienda</h3>
+                                {project.isFreelanceProject()
+                                    ? <p>{project.retrieveCompanyName()}</p>
+                                    : buildNavLink(project.retrieveCompanyName(), "/companies")
+                                }
+                            </div>
+                        )}
 
-                        <div className="detail_title">
-                            <h3>🌐 Sito Web</h3>
-                            <p className="information">
-                                <a href={project.retrieveWebSite()} target="_blank" >
-                                    {project.retrieveWebSite()}
-                                </a>
-                            </p>
+                        {(project.hasWebsite() || project.hasGooglePlayStoreUrl()) && (
+                            <div className="detail_title">
+                                <h3>🌐 Sito Web</h3>
 
-                            {project.hasGooglePlayStoreUrl() && (
-                                <p className="information">
-                                    <a href={project.googlePlayStore} target="_blank" >
-                                        Pagina Google Play Store
-                                    </a>
-                                </p>
-                            )}
-                        </div>
+                                {project.hasWebsite() && (
+                                    <p className="information">
+                                        <a href={project.retrieveWebSite()} target="_blank">
+                                            {project.retrieveWebSite()}
+                                        </a>
+                                    </p>
+                                )}
+
+                                {project.hasGooglePlayStoreUrl() && (
+                                    <p className="information">
+                                        <a href={project.googlePlayStore} target="_blank">
+                                            Pagina Google Play Store
+                                        </a>
+                                    </p>
+                                )}
+                            </div>
+                        )}
 
                         <p className="information">{project.content}</p>
+
+                        <HorizontalLinks parentName={project.id} title="Tecnologie" linkToPage="technologies" values={project.getTechnologies()} />
                     </div>
                 ))}
             </div>

@@ -1,10 +1,11 @@
 import useScrollToHash from '../utils/HookUtils';
-import { retrieveAll } from '../repository/companies/companiesRepository';
+import { portfolioRepository } from '../repository/portfolioRepository';
+import { HorizontalLinks } from '../utils/NavLinkUtils';
 
 export default function Companies() {
 
     useScrollToHash();
-    const companiesList = retrieveAll();
+    const companiesList = portfolioRepository.getCompanies();
 
     return (
         <div>
@@ -39,6 +40,8 @@ export default function Companies() {
                     </div>
 
                     <p className="information">{company.content}</p>
+
+                    <HorizontalLinks parentName={company.id} title="Progetti" linkToPage="projects" values={company.projects} />
                 </div>
             ))}
         </div>

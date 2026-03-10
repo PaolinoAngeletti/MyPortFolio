@@ -1,0 +1,482 @@
+{
+  "technologyTypes": [
+    {
+      "id": "language",
+      "title": "Linguaggi di programmazione",
+      "order": 1
+    },
+    {
+      "id": "framework",
+      "title": "Framework & Tooling",
+      "order": 2
+    },
+    {
+      "id": "cloud",
+      "title": "Cloud Services",
+      "order": 3
+    },
+    {
+      "id": "container",
+      "title": "Container & Orchestration",
+      "order": 4
+    },
+    {
+      "id": "db_sql",
+      "title": "Database Relazionali",
+      "order": 5
+    },
+    {
+      "id": "db_no_sql",
+      "title": "Database NoSQL",
+      "order": 6
+    },
+    {
+      "id": "broker",
+      "title": "Messages Brokers",
+      "order": 7
+    },
+    {
+      "id": "scheduler",
+      "title": "Workflow Orchestrator",
+      "order": 8
+    },
+    {
+      "id": "pattern",
+      "title": "Patterns",
+      "order": 9
+    },
+    {
+      "id": "documentation",
+      "title": "Documentazione & PM",
+      "order": 10
+    },
+    {
+      "id": "hardware",
+      "title": "Hardware & IoT Integration",
+      "order": 11
+    },
+    {
+      "id": "remote_access",
+      "title": "Remote Access & System Administration",
+      "order": 12
+    }
+  ],
+  "technologies": [
+    {
+      "id": "airflow",
+      "name": "Apache Airflow",
+      "type": "scheduler",
+      "content": "Apache Airflow è una piattaforma open-source utilizzata per orchestrare, schedulare e monitorare workflow, spesso impiegata nella gestione di pipeline di dati.\nPermette di definire flussi di lavoro come DAG in Python, coordinando l’esecuzione di task tra loro dipendenti, come processi ETL, elaborazioni batch o pipeline di analytics.\n\nNel progetto HMAX l’ho utilizzato per schedulare processi ETL sui dati e gestire l’ingestion batch dei dati energetici nel contesto del prodotto Lumada."
+    },
+    {
+      "id": "android",
+      "name": "Android (Mobile Dev)",
+      "type": "framework",
+      "content": "Il framework Android è stata la tecnologia che ho usato per circa 7 anni, dal 2016 al 2023.\nCome IDE di sviluppo è stato usato Android Studio, mentre come linguaggio ho usato per lo più Java, ma ho avuto modo di usare anche Kotlin in altri progetti minori e per funzioni specifiche.\n\nHo avuto modo di adottare architetture di tipo MVC (Model-View-Controller) o MVP (Model-View-Presenter) per garantire una separazione chiara delle responsabilità: le activity fungevano da model o presenter, che invocano fragment che fungono da view, per mostrare l'interfaccia utente e reagire agli input dell'utente.\nHo organizzato i file XML per definire il layout dell'interfaccia utente e ho utilizzato i file di risorse per la gestione delle stringhe, delle dimensioni e degli stili.\n\nL’associazione degli elementi della view ed il relativo controllore veniva eseguita tramite view binding.\nInoltre, ho utilizzato Gradle come strumento di build per gestire le dipendenze esterne e assicurare una corretta configurazione del progetto.\nRiguardo i database, ho usato sia database locali SQLite sia progetti in cui i dati venivano rilevati tramite API.\n\nNei progetti NegozioPerfetto, MBE LAB e MagazzinoPerfetto, questo database locale veniva poi sincronizzato con un database in cloud tramite un processo scritto ad-hoc.\nAltri servizi usati in questo contesto sono Firebase, usato per ricevere notifiche di crash o analisi e per inviare notifiche push, e Git, usato per il versioning.\nPer quanto riguarda invece l’invocazione di API, si enuncia anche l’utilizzo di Retrofit."
+    },
+    {
+      "id": "aws",
+      "name": "AWS Amazon Cloud",
+      "type": "cloud",
+      "content": "Ho utilizzato i servizi AWS durante le mie esperienze di sviluppo mobile Android.\nDi seguito i servizi usati che la piattaforma mette a disposizione:\n\nAurora DB\nGestione di un database relazionale basato su MySQL.\nIn un contesto AWS, i dati venivano interrogati esclusivamente tramite Lambda, che eseguivano le query, trasformavano i dati e li restituivano al chiamante.\nQuesto approccio ha permesso di mantenere sicuro l’accesso al database e di garantire una gestione scalabile e serverless delle operazioni di lettura e scrittura.\n\nDynamo DB\nGestione di un database non relazionale serverless basato su struttura key-value.\nQuesta soluzione è stata utilizzata per la storicizzazione di dati che non era possibile gestire in un database relazionale, come ad esempio documenti JSON.\nPer alcune entità, infatti, uno degli attributi conteneva un JSON; per queste entità è stata quindi scelta la storicizzazione su DynamoDB anziché su Aurora, garantendo maggiore flessibilità e scalabilità nella gestione dei dati.\n\nLambda\nServizio di elaborazione che consente di eseguire del codice senza la necessità di effettuare il provisioning o la gestione dei server.\nQuesto codice storicizzato è poi invocabile tramite API o tramite SDK Amazon.\nIl codice per le funzioni di lambda può essere scritto con una lista di linguaggio che la piattaforma mette a disposizione, e nello specifico ho usato: Python e NodeJS.\nLe lambda sviluppate, in genere, avevano la responsabilità di accedere ai database previsti, estrarre dati, trasformarli e restituirli al chiamante tramite API.\n\nAPI Gateway\nServizio AWS per la creazione, la pubblicazione, la gestione, il monitoraggio e la protezione di API REST, HTTP e WebSocket a qualsiasi livello.\nGli sviluppatori di API possono creare API in grado di accedere ad AWS o ad altri servizi Web, nonché ai dati archiviati nel cloud AWS.\nIn particolare, nella mia esperienza, ho sempre provveduto a collegare una API ad una funzione Lambda specifica.\n\nCognito\nPiattaforma di identità per app Web e per dispositivi mobili, utile a gestire l'accesso al sistema tramite credenziali.\nÈ una directory utente, un server di autenticazione e un servizio di autorizzazione per i token di accesso OAuth 2.0 e le credenziali AWS.\n\nS3 (Amazon Simple Storage Service)\nServizio Amazon dedicato alla archiviazione e gestione di una serie di documenti e file generici previsti dal sistema in implementazione.\nHo gestito nel tempo sia bucket privati che pubblici, in base alla richiesta utente.\n\nCloud Watch\nServizio di monitoraggio di AWS per le risorse cloud e le applicazioni in esecuzione su AWS.\nHo utilizzato Amazon CloudWatch per raccogliere e tenere traccia dei parametri, raccogliere e monitorare file di log prodotti dai vari servizi gestiti nel tempo.\nEsempio: visualizzare i log prodotti da una specifica funzione lambda.\n\nBatch\nServizio AWS utilizzato per eseguire processi di lunga durata.\nHo utilizzato batch per eseguire, ad esempio, calcoli notturni statistici che in altre condizioni avrebbero impiegato troppo tempo e risorse.\nQuesti job potevano essere schedulati (esempio ogni notte) o eseguiti su richiesta (esempio l’esportazione in CSV dei dati di magazzino).\n\nECR (Amazon Elastic Container Registry)\nServizio di registro delle immagini container.\nLe immagini che ho caricato in ECR erano sviluppate tramite Docker e poi caricate in ECR come repository private.\nTale servizio è stato usato per poter avviare le suddette immagini Docker tramite AWS Batch."
+    },
+    {
+      "id": "bean_shell",
+      "name": "Bean Shell",
+      "type": "language",
+      "content": "Ho utilizzato il linguaggio BeanShell per le attività di test automation del progetto 360Motion, basato sull’uso del software Apache JMeter.\nQuindi linguaggio utilizzato solamente per scripting, e non a livello di progetto."
+    },
+    {
+      "id": "docker",
+      "name": "Docker",
+      "type": "container",
+      "content": "Nella mia esperienza ho lavorato in maniera massiccia con Docker, utilizzando questa tecnologia in due modalità principali:\n\n1. Sviluppo di app mobile con integrazione AWS: ho utilizzato Docker per creare container a partire da script sviluppati in PHP.\nLe immagini generate venivano poi caricate su AWS tramite il servizio AWS Batch, utilizzato per eseguire job schedulati e non, consentendo di processare operazioni anche di lunga durata, che potevano richiedere diverse ore.\n\n2. Progetti Hitachi 360Flow e 360Motion: ho impiegato Docker nella sua funzione principale, ossia la containerizzazione di servizi Java, permettendone l’esecuzione sia in locale sia in ambiente di produzione tramite Kubernetes.\nIn questo contesto ho utilizzato Docker Compose per buildare e orchestrare i vari container in maniera efficiente."
+    },
+    {
+      "id": "doors",
+      "name": "Doors",
+      "type": "documentation",
+      "content": "IBM Engineering Requirements Management DOORS è uno strumento di gestione dei requisiti ampiamente utilizzato nel settore dell'ingegneria e dello sviluppo di software.\nHo utilizzato questo strumento per gestire i requisiti del progetto 360 Motion."
+    },
+    {
+      "id": "dynamo_db",
+      "name": "DynamoDB",
+      "type": "db_no_sql",
+      "content": "Amazon DynamoDB è un servizio di database NoSQL gestito, offerto da AWS, progettato per garantire prestazioni veloci e scalabili.\nÈ altamente disponibile, supporta dati strutturati in tabelle, ed è ottimizzato per applicazioni che richiedono basse latenze e alta velocità nelle operazioni di lettura e scrittura.\n\nNel progetto NegozioPerfetto, è stato usato DynamoDB per la storicizzazione di alcuni tipi di entità, come ad esempio documenti JSON da associare a specifiche transazioni di magazzino storicizzate, invece, in MySQL."
+    },
+    {
+      "id": "git",
+      "name": "GIT",
+      "type": "framework",
+      "content": "Ho utilizzato GIT come strumento di versioning in tutti i progetti in cui ho lavorato.\nLa mia esperienza mi ha portato a utilizzare GIT in quasi tutte le sue funzionalità, lavorando su branch separati che venivano poi pushati sia tramite pull-request sia tramite commit diretti sul branch master.\nHo anche utilizzato la variante Git Flow, che permette di seguire un modello di branching strutturato e standardizzato, gestendo in modo chiaro e sicuro le fasi di sviluppo, release e hotfix.\nQuesto approccio facilita il lavoro in team, riduce il rischio di conflitti e permette di mantenere sempre stabile il branch principale."
+    },
+    {
+      "id": "gradle",
+      "name": "Gradle",
+      "type": "framework",
+      "content": "Ho utilizzato Gradle in vari progetti, in particolare nei progetti implementati tramite framework Android.\nLa tecnologia veniva utilizzata ovviamente per la gestione delle dipendenze, il versioning dell’applicativo e la configurazione dei task di build, semplificando così il processo di compilazione e distribuzione dell’app."
+    },
+    {
+      "id": "java",
+      "name": "Java",
+      "type": "language",
+      "content": "Nella mia esperienza ho utilizzato Java in più di un progetto, ma principalmente in due modi:\n\n1. Sviluppo di applicazioni mobile in ambito logistico, quindi sfruttando il framework previsto dallo sviluppo Android. Per ulteriori dettagli relativi alle mie esperienze Android, si può far riferimento alla apposita sezione.\n\n2. Sviluppo di micro servizi in Java tramite framework Spring Boot.\n\nLato progetto, ho utilizzato sia Maven che Gradle come strumento di gestione delle dipendenze, del versionamento, ecc."
+    },
+    {
+      "id": "javascript",
+      "name": "Javascript",
+      "type": "language",
+      "content": "Ho utilizzato JavaScript in diversi progetti lato front-end, in particolare nelle mie prime esperienze lavorative, dove ero responsabile dello sviluppo e della manutenzione di alcuni applicativi web.\nIn questa fase, l’utilizzo di JavaScript è stato di tipo tradizionale, in combinazione con HTML e CSS, senza l’impiego di framework particolari, per realizzare le funzionalità e l’interfaccia desiderate.\nSuccessivamente ho utilizzato anche jQuery, per semplificare l’accesso e la manipolazione degli elementi del DOM.\nInfine, in alcuni progetti personali, ho avuto modo di approfondire l’uso di React, implementando un’applicazione basata su JSX (JavaScript XML) per raggiungere gli obiettivi dell’applicazione.\nHo anche avuto modo di esplorare lo Unit Testing in Javascript, sfruttando il framework Jasmine."
+    },
+    {
+      "id": "kafka",
+      "name": "Apache Kafka",
+      "type": "broker",
+      "content": "Ho utilizzato Apache Kafka nel progetto 360Motion per distribuire messaggi tra i diversi consumer dello streaming interno.\nPer la gestione e il monitoraggio dei topic e dei messaggi in circolazione, ho utilizzato AKHQ, che ha permesso di leggere e analizzare facilmente i flussi di dati all’interno della piattaforma Kafka.\n\nNel progetto HMAX, Apache Kafka è stato utilizzato come data ingestion layer per i dati energetici in real-time, consentendo la gestione di flussi ad alta frequenza con migliaia di messaggi al secondo."
+    },
+    {
+      "id": "maven",
+      "name": "Maven",
+      "type": "framework",
+      "content": "Per il progetto 360Motion ho utilizzato Maven per la gestione centralizzata delle dipendenze e il versionamento dei vari servizi. Il sistema di build supportava, per alcuni servizi, output multipli, includendo sia un applicativo eseguibile sia una libreria, ottimizzando compilazione e distribuzione."
+    },
+    {
+      "id": "mqtt",
+      "name": "MQTT",
+      "type": "broker",
+      "content": "MQTT è un protocollo di messaggistica leggero basato su publish/subscribe, progettato per reti con larghezza di banda limitata e connessioni intermittenti.\nNei progetti 360Flow Veicolo e 360Motion, ho utilizzato MQTT per consentire ai veicoli in movimento di inviare ai componenti centralizzati dati come vehicle-congestion, vehicle-position e simili.\nQuesto protocollo è stato scelto perché, ad alte velocità, la connettività potrebbe non essere garantita; MQTT è progettato proprio per garantire la comunicazione anche in presenza di connessioni instabili o di scarsa qualità."
+    },
+    {
+      "id": "my_sql",
+      "name": "MySQL",
+      "type": "db_sql",
+      "content": "Database usato nei progetti NegozioPerfetto, MagazzinoPerfetto e MBE LAB come database in cloud per la storicizzazione di dati provenienti dalle APP Android.\nGli strumenti utilizzati sono stati:\n• Trigger\n• Stored function\n• Stored procedure\n• Indici\n\nNel progetto MagazzinoPerfetto, sono stati implementati trigger che invocavano chiamate API che a loro volta invocavano procedure lambda in AWS, per rendere disponibili web hook utili all’utente finale.\nQuesta soluzione ha consentito l'integrazione fluida con altre applicazioni e sistemi esterni, garantendo una gestione efficiente delle notifiche e degli aggiornamenti in tempo reale all'interno del magazzino."
+    },
+    {
+      "id": "postgresql",
+      "name": "PostgresSQL",
+      "type": "db_sql",
+      "content": "Nell'ambito dei progetti Hitachi, ho utilizzato PostgreSQL come database per la storicizzazione dei dati elaborati dal sistema.\nAnche per questo database sono state utilizzati trigger e procedure. Inoltre, per alcune entità, sono stati anche gestiti JSON come colonne di un record."
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "type": "language",
+      "content": "Nella mia esperienza ho utilizzato Python in più di un progetto, con le seguenti modalità:\n\n1. In ambito AWS, ho utilizzato Python per l’implementazione delle funzioni Lambda, che venivano poi esposte tramite le apposite API Gateway previste sempre nell’ambito AWS. In particolare, queste funzioni Lambda sono state sviluppate con l’utilizzo della libreria boto3, utile per l'interazione con gli altri servizi AWS (esempio database, storage, ecc.).\n\n2. Nel progetto 360FlowVehicle, Python era il linguaggio di programmazione con cui l’intero progetto è stato sviluppato. I moduli sviluppati venivano poi containerizzati in ambito Docker. In questo contesto è stato utilizzato PyCharm come IDE ed anche un server Flask per simulare richieste HTTP.\n\n3. Nel progetto TCR, mi sono occupato della migrazione del progetto da Python 2.7 a Python 3.9, andando a gestire anche casistiche in cui alcune librerie utilizzate dalla 2.7 non erano più supportate dalla versione 3.9.\n\n4. Nel progetto HMAX, ho utilizzato Python per l’implementazione di alcuni DAG, ossia script schedulati ed eseguiti tramite l’utilizzo di Apache Airflow."
+    },
+    {
+      "id": "rfid",
+      "name": "RFID",
+      "type": "hardware",
+      "content": "Nel contesto del progetto MagazzinoPerfetto, ho applicato la tecnologia RFID per facilitare il tracciamento dell'entrata e dell'uscita della merce, nonché per semplificare le attività di inventario e il controllo dello stock in magazzino.\nIn particolare, abbiamo utilizzato l'area di memoria EPC per memorizzare i dati univoci degli articoli, mentre il TID è stato sfruttato per monitorare il numero di rilevazioni dell'EPC specifico durante la lettura RFID.\nL’integrazione RFID con l’APP è stata eseguita tramite SDK di Zebra."
+    },
+    {
+      "id": "spring_boot",
+      "name": "Spring Boot",
+      "type": "framework",
+      "content": "Durante lo sviluppo del progetto 360Motion, ho contribuito alla realizzazione di un sistema basato su Spring Boot e architettura a microservizi, dove ciascun servizio era indipendente e comunicava con gli altri tramite Kafka.\nHo curato la definizione delle API REST, la gestione del data layer tramite Spring Data JPA e Hibernate, e la configurazione dei database PostgreSQL e Redis per la memorizzazione dei dati.\nL’intero progetto è stato gestito e costruito con Maven, assicurando una solida integrazione tra i vari componenti.\n\nNel progetto HMAX, Spring Framework è stato utilizzato per sviluppare una dashboard web finalizzata alla visualizzazione e gestione dei KPI energetici prodotti dal sistema Lumada."
+    },
+    {
+      "id": "sql_server",
+      "name": "SQL Server",
+      "type": "db_sql",
+      "content": "Database usato nei progetti CRM-O ed ApriUnTicket, come soluzione usata negli applicativi web menzionati."
+    },
+    {
+      "id": "ssh",
+      "name": "SSH",
+      "type": "remote_access",
+      "content": "Ho utilizzato SSH per accedere e lavorare su diverse macchine virtuali Linux Red Hat 9, messe a disposizione del team di Hitachi Digital per attività di sviluppo.\nPoiché queste macchine non avevano accesso a Internet, i file venivano trasferiti in modalità offline."
+    },
+    {
+      "id": "swift",
+      "name": "Swift",
+      "type": "language",
+      "content": "Ho utilizzato il linguaggio Swift per lo sviluppo dell’app mobile QL-Mobile.\nSi tratta dell’unico progetto in cui ho impiegato questo linguaggio, ma l’esperienza mi ha permesso di acquisire familiarità sia con Swift sia con l’IDE Xcode di Apple.\nHo approfondito le best practice di sviluppo iOS, realizzando un’interfaccia fluida e funzionale, integrando API esterne e gestendo un database locale per la memorizzazione di dati persistenti, come le impostazioni utente."
+    },
+    {
+      "id": "vb_net",
+      "name": "VB.NET",
+      "type": "language",
+      "content": "Ho avuto modo di utilizzare il linguaggio VB.NET nei primi anni della mia esperienza lavorativa, occupandomi inizialmente della manutenzione di applicativi già in produzione al momento della mia assunzione.\nCon il tempo, ho esteso le mie competenze sviluppando nuove funzionalità e partecipando all’evoluzione dei moduli esistenti, migliorandone prestazioni e stabilità.\nQuesta esperienza mi ha permesso di approfondire la programmazione ad oggetti in ambiente .NET, l’interazione con database SQL Server e la gestione del ciclo di vita del software in contesti aziendali strutturati."
+    },
+    {
+      "id": "nodejs",
+      "name": "Node.js",
+      "type": "langauge",
+      "content": "Ho utilizzato Node.js principalmente per la scrittura di script e funzioni serverless in AWS Lambda, sfruttando la sua capacità di gestire in modo efficiente eventi e richieste asincrone.\n\nLa mia esperienza con questo linguaggio è quindi più orientata allo scripting operativo che allo sviluppo di applicazioni complete: ho scritto codice per connettermi a database, elaborare dati e integrare servizi cloud, ma non mi sono occupato di aspetti come build, dipendenze o configurazioni complesse di progetto.\n\nLe Lambda potevano essere scritte anche in Python, ma in alcuni casi si preferiva Node.js per la sua rapidità nel gestire operazioni I/O asincrone.\nAd esempio, ho realizzato una funzione che riceveva richieste API, interrogava un database DynamoDB, e restituiva i risultati in formato JSON in modo non bloccante, sfruttando le Promise e le funzioni async/await di Node.js."
+    },
+    {
+      "id": "redis",
+      "name": "Redis",
+      "type": "db_no_sql",
+      "content": "Redis è un database in-memory open-source che funziona come un data-store NoSQL.\nÈ noto per la sua velocità estremamente elevata, poiché i dati vengono memorizzati principalmente in memoria (RAM) anziché su disco.\nRedis supporta strutture dati come stringhe, liste, set, hash e bitmaps, ed è spesso utilizzato per caching, session management, real-time analytics e messaging.\n\nNel progetto 360Motion, ho usato Redis per la storicizzazione e lettura di JSON che dovevano essere letti e modificati di continuo in runtime.\nUsato, inoltre, RedisCommander come strumento per l’accesso a tale database."
+    },
+    {
+      "id": "zpl",
+      "name": "ZPL",
+      "type": "hardware",
+      "content": "Ho utilizzato lo ZPL per creare etichette stampabili tramite stampanti Zebra, consentendomi di gestire le dimensioni delle etichette e altri aspetti legati alla funzionalità. Questo linguaggio si è dimostrato particolarmente utile per le stampe via Bluetooth, riducendo il carico di dati da inviare dal dispositivo alla stampante, ottimizzando così il processo di stampa."
+    }
+  ],
+  "projects": [
+    {
+      "id": "my_portfolio",
+      "name": "My PortFolio",
+      "website": "https://paolinoangeletti.github.io/MyPortFolio",
+      "technologies": [
+        "html",
+        "css",
+        "javascript",
+        "git",
+        "react"
+      ],
+      "content": "Questa applicazione realizza un curriculum vitae navigabile, in cui ogni concetto è collegato a progetti, tecnologie, e viceversa.\nL’applicazione è stata deployata tramite GitHub Pages ed è stata realizzata utilizzando il framework React, quindi HTML, CSS e Javascript XML.\nPer il versionamento è stato utilizzato GIT.",
+      "start": "2025-10"
+    },
+    {
+      "id": "fanta_regolamento",
+      "name": "FantaRegolamento",
+      "website": "https://paolinoangeletti.github.io/fantaregolamento",
+      "technologies": [
+        "html",
+        "css",
+        "git",
+        "javascript"
+      ],
+      "content": "Questo progetto nasce da un gioco condiviso con amici: il Fantacalcio.\nA partire dall’esigenza di definire un regolamento chiaro e automatizzato in grado di gestire le diverse situazioni che possono presentarsi, ho ideato e sviluppato una web application dedicata.\nL’applicazione è stata deployata tramite GitHub Pages ed è stata realizzata utilizzando HTML, CSS e JavaScript.\nIn questo progetto ho anche avuto modo di realizzare Unit testing sfruttando Jasmine.",
+      "start": "2023-08"
+    },
+    {
+      "id": "ql_mobile",
+      "name": "Quadro Luminoso - QL Mobile",
+      "company": "RFI - Ferrovie dello Stato",
+      "technologies": [
+        "android",
+        "git",
+        "swift"
+      ],
+      "content": "Progetto commissionato da Trenitalia, che aveva l’esigenza di monitorare, in maniera sicura e semplice, le varie tratte che il sistema ferroviario prevedeva.\nQuesto progetto nasce durante il periodo Covid, in cui, per sopperire all’impossibilità di lavorare in presenza in ufficio, venne ideata questa soluzione per permettere agli operatori di lavorare anche da casa.\nTutt’ora il sistema è in uso dalle stazioni di Bologna e Milano, ma col tempo la lista potrà solamente aumentare.\n\nQL Mobile è una APP che, tramite sistemi di API, comunica con i sistemi RFI per ottenere informazioni riguardo le tratte, i ritardi, le videoregistrazioni, che un qualsiasi operatore poteva interrogare per qualsiasi esigenza.\nOltre ciò, la APP implementa anche un sistema di streaming video per accedere a varie telecamere poste su una specifica tratta.\nSono previste due modalità di visualizzazione:\nModalità Image: aggiornamento a intervalli regolari configurabili, che simula un frame rate (FPS) costante.\nModalità RTSP: riproduzione diretta di flussi video in tempo reale provenienti dal server.\n\nPer ragioni di sicurezza, la APP non è pubblicata sul PlayStore ufficiale ed opera in maniera corretta solo in presenza di Rete mobile RFI sul device (SIM dedicata), cosi da controllare con facilità i dispositivi da cui la APP può funzionare.\nL’APP viene distribuita attraverso uno store interno RFI, accessibile solo a personale autorizzato.\nLa mia responsabilità includeva il build locale del progetto e la pubblicazione interna sullo store RFI (la distribuzione finale era gestita da altri team).\n\nLa APP è stata sviluppata sia per Android che per iOS, scritta in entrambi casi con linguaggio nativo Android e Swift.",
+      "start": "2021-03"
+    },
+    {
+      "id": "acquisto_merci",
+      "name": "Acquisto Merci - Creazione Ordini",
+      "company": "software_business",
+      "technologies": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "content": "Questa applicazione è stata implementata durante il mio tirocinio aziendale.\nEssa nasce dall'esigenza dei clienti finali di ordinare merce in autonomia, e quindi l'applicativo, implementato in stile Master-detail, mostrava la lista di articoli acquistabili e la gestione di un carrello finale.\nDopodiché, ad ordine completo, esso veniva esportato nel sistema SAP di riferimento.\nLe richieste verso il server SAP venivano eseguite tramite API REST.\nUtilizzato SAP WEB IDE come strumento di lavoro.",
+      "start": "2016-07"
+    },
+    {
+      "id": "movitel",
+      "name": "Movitel",
+      "company": "advise",
+      "technologies": [
+        "vb_net",
+        "javascript",
+        "sql_server"
+      ],
+      "content": "Questo piccolo progetto nasce dalla completa integrazione con i sistemi Voispeed, azienda fornitrice di centralini professionali aziendali.\nL’obiettivo di questa applicazione Desktop era quella di interfacciarsi con il sistema Voispeed in modo da replicare su schermo le funzionalità previste da un classico telefono centralino, esempio la possibilità di effettuare chiamate, inoltrare chiamate, ecc.\nLe comunicazioni con il centralino avvenivano tramite API REST.",
+      "start": "2017-02"
+    },
+    {
+      "id": "crm_o",
+      "name": "CRM-O",
+      "company": "advise",
+      "technologies": [
+        "html",
+        "css",
+        "javascript",
+        "sql_server",
+        "vb_net"
+      ],
+      "content": "CRM - O (Officina) è un software sviluppato per una delle più grandi concessionarie Peugeot e Volkswagen della Campania.\nIl software nasce come esigenza alla seguente richiesta: le due grandi multinazionali nominate sopra, richiedono con cadenza mensile un file tracciato, in formato txt, contenente l'elenco dei clienti soddisfatti e non passati in officina durante il mese corrente.\nLa soddisfazione viene stabilita tramite un colloquio telefonico che viene effettuato.\n\nDunque, il software, aveva i seguenti compiti:\n- Comunicare con i gestionali, ottenendo così i clienti da chiamare questo mese.\n- Per rendere agile la chiamata, ossia senza l'onere di dover digitare il numero da chiamare, tale software comunicava con un sistema di chiamate VoIP (www.voispeed.com), in modo che l'operatore potesse effettuare chiamate direttamente dalla pagina web.\n- Compilazione dei questionari, da effettuare, ovviamente, a chiamata conclusa col cliente (o durante).\n- Generazione del file tracciato, rispettando le regole previste, ed invio di tale file alle case madri.\n\nApplicativo scritto in .NET, e database SQL per l’archivio dei dati.",
+      "start": "2017-03"
+    },
+    {
+      "id": "apri_un_ticket",
+      "name": "ApriUnTicket",
+      "company": "advise",
+      "technologies": [
+        "html",
+        "css",
+        "javascript",
+        "sql_server",
+        "vb_net"
+      ],
+      "content": "ApriUnTicket è un CRM (Customer Relationship Management) sviluppato dapprima per uso interno aziendale, e poi venduto a clienti terzi per alcune funzionalità utili individuate in esso.\nQuesto CRM, a dispetto degli altri, è un CRM sviluppato con l'obiettivo di facilitare non solo il rapporto con la clientela e la gestione dei vari problemi informatici che ogni giorno possono venire a mostrarsi, ma è stato sviluppato con il vero scopo di aiutare i tecnici che lavorano ai problemi, e quindi vien data la possibilità di indicare metodo (Teleassistenza oppure On Side) e durata di un intervento, così da poter poi estrarre anche reportistiche utili a capire, ad esempio, il cliente più impegnativo, il cliente con meno problemi, e così via.\nAltra particolarità di questo progetto (presente però anche in altri CRM) è l'implementazione di un lettore automatico di email, cioè un utente con problema non dovrà far altro che scrivere una email ad un indirizzo specificato, e tale lettore automatico aprirà un ticket automaticamente, oppure lo aggiornerà se la email richiama un ticket già aperto in precedenza.\nIn questo modo sia gli utenti che i tecnici non dovranno mai accedere al portale web del CRM per gestire un issue (o ticket), ma potranno farlo in maniera comodissima tramite le email.\n\nL’applicativo è stato scritto tramite tecnologie .NET (ASPX nello specifico) con database SQL per la gestione dei dati.\nPer la parte di front-end invece sono stati utilizzati:\n• HTML, CSS, Javascript.\n• IDE di sviluppo: Visual studio.\n• PHP: usato per l’implementazione del lettore automatico di email.",
+      "start": "2017-04"
+    },
+    {
+      "id": "negozio_perfetto",
+      "name": "Negozio Perfetto",
+      "company": "advise",
+      "website": "https://www.negozioperfetto.it/",
+      "googlePlayStore": "https://play.google.com/store/apps/details?id=advise.magazzinoperfetto&pli=1",
+      "technologies": [
+        "android",
+        "aws",
+        "dynamo_db",
+        "gradle",
+        "java",
+        "git",
+        "my_sql",
+        "python",
+        "nodejs",
+        "zpl"
+      ],
+      "content": "NegozioPerfetto è un progetto nato dall'idea di aiutare i piccoli negozianti a contrastare le grandi multinazionali che oggi dominano il mercato.\nNegozioPerfetto è quindi un gestionale light, sviluppato per essere quanto più intuitivo e semplice possibile.\nOltre alle classiche funzioni di gestione della movimentazione di magazzino (quindi carico, scarico, trasferimenti, ecc.), l'obiettivo del progetto era quello di implementare un sito e-commerce completamente ed automaticamente integrato al gestionale, cosi da mostrare online sempre anagrafiche e stock aggiornati in tempo reale.\nAltra questione affrontata nel progetto era l'utilizzo della APP in offline: dato che, in un negozio, la connessione potrebbe essere scarsa o comunque non perfetta, il negoziante avrebbe potuto tranquillamente vendere.\nTramite poi un processo di sincronizzazione, i dati venivano sincronizzati sia in entrata che in uscita con il cloud, permettendo quindi sia un backup dei dati sia la possibilità di lavorare offline con una lista indefinita di dispositivi.\n\nIn questo progetto sono stato coinvolto nelle seguenti fasi del software:\n- Analisi\n- Design\n- Implementazione\n- Manutenzione.\n\nDi seguito, invece, le tecnologie usate:\n\nAmazon AWS Cloud\nCome detto nella descrizione del progetto, la APP prevede di lavorare in offline per poi sincronizzare le modifiche (sia in importazione che esportazione) su un server in cloud.\nÈ stato scelto AWS come piattaforma cloud, di cui sono stati utilizzati svariati servizi:\n- EC2: servizio per avere in esecuzione un server Linux.\n- Aurora DB: database relazione MySQL.\n- DynamoDB: database non relazione usato per contenere alcune informazioni particolari.\n- Lambda: servizio con cui creare delle procedure online raggiungibili tramite API. Per la scrittura di queste lambda, sono stati usati principalmente due linguaggi: Python e NodeJS.\n- API Gateway : servizio con cui creare delle API associate poi a delle funzioni lambda.\n- Cognito : servizio con cui implementare velocemente le procedure di login, recupero password e registrazione al sistema.\n- S3 : spazio di storage in cui poter salvare file.\n- Iot Core : servizio di IOT usati per richieste verticali, esempio implementazione di un Dash button con cui ordinare uno specifico articolo solamente cliccando il tasto previsto.\n\nJava (Android)\nLa APP è stata scritta utilizzando il linguaggio Android nativo, mentre come IDE è stato usato Android Studio.\nÈ stato implementato un database in locale SQLite che poi, tramite API, veniva sincronizzato con il database in cloud in MySQL.\nAltri strumenti usati durante il progetto sono stati Fabric per l’Analytics e Crashlitycs e Firebase per l’invio di notifiche push al sistema.\n\nPython, NodeJS\nLinguaggi utilizzati per scrivere le funzioni lambda necessarie al sistema.\n\nGit Hub\nÈ stato usato GitHub come piattaforma di versioning.\n\nWooCommerce\nIl sito integrato al progetto è stato creato tramite piattaforma WooCommerce, ed ovviamente sono state implementate tutte le API utili al progetto per implementare l'integrazione con il sito discussa nella descrizione del progetto.\n\nMySQL\nCome database in cloud è stato scelto una soluzione basata sul MySQL.\nNegli anni sono stati approfonditi varie tematiche relativamente al database, ossia sono state implementati trigger, stored functions, stored procedures ed indicizzazione delle tabelle più sollecitate dalle operazioni previste.\n\nZPL\nLinguaggio utilizzato per creare etichette stampabili tramite stampanti Zebra, in modo da gestire dimensione etichette ed altri aspetti connessi alla funzionalità.\nParticolarmente utile per stampe Bluetooth, in modo da alleggerire il carico da inviare da dispositivo a stampante.",
+      "start": "2018-01"
+    },
+    {
+      "id": "mbe_lab",
+      "name": "MBE LAB",
+      "company": "advise",
+      "website": "https://www.mbe.it",
+      "googlePlayStore": "https://play.google.com/store/apps/details?id=mbe.mp&hl=it",
+      "technologies": [
+        "android",
+        "aws",
+        "docker",
+        "gradle",
+        "java",
+        "git",
+        "my_sql",
+        "python",
+        "nodejs",
+        "zpl"
+      ],
+      "content": "MBE LAB è un gestionale per logistiche nato dall'interesse di Mail Boxes Etc. verso NegozioPerfetto.\nEssendo però NegozioPerfetto pensato per negozianti e più concentrato sulla vendita al banco, ecco che viene avviato questo nuovo progetto di logistica. \nSe da un lato l'infrastruttura non ha subito grosse modifiche rispetto a NegozioPerfetto (incremento del numero delle tabelle, campi diversi), la APP è stata completamente rivisitata, dato che i requisiti tra la vendita al banco e la logistica sono parecchio differenti.\nAnche sotto l'aspetto delle tecnologie il sistema non ha subito grosse modifiche.\n\nDunque, le differenze tra i due progetti sono per lo più funzionali che infrastrutturali. \nIn questo progetto ci siamo scontrati con l'enorme mole di dati che logisticamente venivano prodotto, e ciò ha comportato alcune migliorie al database ed alla APP stessa in termini di performance. \nBasti pensare che, in alcuni casi particolare, la APP ha dovuto gestire, sincronizzando automaticamente più di 50 terminali, le emissioni di circa 10.000 documenti di spedizione al giorno. \nLe funzionalità si sono poi concentrato sull'integrazione tra i sistemi da noi gestiti e quelli di MBE, implementando una lista corposa di API (lettera vettura, spedizioni, utenza) ed un sistema di SSO (single sign-on).\n\nMBE LAB è un progetto utilizzato in vari paesi del mondo, quali Italia, Germania, Inghilterra, Spagna, Polonia, Kazakistan, Panama e Francia, e la lista con il tempo potrà solamente aumentare. \nIn questo progetto sono stato coinvolto nelle seguenti fasi del software: Analisi, Design, Implementazione e manutenzione.",
+      "start": "2020-01"
+    },
+    {
+      "id": "magazzino_perfetto",
+      "name": "Magazzino Perfetto",
+      "company": "advise",
+      "website": "https://www.magazzinoperfetto.it",
+      "googlePlayStore": "https://play.google.com/store/apps/details?id=mp.mp2021",
+      "technologies": [
+        "android",
+        "aws",
+        "docker",
+        "gradle",
+        "java",
+        "git",
+        "my_sql",
+        "python",
+        "rfid",
+        "nodejs",
+        "zpl"
+      ],
+      "content": "Dopo l'esperienza fatta con MBE LAB, dunque, si arriva al lancio di un nuovo progetto: MagazzinoPerfetto. \nMagazzinoPerfetto nasce anch'esso come gestionale, ma questa volta non di negozi, non di logistiche, ma magazzini nel loro completo ciclo di vita. \nQuindi, anche in questo caso, le modifiche di infrastruttura sono ben poche (incremento del numero delle tabelle, campi diversi), ma sono maggiormente modifiche funzionali ed integrazioni verticali verso altri sistemi. \nInfatti, avendo dovuto implementare un WMS completo, ci siamo ritrovati a doverci interfacciare con molteplici sistemi di terzi parti, in base alle esigenze dei clienti. \n\nTra le principali integrazioni eseguite: \n• Integrazione con un sistema di blockchain, con cui memorizzare le transazioni della merce.\n• Implementazione della tecnologia RFID.\n• Integrazione con sistemi di contabilità.\n• Integrazione con la dogana francese.\n• Integrazione totale con Zebra, azienda di hardware di magazzino (terminali, RFID, visori).\n• Integrazione con WooCommerce per siti customizzati.\n\nIn questo progetto sono stato coinvolto nelle seguenti fasi del software: Analisi, Design, Implementazione e manutenzione.",
+      "start": "2022-01"
+    },
+    {
+      "id": "360_flow_vehicle",
+      "name": "360 Flow - Veicolo",
+      "company": "hitachi",
+      "technologies": [
+        "docker",
+        "git",
+        "mqtt",
+        "postgresql",
+        "python"
+      ],
+      "content": "360Flow è un sistema a micro servizi per il conteggio delle persone a bordo veicolo.\n\nIl sistema è stato sviluppato in Python su più moduli che comunicano tra di loro tramite algoritmo MQTT e tramite l’esterno tramite HTTP e socket.\nIl sistema si interfaccia con la sensoristica per la manipolazione dei dati di congestionamento a bordo treno, dei dati di posizionamento e dei dati di diagnostica.\nI moduli sono sviluppati per container Docker su sistema operativo Windows. Il sistema utilizza dei sistemi per difendersi da attacchi informatici. Inoltre è presente la possibilità di interfacciamento diretto con il TCMS a bordo treno tramite un modulo sviluppato in C con protocollo TRDP.\nInoltre è presente un modulo di AI per la rilevazione delle porte aperte o chiuse in caso di impossibilità di connessione con il TCMS. È stato sviluppato un proxy per consentire la connessione da parte di app terze, come ad esempio HMI per di manutenzione che permette l’invio di comandi al sistema o la lettura di dati da esso. È presente anche un database di tipo relazionale PostgreSQL il quale viene utilizzato per la configurazione dei dispositivi e per la storicizzazione dei dati. Si è dovuta gestire tutta la parte relativa alla sicurezza informatica per le comunicazioni in ingresso ed in uscita dal sistema, in particolare utilizzando certificazioni sulle comunicazioni, crittazione dei dati con chiavi simmetriche e asimmetriche e combinazioni utente password per l’autenticazione.\n\nTra i dati che la 360Flow raccoglie possiamo nominare:\n• Numero di persone entrate ed uscite ad una certa stazione per una certa porta del treno\n• Numero di persone che, durante il viaggio, ha cambiato la propria carrozza di viaggio.\n• Tipo di oggetti che occupano il treno, esempio biciclette, carrozzine, ecc.\n\n360Flow prevede software sia per la parte veicolo (treno) che per la parte di stazione.\nIn particolare, ho lavorato alla parte di veicolo, eseguendo i seguenti sviluppi:\n• Implementazione delle operazioni CRUD sul database PostgreSQL.\n• Gestione del formato JSON dei messaggi che il modulo ActionCore (proxy) doveva prevedere.\n• Gestione dell’algoritmo di crittazione che doveva essere applicato ai messaggi da pubblicare tramite MQTT.\n• Sviluppo della libreria centralizzata per il logging del sistema.\n• Sviluppo di un componente del modulo di diagnostica, il FileArchiver, utile a gestire i log creati nel punto precedente. Di fatti, il FileArchiver verifica se i log abbiano superato una certa dimensione oppure una certa data di creazione, ed in tal caso vengono archiviati ed inviati al sistema esterno centrale.\n• Sviluppo del modulo DiagnosticReporter, modulo dedicato al monitoraggio di alcuni valori del sistema centrale.\nEsempio, se la RAM della macchina a bordo treno supera alcuni limiti previsti, il sistema di controllo centrale deve essere allertato tramite messaggi HTTP e/o MQTT.",
+      "start": "2024-01"
+    },
+    {
+      "id": "tcr",
+      "name": "TCR - Test Case Runner",
+      "company": "teoresi",
+      "technologies": [
+        "python",
+        "git"
+      ],
+      "content": "Il Test Case Runner è una piattaforma generica per implementare l'automazione dei test, basata su un'applicazione web Python Django.\nLe funzionalità principali consentono di:\n• caricare una suite di test basata su un formato XML validato\n• caricare plugins su richiesta\n• memorizzare su un database SQLite le informazioni del test (ovvero test, descrizione, requisiti, report di esecuzione)\n• eseguire le fasi di prova\n• esportare documenti personalizzati in base alle informazioni archiviate nel database.\n\nL'applicazione può essere personalizzata per testare un progetto specifico. \nIl core carica automaticamente i plugins presenti in una cartella specifica.\nI plugin possono implementare le seguenti interfacce:\n• pre-esecuzione: una serie di passaggi eseguiti prima dell'esecuzione dei passaggi di test (ovvero preconfigurazione del test)\n• eseguire: una serie di passaggi di test\n• post-esecuzione: una serie di passaggi eseguiti dopo l'esecuzione dei passaggi di test (ovvero smontaggio)\n\nL'applicazione web Python Django consente di:\n• caricare una suite di test\n• creare una nuova suite di test\n• modificare una suite di test (ad esempio aggiornando titolo o descrizione, aggiungendo test case, modificando passaggi di test, …)\n• eseguire una suite di test\n• mostra la cronologia della suite di test\n• Esportare una suite di test.\n\nIn questo progetto mi sono occupato di:\n• Migrazione del progetto da Python 2.7 a Python 3.9, in cui sono stato coinvolto nel refactoring di alcune funzionalità, dato che alcune librerie usate in Python 2.7 non erano presenti per Python 3.9 oppure producevano risultati diversi. Nomino ad esempio la libreria py_spy, sostituita con py_shark per lo sniffing di pacchetti di rete UDP.\n• Integrazione del protocollo TRDP, oltre a quello già presente IPTCOM. Il TRDP (Train Real-time Data Protocol) è un protocollo di comunicazione progettato specificamente per il settore ferroviario, che permette la trasmissione di dati in tempo reale tra i vari sistemi di un treno. È stato sviluppato per soddisfare le esigenze di comunicazione affidabile e deterministica in ambienti ferroviari, dove è fondamentale avere un basso ritardo e alta disponibilità dei dati.\n• Definizione di una GUI utile alla creazione dei test XML in maniera rapida ed intuitiva.",
+      "start": "2024-04"
+    },
+    {
+      "id": "360_motion",
+      "name": "360 Motion",
+      "company": "hitachi",
+      "website": "https://www.youtube.com/watch?v=3Oe-XVIZd-I",
+      "technologies": [
+        "bean_shell",
+        "docker",
+        "doors",
+        "java",
+        "git",
+        "kafka",
+        "maven",
+        "mqtt",
+        "postgresql",
+        "spring_boot",
+        "redis"
+      ],
+      "content": "360Motion è una piattaforma pionieristica che sta trasformando la mobilità urbana consolidando i dati provenienti da diversi servizi di trasporto in una soluzione unificata. È alimentato da algoritmi avanzati di intelligenza artificiale e ML, che gli consentono di ottimizzare dinamicamente le reti di trasporto pubblico, facilitare la pianificazione degli scenari e anticipare e mitigare le interruzioni.\nIn pratica, 360Motion riunisce i dati di più servizi di trasporto (bus, metro e veicoli vari) in un'unica piattaforma unificata.\nQuesti dati vengono ricevuti ed analizzati, con lo scopo di fornire una piattaforma web che possa fornire all’utente quante più informazioni e operatività possibili.\n\n360Motion è una piattaforma indipendente dall'hardware, in grado di scalare le soluzioni di mobilità esistenti raccogliendo e acquisendo dati da qualsiasi tipo di fonte e consentendo a operatori e passeggeri di comprendere il modo ottimale di spostarsi attraverso i paesaggi urbani.\nTecnicamente, invece, 360Motion è un progetto a micro-servizi, scritti in Java (SpringBoot), Python, ed una parte front-end scritta in Angular, che viene distribuito tramite Kubernetes e pipeline DevOps.\n\nIn questa mia esperienza come consulente, le attività di cui mi sono occupato sono:\n• Implementazione di Integration-test per controller Spring che ne erano sprovvisti, con JUnit.\n• Incremento della code coverage del codice.\n• Integrazione di Swagger nei controller previsti.\n• Verifica ed eventuale fix per work-item rilevati dal team di V&V (Verification & Validation), tramite software JMeter e linguaggio BeanShell.\n• Refactoring di un SDK interno utile alla gestione delle proprietà che i singoli componenti potevano richiedere al database\n• Implementazione della libreria Test Core, utilizzata come framework per la scrittura di test di integrazione. Questa libreria mette a disposizione vari connettori (database, Redis, Kafka, ecc.) e gestisce, tramite il file application. properties, l'accesso a tali connettori tramite test container o tramite l'ambiente reale locale. I connettori vengono implementati utilizzando il Factory pattern, garantendo così una facile aggiunta di nuovi elementi.\n• Implementazione di un nuovo servizio Java, platform-integration-test, che, tramite la libreria Test Core, contiene una serie di test di integrazione per verificare il comportamento dei vari microservizi rilasciati. Questo strumento è stato impostato in modo da eseguire, ogni notte, una suite di test di integrazione definiti tramite JSON, in modo da verificare, ogni giorno, l’impatto di nuovi sviluppi o modifiche all’ambiente sulla stabilità del software.\n\nNel contesto di IntelliJ, sono stati usati i seguenti plugins:\n• Lombok, usato per importare annotazioni e ridurre il codice scritto.\n• SonarLint, utile a rilevare eventuali problemi del codice.",
+      "start": "2025-05"
+    },
+    {
+      "id": "hmax",
+      "name": "HMAX",
+      "company": "hitachi",
+      "website": "https://www.hitachirail.com/products-and-solutions/digital-asset-management/",
+      "technologies": [
+        "airflow",
+        "java",
+        "kafka",
+        "git",
+        "postgresql",
+        "python",
+        "kubernetes",
+        "spring_boot",
+        "ssh"
+      ],
+      "content": "HMAX è una piattaforma di gestione digitale delle risorse di Hitachi Rail. \nHMAX consente di prevedere i problemi, ottimizzare la rete e trasformare le operazioni, su flotte di treni, sistemi di segnalamento e infrastrutture.\n\nIn questo immenso progetto, ho contributo allo sviluppo di una piattaforma Energy Management System (enMS) per la raccolta e l’analisi di dati di consumo energetico e idrico, con generazione di KPI energetici conformi allo standard ISO 50001.\n\nResponsabile del coordinamento tecnico tra team internazionali (Hitachi Digital Vietnam) e della traduzione dei requisiti funzionali in specifiche architetturali e tecniche per l’implementazione.\n\nDefinizione e supervisione dell’implementazione di un’architettura data-driven capace di gestire ingestione dati sia real-time che batch, pipeline di elaborazione dei dati e calcolo dei KPI energetici.\n\nL’infrastruttura di sviluppo e deploy era basata su ambienti virtualizzati accessibili via SSH, con pipeline di sviluppo e integrazione continua.",
+      "start": "2026-09"
+    }
+  ],
+  "companies": [
+    {
+      "id": "software_business",
+      "name": "Software Business S.R.L.",
+      "start": "Marzo 2016",
+      "end": "Agosto 2016",
+      "city": "Mugnano del Cardinale (AV)",
+      "website": "https://www.softwarebusiness.it",
+      "content": "Questa esperienza è nata come opportunità di tirocinio messa a disposizione dall’università.\nIl mio obiettivo finale era il rilascio di una piattaforma web user-friendly avente lo scopo di creare ordini clienti in SAP.\nTale applicativo doveva essere utilizzato dagli stessi customer finali, che quindi potevano ordinare merce autonomamente, stile e-commerce."
+    },
+    {
+      "id": "advise",
+      "name": "Advise S.R.L.",
+      "start": "Giugno 2016",
+      "end": "Gennaio 2024",
+      "city": "Mugnano del Cardinale (AV)",
+      "website": "https://www.advise.it",
+      "content": "La mia esperienza in questa azienda si può suddividere in due fasi:\nAll’inizio, le prime attività riguardavano la manutenzione degli applicativi già in produzione, scritti prevalentemente con tecnologia .NET e database SQL o MySQL.\nIn questa fase mi sono occupato sia dello sviluppo Back-End che Front-End, con l’ausilio delle classiche tecnologie HTML, CSS e Javascript. Nessun framework in particolare è stato utilizzato.\nDopo circa un anno dalla mia assunzione, sono stati avviati alcuni progetti per lo sviluppo di APP, nello specifico Android e Gestionali di magazzino (ambito logistico), di cui sono diventato, col tempo, Project Manager. I progetti vengono descritti più ampiamente nella sezione dedicata.\nQueste APP sono state sviluppate, quindi, con l’utilizzo del framework Android e l’integrazione di alcuni servizi AWS."
+    },
+    {
+      "id": "teoresi",
+      "name": "Teoresi Group S.P.A.",
+      "start": "Gennaio 2024",
+      "end": "Febbraio 2026",
+      "city": "Napoli, via Ferrante Imparato",
+      "website": "https://www.teoresigroup.it",
+      "content": "Teoresi è una multi-nazionale in ambito di consulenza ingegneristica. Come tale, sono stato assegnato, nel tempo, a diversi progetti per diversi clienti finali, di cui parlo nei paragrafi successivi.\nIn questo periodo ho vissuto politiche di smart-working ibrido, alternando così giornate in presenza (sia in sede Teoresi che sede cliente) con giornate di smart."
+    },
+    {
+      "id": "hitachi",
+      "name": "Hitachi Rail STS S.P.A.",
+      "start": "Gennaio 2024",
+      "end": "Febbraio 2026",
+      "city": "Napoli, via Argine",
+      "website": "https://www.hitachirail.com",
+      "content": "Ho lavorato presso Hitachi come consulente Teoresi, in svariati progetti.\nIn particolare, ho lavorato al progetto 360Flow, lato veicolo, per la manutenzione dei moduli già implementati oltre allo sviluppo di nuove librerie e moduli software.\nIn Giugno 2024, sono stato invece assegnato al progetto 360Motion, terminato invece verso Settembre 2025, dato che in questo periodo sono stato assegnato al progetto HMAX.\nPer un approfondimento dei progetti e delle tecnologie coinvolte, si può far riferimento alle apposite sezioni."
+    }
+  ]
+}
