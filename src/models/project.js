@@ -37,12 +37,12 @@ export class Project {
         return this.company.name;
     }
 
+    hasWebsite() {
+        return this.retrieveWebSite() != null;
+    }
+
     retrieveWebSite() {
-        var result = this.projectWebSite;
-        if (!result && this.company) {
-            result = this.company.webSite;
-        }
-        return result;
+        return this.projectWebSite;
     }
 
     getTechnologies() {

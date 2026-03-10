@@ -26,22 +26,27 @@ export default function Projects() {
                             </div>
                         )}
 
-                        <div className="detail_title">
-                            <h3>🌐 Sito Web</h3>
-                            <p className="information">
-                                <a href={project.retrieveWebSite()} target="_blank" >
-                                    {project.retrieveWebSite()}
-                                </a>
-                            </p>
+                        {(project.hasWebsite() || project.hasGooglePlayStoreUrl()) && (
+                            <div className="detail_title">
+                                <h3>🌐 Sito Web</h3>
 
-                            {project.hasGooglePlayStoreUrl() && (
-                                <p className="information">
-                                    <a href={project.googlePlayStore} target="_blank" >
-                                        Pagina Google Play Store
-                                    </a>
-                                </p>
-                            )}
-                        </div>
+                                {project.hasWebsite() && (
+                                    <p className="information">
+                                        <a href={project.retrieveWebSite()} target="_blank">
+                                            {project.retrieveWebSite()}
+                                        </a>
+                                    </p>
+                                )}
+
+                                {project.hasGooglePlayStoreUrl() && (
+                                    <p className="information">
+                                        <a href={project.googlePlayStore} target="_blank">
+                                            Pagina Google Play Store
+                                        </a>
+                                    </p>
+                                )}
+                            </div>
+                        )}
 
                         <p className="information">{project.content}</p>
 
