@@ -44,7 +44,7 @@ class PortfolioRepository {
 
   buildProjects() {
     data.projects.forEach(p => {
-      const project = new Project(p.name, p.website, p.content);
+      const project = new Project(p);
 
       // mapping project with company.
       if (p.company) {
@@ -53,7 +53,7 @@ class PortfolioRepository {
           project.setCompany(projectCompany);
           projectCompany.addProject(project);
         } else {
-          // companies over experiences branch. 
+          // companies over experiences. 
           // This companies will be managed as freelance companies.
           const otherCompany = new Company({ "name": p.company });
           otherCompany.setIfFreelance(true);

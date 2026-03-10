@@ -1,9 +1,10 @@
 export class Project {
 
-    constructor(name, projectWebSite, content) {
-        this.name = name;
-        this.content = content;
-        this.projectWebSite = projectWebSite;
+    constructor(json) {
+        this.name = json.name;
+        this.content = json.content;
+        this.projectWebSite = json.website;
+        this.googlePlayStore = json.googlePlayStore;
         this.technologies = [];
     }
 
