@@ -127,8 +127,20 @@ class PortfolioRepository {
       .filter(group => group.technologies.length > 0);
   }
 
-  getCompanies() {
-    return [...this.companies.values()];
+  /**
+   * Returns the list of companies, optionally filtered by the presence of a parent company.
+   * @param {boolean|null} [parent=null] - Optional filter for parent relationship:
+   *  - `null` → return all companies
+   *  - `true` → return only companies that have a parent
+   *  - `false` → return only companies without a parent
+   * @returns {Array<Object>} An array containing the companies that match the filter criteria. 
+   */
+  getCompanies(parent = null) {
+    const companies = [...this.companies.values()];
+    if (parent === null) {
+      return companies;
+    }
+    return companies.filter(company => parent ? company.parent != null : company.parent == null);
   }
 
 }
