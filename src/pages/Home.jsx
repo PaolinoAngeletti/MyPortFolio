@@ -4,8 +4,10 @@ import { portfolioRepository } from '../repository/portfolioRepository';
 export default function Home() {
 
     const emailAddress = "paolinoangeletti@gmail.com";
-    const technologiesList = portfolioRepository.getTechnologiesGroupedByType();
     const linkedinUrl = "https://www.linkedin.com/in/paolino-angeletti-64484211b";
+
+    const companiesList = portfolioRepository.getCompanies(false);
+    const technologiesList = portfolioRepository.getTechnologiesGroupedByType();
 
     return (
         <div>
@@ -71,65 +73,23 @@ export default function Home() {
 
             <h2>Esperienze professionali</h2>
 
-            <div className="detail_title">
-                <h3>Teoresi Group S.p.A. (Consultant @ Hitachi Rail)</h3>
-                <p className="information">Napoli • Giugno 2024 - presente</p>
-                <ul>
-                    <li>
-                        Progetti: 360Motion, 360FlowVehicle (ambito Railway)
-                    </li>
-                    <li>
-                        Sviluppo microservizi in Java Spring Boot e Python.
-                    </li>
-                    <li>
-                        Utilizzo avanzato di: Docker, Kafka, Keycloak, Redis, PostgreSQL, AKHQ, JMeter, SonarQube, Test Containers
-                    </li>
-                    <li>
-                        Progettazione e refactoring SDK e librerie interne
-                    </li>
-                    <li>
-                        Gestione test di integrazione tramite libreria proprietaria Test Core
-                    </li>
-                    <li>
-                        Protocolli: HTTP, MQTT
-                    </li>
-                    <li>
-                        Sicurezza: Crittografia, Keycloak, JWT
-                    </li>
-                </ul>
-            </div>
+            {companiesList.map((company) => (
+                <div key={company.name} className="detail_title">
+                    <h3>{company.name}</h3>
+                    <p className="information">
+                        {company.location} • {company.start} - {company.end}
+                    </p>
 
-            <div className="detail_title">
-                <h3>Advise S.R.L.</h3>
-                <p className="information">Mugnano del Cardinale (AV) • Giugno 2016 - Gennaio 2024</p>
-                <ul>
-                    <li>
-                        Progetti Android (Java) & Back end (Node.js, Python)
-                    </li>
-                    <li>
-                        Project Manager su vari gestionali (NegozioPerfetto, MBE LAB, MagazzinoPerfetto)
-                    </li>
-                    <li>
-                        Integrazione con AWS, RFID, Blockchain, WooCommerce
-                    </li>
-                    <li>
-                        Realizzazione APP offline-first sincronizzate con MySQL/DynamoDB
-                    </li>
-                    <li>
-                        API REST, notifiche push (Firebase), stampa Bluetooth (ZPL)
-                    </li>
-                </ul>
-            </div>
+                    {company.activities && company.activities.length > 0 && (
+                        <ul>
+                            {company.activities.map((activity, index) => (
+                                <li key={index}>{activity}</li>
+                            ))}
+                        </ul>
+                    )}
 
-            <div className="detail_title">
-                <h3>Software Business S.R.L.</h3>
-                <p className="information">Mugnano del Cardinale (AV) • Tirocinio universitario • Marzo 2016 - Agosto 2016</p>
-                <ul>
-                    <li>
-                        Progettazione e rilascio piattaforma ordini B2B integrata SAP
-                    </li>
-                </ul>
-            </div>
+                </div>
+            ))}
 
             <h2>Competenze tecniche</h2>
 

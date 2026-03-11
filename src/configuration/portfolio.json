@@ -449,7 +449,11 @@
       "end": "Agosto 2016",
       "city": "Mugnano del Cardinale (AV)",
       "website": "https://www.softwarebusiness.it",
-      "content": "Questa esperienza è nata come opportunità di tirocinio messa a disposizione dall’università.\nIl mio obiettivo finale era il rilascio di una piattaforma web user-friendly avente lo scopo di creare ordini clienti in SAP.\nTale applicativo doveva essere utilizzato dagli stessi customer finali, che quindi potevano ordinare merce autonomamente, stile e-commerce."
+      "content": "Questa esperienza è nata come opportunità di tirocinio messa a disposizione dall’università.\nIl mio obiettivo finale era il rilascio di una piattaforma web user-friendly avente lo scopo di creare ordini clienti in SAP.\nTale applicativo doveva essere utilizzato dagli stessi customer finali, che quindi potevano ordinare merce autonomamente, stile e-commerce.",
+      "activities": [
+        "Tirocinio universitario",
+        "Progettazione e rilascio piattaforma ordini B2B integrata SAP"
+      ]
     },
     {
       "id": "advise",
@@ -458,7 +462,14 @@
       "end": "Gennaio 2024",
       "city": "Mugnano del Cardinale (AV)",
       "website": "https://www.advise.it",
-      "content": "La mia esperienza in questa azienda si può suddividere in due fasi:\nAll’inizio, le prime attività riguardavano la manutenzione degli applicativi già in produzione, scritti prevalentemente con tecnologia .NET e database SQL o MySQL.\nIn questa fase mi sono occupato sia dello sviluppo Back-End che Front-End, con l’ausilio delle classiche tecnologie HTML, CSS e Javascript. Nessun framework in particolare è stato utilizzato.\nDopo circa un anno dalla mia assunzione, sono stati avviati alcuni progetti per lo sviluppo di APP, nello specifico Android e Gestionali di magazzino (ambito logistico), di cui sono diventato, col tempo, Project Manager. I progetti vengono descritti più ampiamente nella sezione dedicata.\nQueste APP sono state sviluppate, quindi, con l’utilizzo del framework Android e l’integrazione di alcuni servizi AWS."
+      "content": "La mia esperienza in questa azienda si può suddividere in due fasi:\nAll’inizio, le prime attività riguardavano la manutenzione degli applicativi già in produzione, scritti prevalentemente con tecnologia .NET e database SQL o MySQL.\nIn questa fase mi sono occupato sia dello sviluppo Back-End che Front-End, con l’ausilio delle classiche tecnologie HTML, CSS e Javascript. Nessun framework in particolare è stato utilizzato.\nDopo circa un anno dalla mia assunzione, sono stati avviati alcuni progetti per lo sviluppo di APP, nello specifico Android e Gestionali di magazzino (ambito logistico), di cui sono diventato, col tempo, Project Manager. I progetti vengono descritti più ampiamente nella sezione dedicata.\nQueste APP sono state sviluppate, quindi, con l’utilizzo del framework Android e l’integrazione di alcuni servizi AWS.",
+      "activities": [
+        "Progetti Android (Java) & Back end (Node.js, Python)",
+        "Project Manager su vari gestionali (NegozioPerfetto, MBE LAB, MagazzinoPerfetto)",
+        "Integrazione con AWS, RFID, Blockchain, WooCommerce",
+        "Realizzazione APP offline-first sincronizzate con MySQL/DynamoDB",
+        "API REST, notifiche push (Firebase), stampa Bluetooth (ZPL)"
+      ]
     },
     {
       "id": "teoresi",
@@ -467,10 +478,21 @@
       "end": "Febbraio 2026",
       "city": "Napoli, via Ferrante Imparato",
       "website": "https://www.teoresigroup.it",
-      "content": "Teoresi è una multi-nazionale in ambito di consulenza ingegneristica. Come tale, sono stato assegnato, nel tempo, a diversi progetti per diversi clienti finali, di cui parlo nei paragrafi successivi.\nIn questo periodo ho vissuto politiche di smart-working ibrido, alternando così giornate in presenza (sia in sede Teoresi che sede cliente) con giornate di smart."
+      "content": "Teoresi è una multi-nazionale in ambito di consulenza ingegneristica. Come tale, sono stato assegnato, nel tempo, a diversi progetti per diversi clienti finali, di cui parlo nei paragrafi successivi.\nIn questo periodo ho vissuto politiche di smart-working ibrido, alternando così giornate in presenza (sia in sede Teoresi che sede cliente) con giornate di smart.",
+      "activities": [
+        "Cliente: Hitachi Rail STS S.P.A.",
+        "Progetti: 360Motion, 360FlowVehicle (ambito Railway)",
+        "Sviluppo microservizi in Java Spring Boot e Python",
+        "Utilizzo avanzato di: Docker, Kafka, Keycloak, Redis, PostgreSQL, AKHQ, JMeter, SonarQube, Test Containers",
+        "Progettazione e refactoring SDK e librerie interne",
+        "Gestione test di integrazione tramite libreria proprietaria Test Core",
+        "Protocolli: HTTP, MQTT",
+        "Sicurezza: Crittografia, Keycloak, JWT"
+      ]
     },
     {
       "id": "hitachi",
+      "parent": "teoresi",
       "name": "Hitachi Rail STS S.P.A.",
       "start": "Gennaio 2024",
       "end": "Febbraio 2026",

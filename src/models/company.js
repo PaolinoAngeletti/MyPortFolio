@@ -9,6 +9,8 @@ export class Company {
         this.location = jsonCompany.city;
         this.webSite = jsonCompany.website;
         this.content = jsonCompany.content;
+        this.activities = jsonCompany.activities;
+        this.parent = jsonCompany.parent;
         this.freelance = false;
         this.projects = [];
     }
