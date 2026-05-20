@@ -13,7 +13,7 @@ I took this opportunity to implement my first React project.
 
 `npm run build`
 
-### Build project for Git Hub Pages site
+### Build project for GitHub Pages site
 
 This project is available at this link: 
 https://paolinoangeletti.github.io/MyPortFolio/
