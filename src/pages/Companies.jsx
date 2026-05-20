@@ -25,10 +25,12 @@ export default function Companies() {
                         <p className="information">{company.end}</p>
                     </div>
 
-                    <div className="detail_title">
-                        <h3>📍 Luogo</h3>
-                        <p className="information">{company.location}</p>
-                    </div>
+                    {company.location && (
+                        <div className="detail_title">
+                            <h3>📍 Luogo</h3>
+                            <p className="information">{company.location}</p>
+                        </div>
+                    )}
 
                     <div className="detail_title">
                         <h3>🌐 Sito Web</h3>
