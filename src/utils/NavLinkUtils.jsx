@@ -21,7 +21,7 @@ export default function buildNavLink(linkTitle, linkPath, callback) {
  * and a list of links pointing to a specified page.
  *
  * Example output:
- * Technologies (3): React, NodeJS, PostgreSQL
+ * Technologies (3): React, Node.js, PostgreSQL
  *
  * @component
  * @param {Object} props - Component properties.

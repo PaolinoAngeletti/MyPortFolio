@@ -90,7 +90,7 @@
       "id": "docker",
       "name": "Docker",
       "type": "container",
-      "content": "Nella mia esperienza ho lavorato in maniera massiccia con Docker, utilizzando questa tecnologia in due modalità principali:\n\n1. Sviluppo di app mobile con integrazione AWS: ho utilizzato Docker per creare container a partire da script sviluppati in PHP.\nLe immagini generate venivano poi caricate su AWS tramite il servizio AWS Batch, utilizzato per eseguire job schedulati e non, consentendo di processare operazioni anche di lunga durata, che potevano richiedere diverse ore.\n\n2. Progetti Hitachi 360Flow e 360Motion: ho impiegato Docker nella sua funzione principale, ossia la containerizzazione di servizi Java, permettendone l’esecuzione sia in locale sia in ambiente di produzione tramite Kubernetes.\nIn questo contesto ho utilizzato Docker Compose per buildare e orchestrare i vari container in maniera efficiente."
+      "content": "Nella mia esperienza ho lavorato in maniera massiccia con Docker, utilizzando questa tecnologia in due modalità principali:\n\n1. Sviluppo di app mobile con integrazione AWS: ho utilizzato Docker per creare container a partire da script sviluppati in PHP.\nLe immagini generate venivano poi caricate su AWS tramite il servizio AWS Batch, utilizzato per eseguire job schedulati e non, consentendo di processare operazioni anche di lunga durata, che potevano richiedere diverse ore.\n\n2. Progetti a micro-servizi: ho impiegato Docker nella sua funzione principale, ossia la containerizzazione di servizi Java, permettendone l’esecuzione sia in locale sia in ambiente di produzione tramite Kubernetes. In questo contesto ho anche utilizzato Docker Compose per buildare e orchestrare i vari container in maniera efficiente."
     },
     {
       "id": "doors",
@@ -132,7 +132,7 @@
       "id": "kafka",
       "name": "Apache Kafka",
       "type": "broker",
-      "content": "Ho utilizzato Apache Kafka nel progetto 360Motion per distribuire messaggi tra i diversi consumer dello streaming interno.\nPer la gestione e il monitoraggio dei topic e dei messaggi in circolazione, ho utilizzato AKHQ, che ha permesso di leggere e analizzare facilmente i flussi di dati all’interno della piattaforma Kafka.\n\nNel progetto HMAX, Apache Kafka è stato utilizzato come data ingestion layer per i dati energetici in real-time, consentendo la gestione di flussi ad alta frequenza con migliaia di messaggi al secondo."
+      "content": "Ho utilizzato Apache Kafka nei progetti 360Motion, Sisal Community per distribuire messaggi tra i diversi consumer dello streaming interno.\nPer la gestione e il monitoraggio dei topic e dei messaggi in circolazione, ho utilizzato AKHQ, che ha permesso di leggere e analizzare facilmente i flussi di dati all’interno della piattaforma Kafka.\nCol tempo ho avuto modo anche di utilizzare altre UI dedicate a Kafka, altre commerciali altre open source.\n\nNel progetto HMAX, Apache Kafka è stato utilizzato come data ingestion layer per i dati energetici in real-time, consentendo la gestione di flussi ad alta frequenza con migliaia di messaggi al secondo.\nNel progetto Sisal Community ho utilizzato i file Avro (avsc) come schema per validare messaggi in ingresso in formato binario.\n"
     },
     {
       "id": "maven",
@@ -150,7 +150,7 @@
       "id": "my_sql",
       "name": "MySQL",
       "type": "db_sql",
-      "content": "Database usato nei progetti NegozioPerfetto, MagazzinoPerfetto e MBE LAB come database in cloud per la storicizzazione di dati provenienti dalle APP Android.\nGli strumenti utilizzati sono stati:\n• Trigger\n• Stored function\n• Stored procedure\n• Indici\n\nNel progetto MagazzinoPerfetto, sono stati implementati trigger che invocavano chiamate API che a loro volta invocavano procedure lambda in AWS, per rendere disponibili web hook utili all’utente finale.\nQuesta soluzione ha consentito l'integrazione fluida con altre applicazioni e sistemi esterni, garantendo una gestione efficiente delle notifiche e degli aggiornamenti in tempo reale all'interno del magazzino."
+      "content": "Database usato nei progetti NegozioPerfetto, MagazzinoPerfetto e MBE LAB come database in cloud per la storicizzazione di dati provenienti dalle APP Android.\nGli strumenti utilizzati sono stati:\n• Trigger\n• Stored function\n• Stored procedure\n• Indici\n\nNel progetto MagazzinoPerfetto, sono stati implementati trigger che invocavano chiamate API che a loro volta invocavano procedure lambda in AWS, per rendere disponibili web hook utili all’utente finale.\nQuesta soluzione ha consentito l'integrazione fluida con altre applicazioni e sistemi esterni, garantendo una gestione efficiente delle notifiche e degli aggiornamenti in tempo reale all'interno del magazzino.\nSuccessivamente, ho utilizzato MySQL anche nel progetto Sisal Community, in cui le iterazioni (persistenza e lettura) venivano gestite tramite Hibernate."
     },
     {
       "id": "postgresql",
@@ -168,13 +168,13 @@
       "id": "rfid",
       "name": "RFID",
       "type": "hardware",
-      "content": "Nel contesto del progetto MagazzinoPerfetto, ho applicato la tecnologia RFID per facilitare il tracciamento dell'entrata e dell'uscita della merce, nonché per semplificare le attività di inventario e il controllo dello stock in magazzino.\nIn particolare, abbiamo utilizzato l'area di memoria EPC per memorizzare i dati univoci degli articoli, mentre il TID è stato sfruttato per monitorare il numero di rilevazioni dell'EPC specifico durante la lettura RFID.\nL’integrazione RFID con l’APP è stata eseguita tramite SDK di Zebra."
+      "content": "Nel contesto del progetto MagazzinoPerfetto, ho applicato la tecnologia RFID per facilitare il tracciamento dell'entrata e dell'uscita della merce, nonché per semplificare le attività di inventario e il controllo dello stock in magazzino.\nIn particolare, abbiamo utilizzato l'area di memoria EPC per memorizzare i dati univoci degli articoli, mentre il TID è stato sfruttato per monitorare il numero di rilevazioni dello EPC specifico durante la lettura RFID.\nL’integrazione RFID con la APP è stata eseguita tramite SDK di Zebra."
     },
     {
       "id": "spring_boot",
       "name": "Spring Boot",
       "type": "framework",
-      "content": "Durante lo sviluppo del progetto 360Motion, ho contribuito alla realizzazione di un sistema basato su Spring Boot e architettura a microservizi, dove ciascun servizio era indipendente e comunicava con gli altri tramite Kafka.\nHo curato la definizione delle API REST, la gestione del data layer tramite Spring Data JPA e Hibernate, e la configurazione dei database PostgreSQL e Redis per la memorizzazione dei dati.\nL’intero progetto è stato gestito e costruito con Maven, assicurando una solida integrazione tra i vari componenti.\n\nNel progetto HMAX, Spring Framework è stato utilizzato per sviluppare una dashboard web finalizzata alla visualizzazione e gestione dei KPI energetici prodotti dal sistema Lumada."
+      "content": "Durante lo sviluppo dei progetti 360Motion e Sisal Community ho contribuito alla realizzazione di un sistema basato su Spring Boot e architettura a microservizi, dove ciascun servizio era indipendente e comunicava con gli altri tramite Kafka.\nHo curato la definizione delle API REST, la gestione del data layer tramite Spring Data JPA e Hibernate, e la configurazione dei database PostgreSQL e Redis per la memorizzazione dei dati.\nL’intero progetto è stato gestito e costruito con Maven, assicurando una solida integrazione tra i vari componenti.\n\nNel progetto HMAX, Spring Framework è stato utilizzato per sviluppare una dashboard web finalizzata alla visualizzazione e gestione dei KPI energetici prodotti dal sistema Lumada."
     },
     {
       "id": "sql_server",
@@ -192,7 +192,7 @@
       "id": "swift",
       "name": "Swift",
       "type": "language",
-      "content": "Ho utilizzato il linguaggio Swift per lo sviluppo dell’app mobile QL-Mobile.\nSi tratta dell’unico progetto in cui ho impiegato questo linguaggio, ma l’esperienza mi ha permesso di acquisire familiarità sia con Swift sia con l’IDE Xcode di Apple.\nHo approfondito le best practice di sviluppo iOS, realizzando un’interfaccia fluida e funzionale, integrando API esterne e gestendo un database locale per la memorizzazione di dati persistenti, come le impostazioni utente."
+      "content": "Ho utilizzato il linguaggio Swift per lo sviluppo dell’app mobile QL-Mobile.\nSi tratta dell’unico progetto in cui ho impiegato questo linguaggio, ma l’esperienza mi ha permesso di acquisire familiarità sia con Swift sia con IDE Xcode di Apple.\nHo approfondito le best practice di sviluppo iOS, realizzando un’interfaccia fluida e funzionale, integrando API esterne e gestendo un database locale per la memorizzazione di dati persistenti, come le impostazioni utente."
     },
     {
       "id": "vb_net",
@@ -203,14 +203,14 @@
     {
       "id": "nodejs",
       "name": "Node.js",
-      "type": "langauge",
+      "type": "language",
       "content": "Ho utilizzato Node.js principalmente per la scrittura di script e funzioni serverless in AWS Lambda, sfruttando la sua capacità di gestire in modo efficiente eventi e richieste asincrone.\n\nLa mia esperienza con questo linguaggio è quindi più orientata allo scripting operativo che allo sviluppo di applicazioni complete: ho scritto codice per connettermi a database, elaborare dati e integrare servizi cloud, ma non mi sono occupato di aspetti come build, dipendenze o configurazioni complesse di progetto.\n\nLe Lambda potevano essere scritte anche in Python, ma in alcuni casi si preferiva Node.js per la sua rapidità nel gestire operazioni I/O asincrone.\nAd esempio, ho realizzato una funzione che riceveva richieste API, interrogava un database DynamoDB, e restituiva i risultati in formato JSON in modo non bloccante, sfruttando le Promise e le funzioni async/await di Node.js."
     },
     {
       "id": "redis",
       "name": "Redis",
       "type": "db_no_sql",
-      "content": "Redis è un database in-memory open-source che funziona come un data-store NoSQL.\nÈ noto per la sua velocità estremamente elevata, poiché i dati vengono memorizzati principalmente in memoria (RAM) anziché su disco.\nRedis supporta strutture dati come stringhe, liste, set, hash e bitmaps, ed è spesso utilizzato per caching, session management, real-time analytics e messaging.\n\nNel progetto 360Motion, ho usato Redis per la storicizzazione e lettura di JSON che dovevano essere letti e modificati di continuo in runtime.\nUsato, inoltre, RedisCommander come strumento per l’accesso a tale database."
+      "content": "Redis è un database in-memory open-source che funziona come un data-store NoSQL.\nÈ noto per la sua velocità estremamente elevata, poiché i dati vengono memorizzati principalmente in memoria (RAM) anziché su disco.\nRedis supporta strutture dati come stringhe, liste, set, hash e bitmaps, ed è spesso utilizzato per caching, session management, real-time analytics e messaging.\n\nNel progetto 360Motion, ho usato Redis per la storicizzazione e lettura di JSON che dovevano essere letti e modificati di continuo in runtime.\nUsato, inoltre, RedisCommander come strumento per l’accesso a tale database.\n\nNel 2026 ho utilizzato Redis nel progetto Sisal Community, usato per evitare alcune lettura dal database principale, cachando quindi alcune entità che potevano non cambiare nel tempo. In questo progetto, inoltre, Redis è stato anche utilizzato per implementare la funzionalità di match making, ossia la funzione di suggerimento di contatti simili ai vari utenti. In questo contesto, è stato utilizzato Redis Stack, in modo da ottimizzare performance su grandi volumi di dati."
     },
     {
       "id": "zpl",
@@ -244,7 +244,7 @@
         "git",
         "javascript"
       ],
-      "content": "Questo progetto nasce da un gioco condiviso con amici: il Fantacalcio.\nA partire dall’esigenza di definire un regolamento chiaro e automatizzato in grado di gestire le diverse situazioni che possono presentarsi, ho ideato e sviluppato una web application dedicata.\nL’applicazione è stata deployata tramite GitHub Pages ed è stata realizzata utilizzando HTML, CSS e JavaScript.\nIn questo progetto ho anche avuto modo di realizzare Unit testing sfruttando Jasmine.",
+      "content": "Questo progetto nasce da un gioco condiviso con amici: il Fantacalcio.\nA partire dall’esigenza di definire un regolamento chiaro e automatizzato in grado di gestire le diverse situazioni che possono presentarsi, ho ideato e sviluppato una web application dedicata.\nL’applicazione è stata rilasciata tramite GitHub Pages ed è stata realizzata utilizzando HTML, CSS e JavaScript.\nIn questo progetto ho anche avuto modo di realizzare Unit testing sfruttando Jasmine.",
       "start": "2023-08"
     },
     {
@@ -308,7 +308,7 @@
         "sql_server",
         "vb_net"
       ],
-      "content": "ApriUnTicket è un CRM (Customer Relationship Management) sviluppato dapprima per uso interno aziendale, e poi venduto a clienti terzi per alcune funzionalità utili individuate in esso.\nQuesto CRM, a dispetto degli altri, è un CRM sviluppato con l'obiettivo di facilitare non solo il rapporto con la clientela e la gestione dei vari problemi informatici che ogni giorno possono venire a mostrarsi, ma è stato sviluppato con il vero scopo di aiutare i tecnici che lavorano ai problemi, e quindi vien data la possibilità di indicare metodo (Teleassistenza oppure On Side) e durata di un intervento, così da poter poi estrarre anche reportistiche utili a capire, ad esempio, il cliente più impegnativo, il cliente con meno problemi, e così via.\nAltra particolarità di questo progetto (presente però anche in altri CRM) è l'implementazione di un lettore automatico di email, cioè un utente con problema non dovrà far altro che scrivere una email ad un indirizzo specificato, e tale lettore automatico aprirà un ticket automaticamente, oppure lo aggiornerà se la email richiama un ticket già aperto in precedenza.\nIn questo modo sia gli utenti che i tecnici non dovranno mai accedere al portale web del CRM per gestire un issue (o ticket), ma potranno farlo in maniera comodissima tramite le email.\n\nL’applicativo è stato scritto tramite tecnologie .NET (ASPX nello specifico) con database SQL per la gestione dei dati.\nPer la parte di front-end invece sono stati utilizzati:\n• HTML, CSS, Javascript.\n• IDE di sviluppo: Visual studio.\n• PHP: usato per l’implementazione del lettore automatico di email.",
+      "content": "ApriUnTicket è un CRM (Customer Relationship Management) sviluppato dapprima per uso interno aziendale, e poi venduto a clienti terzi per alcune funzionalità utili individuate in esso.\nQuesto CRM, a dispetto degli altri, è un CRM sviluppato con l'obiettivo di facilitare non solo il rapporto con la clientela e la gestione dei vari problemi informatici che ogni giorno possono venire a mostrarsi, ma è stato sviluppato con il vero scopo di aiutare i tecnici che lavorano ai problemi, e quindi vien data la possibilità di indicare metodo (Teleassistenza oppure On Side) e durata di un intervento, così da poter poi estrarre anche report utili a capire, ad esempio, il cliente più impegnativo, il cliente con meno problemi, e così via.\nAltra particolarità di questo progetto (presente però anche in altri CRM) è l'implementazione di un lettore automatico di email, cioè un utente con problema non dovrà far altro che scrivere una email ad un indirizzo specificato, e tale lettore automatico aprirà un ticket automaticamente, oppure lo aggiornerà se la email richiama un ticket già aperto in precedenza.\nIn questo modo sia gli utenti che i tecnici non dovranno mai accedere al portale web del CRM per gestire un issue (o ticket), ma potranno farlo in maniera comodissima tramite le email.\n\nL’applicativo è stato scritto tramite tecnologie .NET (ASPX nello specifico) con database SQL per la gestione dei dati.\nPer la parte di front-end invece sono stati utilizzati:\n• HTML, CSS, Javascript.\n• IDE di sviluppo: Visual studio.\n• PHP: usato per l’implementazione del lettore automatico di email.",
       "start": "2017-04"
     },
     {
@@ -438,7 +438,27 @@
         "ssh"
       ],
       "content": "HMAX è una piattaforma di gestione digitale delle risorse di Hitachi Rail. \nHMAX consente di prevedere i problemi, ottimizzare la rete e trasformare le operazioni, su flotte di treni, sistemi di segnalamento e infrastrutture.\n\nIn questo immenso progetto, ho contributo allo sviluppo di una piattaforma Energy Management System (enMS) per la raccolta e l’analisi di dati di consumo energetico e idrico, con generazione di KPI energetici conformi allo standard ISO 50001.\n\nResponsabile del coordinamento tecnico tra team internazionali (Hitachi Digital Vietnam) e della traduzione dei requisiti funzionali in specifiche architetturali e tecniche per l’implementazione.\n\nDefinizione e supervisione dell’implementazione di un’architettura data-driven capace di gestire ingestione dati sia real-time che batch, pipeline di elaborazione dei dati e calcolo dei KPI energetici.\n\nL’infrastruttura di sviluppo e deploy era basata su ambienti virtualizzati accessibili via SSH, con pipeline di sviluppo e integrazione continua.",
-      "start": "2026-09"
+      "start": "2025-09"
+    },
+    {
+      "id": "sisal_community",
+      "name": "Sisal Community",
+      "company": "sisal",
+      "website": "https://www.sisal.it/community",
+      "technologies": [
+        "java",
+        "kafka",
+        "docker",
+        "git",
+        "my_sql",
+        "swagger",
+        "spring_boot",
+        "open_search",
+        "redis",
+        "git_hub_actions"
+      ],
+      "content": "Sisal Community è il social network di Sisal.\nSisal Community nasce con l’obiettivo di creare un nuovo ambiente digitale pensato per riunire chi vive il gioco e l’intrattenimento come un’esperienza da condividere.\n\nIl lancio della piattaforma parte da una base iniziale di oltre 250.000 utenti già registrati al social Sisal Tipster e si pone l’obiettivo di crescere progressivamente, arricchendo l’esperienza di gioco grazie a strumenti social, contenuti editoriali e nuove forme di intrattenimento.\nCon questa iniziativa Sisal diventa la prima azienda italiana a proporre una community strutturata dedicata ai giocatori: uno spazio pensato per incontrarsi, divertirsi e condividere esperienze.\n\nDa un punto di vista tecnico, Sisal Community è invece un progetto a micro sevizi, sviluppato utilizzando Java con framework Spring Boot.\nDa un altro punto di vista, Sisal Community può anche essere visto come punto centrale di un sistema integrato, ossia Sisal Community si pone come middleware verso altri servizi esterni, andando quindi ad integrare in un unico punto vari sistemi.\nTra questi nominiamo: Sisal Tipster, Social+, Akamai.\n\nIl mio ruolo in questo progetto è stato quello di Back-end Developer, coinvolto sia dalla fase iniziale di analisi e progettazione sino alla fase finale di documentazione e testing delle funzionalità.\nEcco altri dettagli tecnici relativi al progetto:\n-\tArchitettura esagonale, andando a distinguere domain ed infrastructure.\n-\tDistribuzione interna dei messaggi tramite Kafka, e validazione dei messaggi tramite file AVRO.\n-\tDocker per le build ed esecuzione dei vari micro servizi sviluppati.\n-\tMySQL come database.\n-\tOpenSearch come strumento per eseguire query su grandi volumi di dati.\n-\tGIT come strumento di versioning, con strategia GIT FLOW.\n-\tCI CD implementata tramite GIT Hub Actions.\n-\tRedis per database in cache.\n",
+      "start": "2026-01"
     }
   ],
   "companies": [
@@ -475,7 +495,7 @@
       "id": "teoresi",
       "name": "Teoresi Group S.P.A.",
       "start": "Gennaio 2024",
-      "end": "Febbraio 2026",
+      "end": "Gennaio 2026",
       "city": "Napoli, via Ferrante Imparato",
       "website": "https://www.teoresigroup.it",
       "content": "Teoresi è una multi-nazionale in ambito di consulenza ingegneristica. Come tale, sono stato assegnato, nel tempo, a diversi progetti per diversi clienti finali, di cui parlo nei paragrafi successivi.\nIn questo periodo ho vissuto politiche di smart-working ibrido, alternando così giornate in presenza (sia in sede Teoresi che sede cliente) con giornate di smart.",
@@ -495,10 +515,36 @@
       "parent": "teoresi",
       "name": "Hitachi Rail STS S.P.A.",
       "start": "Gennaio 2024",
-      "end": "Febbraio 2026",
+      "end": "Gennaio 2026",
       "city": "Napoli, via Argine",
       "website": "https://www.hitachirail.com",
       "content": "Ho lavorato presso Hitachi come consulente Teoresi, in svariati progetti.\nIn particolare, ho lavorato al progetto 360Flow, lato veicolo, per la manutenzione dei moduli già implementati oltre allo sviluppo di nuove librerie e moduli software.\nIn Giugno 2024, sono stato invece assegnato al progetto 360Motion, terminato invece verso Settembre 2025, dato che in questo periodo sono stato assegnato al progetto HMAX.\nPer un approfondimento dei progetti e delle tecnologie coinvolte, si può far riferimento alle apposite sezioni."
+    },
+    {
+      "id": "alten",
+      "name": "Alten Group S.P.A.",
+      "start": "Gennaio 2026",
+      "end": "Esperienza attuale",
+      "city": "Napoli, centro Polifunzionale INAIL",
+      "website": "https://www.alten.it",
+      "content": "ALTEN è una multi-nazionale in ambito di consulenza ingegneristica.\nL’unico cliente presso cui ho lavorato in questo periodo è Sisal.\nIn questo periodo ho vissuto politiche di smart-working ibrido.",
+      "activities": [
+        "Cliente: Sisal S.P.A.",
+        "Progetti: Sisal Community",
+        "Sviluppo microservizi in Java Spring Boot",
+        "Utilizzo avanzato di: Docker, Kafka, Redis, MySQL, SonarQube, Test Containers",
+        "Sicurezza: JWT, AVRO",
+        "Integrazione con: Sisal Tipster, Akamai, Social+"
+      ]
+    },
+    {
+      "id": "sisal",
+      "parent": "alten",
+      "name": "Sisal S.P.A.",
+      "start": "Gennaio 2026",
+      "end": "Esperienza attuale",
+      "website": "https://www.sisal.it",
+      "content": "Nella mia esperienza come consulente presso Sisal ho avuto modo di lavorare al progetto Sisal Community.\nEsso è il social network di Sisal, nato con l’obiettivo di creare una rete in cui gli utenti potessero connettersi, in modo da garantire una esperienza di gioco sempre più immersiva e coinvolgente.\nApprofondiremo il progetto della sezione dedicata."
     }
   ]
 }
