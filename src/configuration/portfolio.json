@@ -217,6 +217,24 @@
       "name": "ZPL",
       "type": "hardware",
       "content": "Ho utilizzato lo ZPL per creare etichette stampabili tramite stampanti Zebra, consentendomi di gestire le dimensioni delle etichette e altri aspetti legati alla funzionalità. Questo linguaggio si è dimostrato particolarmente utile per le stampe via Bluetooth, riducendo il carico di dati da inviare dal dispositivo alla stampante, ottimizzando così il processo di stampa."
+    },
+    {
+      "id": "keycloak",
+      "name": "Keycloak",
+      "type": "remote_access",
+      "content": "Utilizzo di Keycloak come sistema IAM per autenticazione e autorizzazione tramite token JWT.\nConfigurazione e gestione di realm, utenti, ruoli e client per la sicurezza delle API HTTP.\nPersonalizzazione dei token JWT mediante aggiunta e modifica dei claim per supportare logiche applicative e autorizzazioni custom.\nImplementazione della validazione dei token e integrazione con servizi back-end basati su architettura microservizi.\n"
+    },
+    {
+      "id": "html",
+      "name": "HTML CSS",
+      "type": "language",
+      "content": "Ho utilizzato HTML (5) e CSS nella prima fase della mia esperienza lavorativa, dove ero impegnato nello sviluppo di applicativi web usando, appunto, la combinazione HTML CSS Javascript.\nUtilizzo di HTML anche per sviluppare alcuni progetti personali."
+    },
+    {
+      "id": "react",
+      "name": "React",
+      "type": "framework",
+      "content": "React è stato utilizzato per lo sviluppo del progetto personale MyPortFolio, sfruttando la component-based architecture per la realizzazione delle diverse pagine e la gestione della navigazione tramite React Router (Link).\nIl progetto è stato sviluppato come esercizio pratico, senza integrazione di backend o database, con focus sulla costruzione dell’interfaccia e sulla gestione della struttura dell’applicazione."
     }
   ],
   "projects": [
@@ -416,7 +434,8 @@
         "mqtt",
         "postgresql",
         "spring_boot",
-        "redis"
+        "redis",
+        "keycloak"
       ],
       "content": "360Motion è una piattaforma pionieristica che sta trasformando la mobilità urbana consolidando i dati provenienti da diversi servizi di trasporto in una soluzione unificata. È alimentato da algoritmi avanzati di intelligenza artificiale e ML, che gli consentono di ottimizzare dinamicamente le reti di trasporto pubblico, facilitare la pianificazione degli scenari e anticipare e mitigare le interruzioni.\nIn pratica, 360Motion riunisce i dati di più servizi di trasporto (bus, metro e veicoli vari) in un'unica piattaforma unificata.\nQuesti dati vengono ricevuti ed analizzati, con lo scopo di fornire una piattaforma web che possa fornire all’utente quante più informazioni e operatività possibili.\n\n360Motion è una piattaforma indipendente dall'hardware, in grado di scalare le soluzioni di mobilità esistenti raccogliendo e acquisendo dati da qualsiasi tipo di fonte e consentendo a operatori e passeggeri di comprendere il modo ottimale di spostarsi attraverso i paesaggi urbani.\nTecnicamente, invece, 360Motion è un progetto a micro-servizi, scritti in Java (SpringBoot), Python, ed una parte front-end scritta in Angular, che viene distribuito tramite Kubernetes e pipeline DevOps.\n\nIn questa mia esperienza come consulente, le attività di cui mi sono occupato sono:\n• Implementazione di Integration-test per controller Spring che ne erano sprovvisti, con JUnit.\n• Incremento della code coverage del codice.\n• Integrazione di Swagger nei controller previsti.\n• Verifica ed eventuale fix per work-item rilevati dal team di V&V (Verification & Validation), tramite software JMeter e linguaggio BeanShell.\n• Refactoring di un SDK interno utile alla gestione delle proprietà che i singoli componenti potevano richiedere al database\n• Implementazione della libreria Test Core, utilizzata come framework per la scrittura di test di integrazione. Questa libreria mette a disposizione vari connettori (database, Redis, Kafka, ecc.) e gestisce, tramite il file application. properties, l'accesso a tali connettori tramite test container o tramite l'ambiente reale locale. I connettori vengono implementati utilizzando il Factory pattern, garantendo così una facile aggiunta di nuovi elementi.\n• Implementazione di un nuovo servizio Java, platform-integration-test, che, tramite la libreria Test Core, contiene una serie di test di integrazione per verificare il comportamento dei vari microservizi rilasciati. Questo strumento è stato impostato in modo da eseguire, ogni notte, una suite di test di integrazione definiti tramite JSON, in modo da verificare, ogni giorno, l’impatto di nuovi sviluppi o modifiche all’ambiente sulla stabilità del software.\n\nNel contesto di IntelliJ, sono stati usati i seguenti plugins:\n• Lombok, usato per importare annotazioni e ridurre il codice scritto.\n• SonarLint, utile a rilevare eventuali problemi del codice.",
       "start": "2025-05"
