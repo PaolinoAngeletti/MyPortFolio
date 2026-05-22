@@ -223,6 +223,18 @@
       "name": "Keycloak",
       "type": "remote_access",
       "content": "Utilizzo di Keycloak come sistema IAM per autenticazione e autorizzazione tramite token JWT.\nConfigurazione e gestione di realm, utenti, ruoli e client per la sicurezza delle API HTTP.\nPersonalizzazione dei token JWT mediante aggiunta e modifica dei claim per supportare logiche applicative e autorizzazioni custom.\nImplementazione della validazione dei token e integrazione con servizi back-end basati su architettura microservizi.\n"
+    },
+    {
+      "id": "html",
+      "name": "HTML CSS",
+      "type": "language",
+      "content": "Ho utilizzato HTML (5) e CSS nella prima fase della mia esperienza lavorativa, dove ero impegnato nello sviluppo di applicativi web usando, appunto, la combinazione HTML CSS Javascript.\nUtilizzo di HTML anche per sviluppare alcuni progetti personali."
+    },
+    {
+      "id": "react",
+      "name": "React",
+      "type": "framework",
+      "content": "React è stato utilizzato per lo sviluppo del progetto personale MyPortFolio, sfruttando la component-based architecture per la realizzazione delle diverse pagine e la gestione della navigazione tramite React Router (Link).\nIl progetto è stato sviluppato come esercizio pratico, senza integrazione di backend o database, con focus sulla costruzione dell’interfaccia e sulla gestione della struttura dell’applicazione."
     }
   ],
   "projects": [
